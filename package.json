@@ -1,0 +1,25 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "moring bot",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "canvas-senpai": "^2.0.3",
+    "cheerio": "^1.0.0-rc.6",
+    "discord.js": "^12.5.3",
+    "got": "^11.8.2",
+    "jshint": "^2.12.0",
+    "mongoose": "^5.12.5",
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.2",
+    "unirest": "^0.6.0",
+    "vacefron": "^3.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo hi my name is savith \n also this is the test command :)"
+  },
+  "author": "savith",
+  "license": "ISC"
+}
