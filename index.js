@@ -45,7 +45,7 @@ client.once('ready', async() => {
     console.log('bot is ready');
 });
 
-client.on('message', async message => {
+client.on('message',  message => {
     prefixSchema.findOne({guildId: message.guild.id}, async (err, data) => {
         if(!data){
           new prefixSchema({
