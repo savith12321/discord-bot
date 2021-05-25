@@ -17,6 +17,8 @@ const { CanvasSenpai } = require("canvas-senpai")
 const canva = new CanvasSenpai();
 
 const fs = require('fs');
+const { discriminators } = require('./models/prefix-schema');
+const { EBADF } = require('constants');
 
 client.commands = new Discord.Collection();
 
@@ -129,17 +131,17 @@ client.on('message', async message => {
             if (command === 'google') {
                 client.commands.get('google').execute(message, args, client)
             }
-            if( command === 'panda-fact'){
-              client.commands.get('panda-fact').execute(message, args)
+            if (command === 'panda-fact') {
+                client.commands.get('panda-fact').execute(message, args)
             }
-            if( command === 'kola'){
-              client.commands.get('kola').execute(message, args)
+            if (command === 'kola') {
+                client.commands.get('kola').execute(message, args)
             }
-            if( command === 'binaryencode'){
-              client.commands.get('binaryencode').execute(message, args)
+            if (command === 'binaryencode') {
+                client.commands.get('binaryencode').execute(message, args)
             }
-            if( command === 'binarydecode'){
-              client.commands.get('binarydecode').execute(message, args)
+            if (command === 'binarydecode') {
+                client.commands.get('binarydecode').execute(message, args)
             }
         }
     });
@@ -167,3 +169,31 @@ client.on('guildMemberAdd', async(member, guild) => {
         channel.send(attachment);
     })
 });
+
+bot.on("guildCreate", guild => {
+    let found = 0;
+    guild.channels.cache.map((c) => {
+        if (found === 0) {
+            if (channel.type === "text") {
+                if (channel.permissionsFor(bot.user).has("VIEW_CHANNEL") === true) {
+                    if (channel.permissionsFor(bot.user).has("SEND_MESSAGES") === true) {
+                        var embed = new Discord.MessageEmbed()
+                        embed.setTitle(`Thank you for adding me!`)
+                        embed.setColor("RANDOM")
+                        embed.setImage(`https://i.ibb.co/BTr8ybq/Untitled-design-1.png`)
+                        embed.addField("Prefix", "`lol `")
+                        channel.send(embed)
+                        await new prefixSchema({
+                            guildId: message.guild.id,
+                            guildName: message.guild.name,
+                            prefix: "lol ",
+                        }).save();
+
+                        found = 1;
+                    }
+                }
+            }
+        }
+    });
+
+})
