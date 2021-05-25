@@ -14,7 +14,8 @@
     "node-fetch": "^2.6.1",
     "request": "^2.88.2",
     "unirest": "^0.6.0",
-    "vacefron": "^3.4.0"
+    "vacefron": "^3.4.0",
+    "ytsr": "^3.5.0"
   },
   "devDependencies": {},
   "scripts": {

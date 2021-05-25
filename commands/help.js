@@ -7,15 +7,15 @@ module.exports = {
         const helpEmbed = new Discord.MessageEmbed()
             .setTitle("help for moring-bot")
             .setAuthor(`Prefix = ${guildprefix}`)
-            .setThumbnail("https://media.discordapp.net/attachments/834658912422592553/835052092766158899/Untitled_design_1.png")
+            .setThumbnail("https://i.ibb.co/BTr8ybq/Untitled-design-1.png")
             .setURL(`https://discord.com/oauth2/authorize?client_id=804622611828047872&scope=bot&permissions=8589934591`)
-            .addField(`About:`, "`help`|`info`")
-            .addField(`Misc:`, "`setwelcome`|`removewelcome`|`setprefix`")
-            .addField(`Fun:`, "`heaven`|`iamspeed`|`cat`|`dog`|`quote`")
-            .addField(`Moderation:`, "`user-info`|`clear`|`kick`|`ban`")
-            .addField(`Memy:`, "`meme`|`chuck-joke`")
-            .addField(`Ticket:`, "`ticket`")
+            .addField(`About:`, "`help` - sends our commands\n`info` - bot's info")
+            .addField(`Misc:`, "`setwelcome` - set a welcome message\n`removewelcome` - remove welcome message\n`setprefix` - change your guild prefix\n`feedback` - send us a feedback\n`bug` - report a bug")
+            .addField(`Fun:`, "`heaven <@user>` - create a image of a heaven\n`iamspeed <@user>` - create a image of a iamspeed\n`cat` - send a random image of cat\n`dog` - send a random image of a dog\n`quote`- send a random quote\n`rps` - play rock paper scissors\n`google` - Search on google!")
+            .addField(`Moderation:`, "`user-info <@user>` - get <@user>'s info\n`clear <number 1-100>` - purge command!\n`kick <@user>` - kick someone!\n`ban`- ban someone!")
+            .addField(`Memy:`, "`meme` - random meme\n`chuck-joke` - random chuck joke")
+            .addField(`Ticket:`, "`ticket` - create a ticket")
             .setColor(colors[Math.floor(Math.random() * colors.length)])
-        message.channel.send(helpEmbed)
+        message.channel.send(helpEmbed);
     }
 }

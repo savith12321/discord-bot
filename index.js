@@ -34,6 +34,7 @@ mongoose
         useFindAndModify: false
     }).then(() => {
         console.log("connected to mongo db")
+        client.login(config.token);
     }).catch((err) => {
         console.log(err);
     });
@@ -42,108 +43,127 @@ client.once('ready', async() => {
     const servers = await client.guilds.cache.size;
     const users = await client.users.cache.siz;
     client.user.setActivity(`[lol help] | Watching ${servers} servers | v1.0`, { type: "LISTENING" });
-    console.log('bot is ready');
+    console.log(`bot is ready ${servers} ${users}`);
 });
 
-client.on('message',  message => {
-    prefixSchema.findOne({guildId: message.guild.id}, async (err, data) => {
-        if(!data){
-          new prefixSchema({
-              guildId: message.guild.id,
-              prefix: "lol ",
-          }).save();
-        }
-        if(!data) return message.channel.send("setting you a prefix pls type `lol help` for help!")
-        if(!data.prefix) return message.channel.send('unknown error occured' + err)
-        if (!message.content.startsWith(data.prefix) || message.author.bot) return;
+client.on('message', async message => {
+    prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
+        if (!data) {
+            await new prefixSchema({
+                guildId: message.guild.id,
+                guildName: message.guild.name,
+                prefix: "lol ",
+            }).save();
+            message.channel.send("setting you a prefix pls type `lol help` for help!");
+        } else {
 
-        const args = message.content.slice(data.prefix.length).split(/ +/);
-        const command = args.shift().toLowerCase();
-        const guildprefix = data.prefix;
+            if (!message.content.startsWith(data.prefix) || message.author.bot) return;
 
-        if (command === 'ping') {
-            client.commands.get('ping').execute(message, args);
-        }
-        if (command === 'meme') {
-            client.commands.get('meme').execute(message, args);
-        }
-        if (command === 'quote') {
-            client.commands.get('quote').execute(message, args);
-        }
-        if (command === 'help') {
-            client.commands.get('help').execute(message, args, guildprefix);
-        }
-        if (command === 'user-info') {
-            client.commands.get('user-info').execute(message, args);
-        }
-        if (command === 'chuck-joke') {
-            client.commands.get('chuck-joke').execute(message, args);
-        }
-        if (command === 'cat') {
-            client.commands.get('cat').execute(message, args);
-        }
-        if (command === 'dog') {
-            client.commands.get('dog').execute(message, args);
-        }
-        if (command === 'iamspeed') {
-            client.commands.get('iamspeed').execute(message, args);
-        }
-        if (command === 'heaven') {
-            client.commands.get('heaven').execute(message, args);
-        }
-        if (command === 'clear') {
-            client.commands.get('clear').execute(message, args);
-        }
-        if (command === 'kick') {
-            client.commands.get('kick').execute(message, args);
-        }
-        if (command === 'ban') {
-            client.commands.get('ban').execute(message, args);
-        }
-        if (command === 'info') {
-            client.commands.get('info').execute(message, args);
-        }
-        if (command === 'ticket') {
-            client.commands.get('ticket').execute(message, args, client);
-        }
-        if(command === 'setwelcome'){
-          client.commands.get('setwelcome').execute(message, args, client);
-        }
-        if(command === 'removewelcome'){
-          client.commands.get('removewelcome').execute(message, args, client);
-        }
-        if(command === 'setprefix'){
-          client.commands.get('setprefix').execute(message, args);
-        }
-        if(command === 'feedback'){
-          client.commands.get('feedback').execute(message, args, client)
+            const args = message.content.slice(data.prefix.length).split(/ +/);
+            const command = args.shift().toLowerCase();
+            const guildprefix = data.prefix;
+
+            if (command === 'ping') {
+                client.commands.get('ping').execute(message, args);
+            }
+            if (command === 'meme') {
+                client.commands.get('meme').execute(message, args);
+            }
+            if (command === 'quote') {
+                client.commands.get('quote').execute(message, args);
+            }
+            if (command === 'help') {
+                client.commands.get('help').execute(message, args, guildprefix);
+            }
+            if (command === 'user-info') {
+                client.commands.get('user-info').execute(message, args);
+            }
+            if (command === 'chuck-joke') {
+                client.commands.get('chuck-joke').execute(message, args);
+            }
+            if (command === 'cat') {
+                client.commands.get('cat').execute(message, args);
+            }
+            if (command === 'dog') {
+                client.commands.get('dog').execute(message, args);
+            }
+            if (command === 'iamspeed') {
+                client.commands.get('iamspeed').execute(message, args);
+            }
+            if (command === 'heaven') {
+                client.commands.get('heaven').execute(message, args);
+            }
+            if (command === 'clear') {
+                client.commands.get('clear').execute(message, args);
+            }
+            if (command === 'kick') {
+                client.commands.get('kick').execute(message, args);
+            }
+            if (command === 'ban') {
+                client.commands.get('ban').execute(message, args);
+            }
+            if (command === 'info') {
+                client.commands.get('info').execute(message, args);
+            }
+            if (command === 'ticket') {
+                client.commands.get('ticket').execute(message, args, client);
+            }
+            if (command === 'setwelcome') {
+                client.commands.get('setwelcome').execute(message, args, client);
+            }
+            if (command === 'removewelcome') {
+                client.commands.get('removewelcome').execute(message, args, client);
+            }
+            if (command === 'setprefix') {
+                client.commands.get('setprefix').execute(message, args);
+            }
+            if (command === 'feedback') {
+                client.commands.get('feedback').execute(message, args, client)
+            }
+            if (command === 'rps') {
+                client.commands.get('rps').execute(message, args, client)
+            }
+            if (command === 'bug') {
+                client.commands.get('bug').execute(message, args, client)
+            }
+            if (command === 'google') {
+                client.commands.get('google').execute(message, args, client)
+            }
+            if( command === 'panda-fact'){
+              client.commands.get('panda-fact').execute(message, args)
+            }
+            if( command === 'kola'){
+              client.commands.get('kola').execute(message, args)
+            }
+            if( command === 'binaryencode'){
+              client.commands.get('binaryencode').execute(message, args)
+            }
+            if( command === 'binarydecode'){
+              client.commands.get('binarydecode').execute(message, args)
+            }
         }
     });
 
 });
-client.on('guildMemberAdd', async (member, guild) =>{
-  welcomeSchema.findOne({ guildId:member.guild.id }, async (err, data) =>{
-    if(!data) return;
-    const user = member.user;
-    const channel = member.guild.channels.cache.get(data.channelId);
-    if(data.channelId === "") return;
-    let welcomeimg = await canva.welcome(member, { link: "http://www.beach-backgrounds.com/wallpapers/view-from-the-hill-on-the-monaco-wallpaper-1920x600-461.jpg" })
-    const userEmbed = new Discord.MessageEmbed()
-    .setTitle(`Welcome ${user.username} to ${member.guild.name} the discord server`)
-    .setThumbnail(`${user.displayAvatarURL()}`)
-    .setColor("RANDOM")
-    .addField(`About you`, `\n USER TAG: ${user} \n USER NO: ${member.guild.memberCount}`)
-    .addField(`About us`, `\n SERVER NAME: ${member.guild.name} \n TOTAL MEMBERS WITH YOU: ${member.guild.memberCount}`)
-    const attachment = new Discord.MessageAttachment(
-      welcomeimg,
-      "welcome-image.png"
-    );
-    channel.send(`Hey ${user} welcome to our server **${member.guild.name}** \n`);
-    channel.send(userEmbed);
-    channel.send(attachment);
-
-
-  })
+client.on('guildMemberAdd', async(member, guild) => {
+    welcomeSchema.findOne({ guildId: member.guild.id }, async(err, data) => {
+        if (!data) return;
+        const user = member.user;
+        const channel = member.guild.channels.cache.get(data.channelId);
+        if (data.channelId === "") return;
+        let welcomeimg = await canva.welcome(member, { link: "http://www.beach-backgrounds.com/wallpapers/view-from-the-hill-on-the-monaco-wallpaper-1920x600-461.jpg" })
+        const userEmbed = new Discord.MessageEmbed()
+            .setTitle(`Welcome ${user.username} to ${member.guild.name} the discord server`)
+            .setThumbnail(`${user.displayAvatarURL()}`)
+            .setColor("RANDOM")
+            .addField(`About you`, `\n USER TAG: ${user} \n USER NO: ${member.guild.memberCount}`)
+            .addField(`About us`, `\n SERVER NAME: ${member.guild.name} \n TOTAL MEMBERS WITH YOU: ${member.guild.memberCount}`)
+        const attachment = new Discord.MessageAttachment(
+            welcomeimg,
+            "welcome-image.png"
+        );
+        channel.send(`Hey ${user} welcome to our server **${member.guild.name}** \n`);
+        channel.send(userEmbed);
+        channel.send(attachment);
+    })
 });
-
-client.login(config.token);
