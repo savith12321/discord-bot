@@ -172,7 +172,7 @@ client.on('guildMemberAdd', async(member, guild) => {
 
 client.on("guildCreate", async guild => {
     let found = 0;
-    guild.channels.cache.map(async (c) => {
+    guild.channels.cache.map(async channel => {
         if (found === 0) {
             if (channel.type === "text") {
                 if (channel.permissionsFor(client.user).has("VIEW_CHANNEL") === true) {
@@ -192,6 +192,7 @@ client.on("guildCreate", async guild => {
                             }).save();
                           }
                         });
+                        channel.send(embed)
                         found = 1;
                     }
                 }
