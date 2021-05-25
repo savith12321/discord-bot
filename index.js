@@ -186,8 +186,8 @@ client.on("guildCreate", async guild => {
                         prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
                           if(!data){
                             await new prefixSchema({
-                                guildId: guild.guild.id,
-                                guildName: guild.guild.name,
+                                guildId: guild.id,
+                                guildName: guild.name,
                                 prefix: "lol ",
                             }).save();
                           }
