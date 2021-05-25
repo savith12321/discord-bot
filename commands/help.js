@@ -7,7 +7,7 @@ module.exports = {
         const helpEmbed = new Discord.MessageEmbed()
             .setTitle("help for heat")
             .setAuthor(`Prefix = ${guildprefix}`)
-            .setThumbnail("https://i.ibb.co/BTr8ybq/Untitled-design-1.png")
+            .setThumbnail("https://www.logomoose.com/wp-content/uploads/2018/03/heat-v2.png")
             .setURL(`https://discord.com/oauth2/authorize?client_id=804622611828047872&scope=bot&permissions=8589934591`)
             .addField(`About:`, "`help` - sends our commands\n`info` - bot's info")
             .addField(`Misc:`, "`setwelcome` - set a welcome message\n`removewelcome` - remove welcome message\n`setprefix` - change your guild prefix\n`feedback` - send us a feedback\n`bug` - report a bug")
