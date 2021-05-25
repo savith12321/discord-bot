@@ -170,25 +170,28 @@ client.on('guildMemberAdd', async(member, guild) => {
     })
 });
 
-bot.on("guildCreate", guild => {
+client.on("guildCreate", async guild => {
     let found = 0;
-    guild.channels.cache.map((c) => {
+    guild.channels.cache.map(async channel => {
         if (found === 0) {
             if (channel.type === "text") {
-                if (channel.permissionsFor(bot.user).has("VIEW_CHANNEL") === true) {
-                    if (channel.permissionsFor(bot.user).has("SEND_MESSAGES") === true) {
+                if (channel.permissionsFor(client.user).has("VIEW_CHANNEL") === true) {
+                    if (channel.permissionsFor(client.user).has("SEND_MESSAGES") === true) {
                         var embed = new Discord.MessageEmbed()
                         embed.setTitle(`Thank you for adding me!`)
                         embed.setColor("RANDOM")
-                        embed.setImage(`https://i.ibb.co/BTr8ybq/Untitled-design-1.png`)
+                        embed.setImage(`https://images-ext-2.discordapp.net/external/j-T9ysRv3xW8x3rVo_E8bxIMBV6iPI7MdgUiSPA0fj8/https/cdn.discordapp.com/avatars/846615243673042954/42f23ce46c5e8a304e40bce34e119d32.webp`)
                         embed.addField("Prefix", "`lol `")
                         channel.send(embed)
-                        await new prefixSchema({
-                            guildId: message.guild.id,
-                            guildName: message.guild.name,
-                            prefix: "lol ",
-                        }).save();
-
+                        prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
+                          if(!data){
+                            await new prefixSchema({
+                                guildId: guild.guild.id,
+                                guildName: guild.guild.name,
+                                prefix: "lol ",
+                            }).save();
+                          }
+                        });
                         found = 1;
                     }
                 }
