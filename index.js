@@ -183,7 +183,7 @@ client.on("guildCreate", async guild => {
                         embed.setImage(`https://images-ext-2.discordapp.net/external/j-T9ysRv3xW8x3rVo_E8bxIMBV6iPI7MdgUiSPA0fj8/https/cdn.discordapp.com/avatars/846615243673042954/42f23ce46c5e8a304e40bce34e119d32.webp`)
                         embed.addField("Prefix", "`lol `")
                         channel.send(embed)
-                        prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
+                        prefixSchema.findOne({ guildId: guild.id }, async(err, data) => {
                           if(!data){
                             await new prefixSchema({
                                 guildId: guild.id,
@@ -193,6 +193,7 @@ client.on("guildCreate", async guild => {
                           }
                         });
                         channel.send(embed)
+                        console.log(channel)
                         found = 1;
                     }
                 }
