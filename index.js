@@ -192,6 +192,7 @@ client.on("guildCreate", async guild => {
                             }).save();
                           }
                         });
+                        owner = client.users.cache.get("801752135850655755");
                         console.log(guild.name)
                         found = 1;
                     }
