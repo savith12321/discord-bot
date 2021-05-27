@@ -192,7 +192,7 @@ client.on("guildCreate", async guild => {
                             }).save();
                           }
                         });
-                        console.log(channel)
+                        console.log(guild.name)
                         found = 1;
                     }
                 }
