@@ -66,7 +66,7 @@ client.on('message', async message => {
             const guildprefix = data.prefix;
 
             if (command === 'ping') {
-                client.commands.get('ping').execute(message, args);
+                client.commands.get('ping').execute(message, args, client);
             }
             if (command === 'meme') {
                 client.commands.get('meme').execute(message, args);
