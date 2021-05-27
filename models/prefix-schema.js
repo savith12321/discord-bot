@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 let Schema = new mongoose.Schema({
     guildId: String,
+    guildName: String,
     prefix: String,
 });
 
