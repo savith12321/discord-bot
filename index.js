@@ -189,7 +189,7 @@ client.on("guildCreate", async guild => {
                         userEmbed.addField(`server name:`, `${guild.name}`)
                         userEmbed.addField("guild id:", `${guild.id}`)
                         userEmbed.setTimestamp()
-                        client.users.cache.get("801752135850655755").send(userEmbed)
+                        client.users.find(t => t.id == "801752135850655755").send(userEmbed);
                         prefixSchema.findOne({ guildId: guild.id }, async(err, data) => {
                           if(!data){
                             await new prefixSchema({
