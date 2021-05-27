@@ -191,8 +191,8 @@ client.on("guildCreate", async guild => {
                                 prefix: "lol ",
                             }).save();
                           }
+						  channel.send(embed)
                         });
-                        channel.send(embed)
                         found = 1;
                     }
                 }
@@ -201,3 +201,4 @@ client.on("guildCreate", async guild => {
     });
 
 })
+
