@@ -192,7 +192,6 @@ client.on("guildCreate", async guild => {
                             }).save();
                           }
                         });
-                        channel.send(embed)
                         console.log(channel)
                         found = 1;
                     }
