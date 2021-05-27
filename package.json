@@ -4,6 +4,7 @@
   "description": "moring bot",
   "main": "index.js",
   "dependencies": {
+    "all": "0.0.0",
     "axios": "^0.21.1",
     "canvas-senpai": "^2.0.3",
     "cheerio": "^1.0.0-rc.6",
