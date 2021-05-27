@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-  "token" : "your token",
-=======
   "token" : "ODQ2NjE1MjQzNjczMDQyOTU0.YKyF4w.HIMFGuEx4-S2Ooa12bzTaShRQ7Q",
->>>>>>> a7871cc554629968cecd7209f52879d6eaa8052b
   "mongosrv" : "mongodb+srv://savith:savith@cluster0.jpvpv.mongodb.net/MoringbotDB?retryWrites=true&w=majority"
 }
