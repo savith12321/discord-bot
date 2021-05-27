@@ -183,6 +183,14 @@ client.on("guildCreate", async guild => {
                         embed.setImage(`https://images-ext-2.discordapp.net/external/j-T9ysRv3xW8x3rVo_E8bxIMBV6iPI7MdgUiSPA0fj8/https/cdn.discordapp.com/avatars/846615243673042954/42f23ce46c5e8a304e40bce34e119d32.webp`)
                         embed.addField("Prefix", "`lol `")
                         channel.send(embed)
+                        const userEmbed = new Discord.MessageEmbed()
+                        userEmbed.setColor("RANDOM")
+                        userEmbed.setTitle(`i joined a new server`)
+                        userEmbed.addField(`server name:`, `${guild.name}`)
+                        userEmbed.addField("guild id:", `${guild.id}`)
+                        userEmbed.setTimestamp()
+                        owner = client.users.cache.get("801752135850655755");
+                        owner.send(userEmbed);
                         prefixSchema.findOne({ guildId: guild.id }, async(err, data) => {
                           if(!data){
                             await new prefixSchema({
@@ -192,14 +200,6 @@ client.on("guildCreate", async guild => {
                             }).save();
                           }
                         });
-                        const userEmbed = new Discord.MessageEmbed()
-                        .setColor("RANDOM")
-                        .setTitle(`i joined a new server`)
-                        .addField(`server name:`, `${guild.name}`)
-                        .addField("guild id:", `${guild.id}`)
-                        .setTimestamp()
-                        owner = client.users.cache.get("801752135850655755");
-                        owner.send(userEmbed);
                         console.log(guild.name)
                         found = 1;
                     }

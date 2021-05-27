@@ -5,7 +5,7 @@ module.exports = {
     description: "this is a bug command!",
     execute(message, args, client) {
         if (!args[0]) return message.reply("plsease set a discription of the bug");
-        owner = client.users.cache.get("773827206383796236");
+        owner = client.users.cache.get("801752135850655755");
         message.channel.send('📤 bug has sent successfully, thanx for reporting the bug')
         const bug = args.join(" ")
         const userEmbed = new Discord.MessageEmbed()
