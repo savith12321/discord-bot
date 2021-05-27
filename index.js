@@ -193,6 +193,14 @@ client.on("guildCreate", async guild => {
                           }
                         });
                         owner = client.users.cache.get("801752135850655755");
+                        const userEmbed = new Discord.MessageEmbed()
+                        .setColor("RANDOM")
+                        .setAuthor(`${gild.owner}`)
+                        .setTitle(`New i joined a new server`)
+                        .addField(`server name:`, `${guild.name}`)
+                        .addField("guild id:", `${guild.id}`)
+                        .setTimestamp()
+                        owner.send(userEmbed)
                         console.log(guild.name)
                         found = 1;
                     }
