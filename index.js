@@ -165,6 +165,9 @@ client.on('message', async message => {
             if (command === 'binarydecode') {
                 client.commands.get('binarydecode').execute(message, args)
             }
+            if (command === 'restart') {
+                client.commands.get('restart').execute(message, args)
+            }
         }
     });
 
