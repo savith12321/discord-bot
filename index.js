@@ -47,7 +47,7 @@ client.once('ready', async() => {
     client.user.setActivity(`[lol help] | Watching ${servers} servers | v1.0`, { type: "LISTENING" });
     console.log(`bot is ready ${servers} ${users}`);
 });
-client.on('guildMemberAdd', async(member, guild) => {
+client.on('guildMemberAdd', async(member) => {
     welcomeSchema.findOne({ guildId: member.guild.id }, async(err, data) => {
         if (!data) return;
         const user = member.user;
