@@ -51,8 +51,8 @@ client.on('guildMemberAdd', async(member, guild) => {
     welcomeSchema.findOne({ guildId: member.guild.id }, async(err, data) => {
         if (!data) return;
         const user = member.user;
-        const channel = member.guild.channels.cache.get(data.channelId);
         if (data.channelId === "") return;
+        const channel = member.guild.channels.cache.get(data.channelId);
         let welcomeimg = await canva.welcome(member, { link: "http://www.beach-backgrounds.com/wallpapers/view-from-the-hill-on-the-monaco-wallpaper-1920x600-461.jpg" })
         const userEmbed = new Discord.MessageEmbed()
             .setTitle(`Welcome ${user.username} to ${member.guild.name} the discord server`)
