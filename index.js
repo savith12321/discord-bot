@@ -18,7 +18,7 @@ const canva = new CanvasSenpai();
 
 const fs = require('fs');
 const { discriminators } = require('./models/prefix-schema');
-const { EBADF } = require('constants');
+const { EBADF, SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require('constants');
 
 client.commands = new Discord.Collection();
 
@@ -188,7 +188,8 @@ client.on("guildCreate", async guild => {
                         userEmbed.addField(`server name:`, `${guild.name}`)
                         userEmbed.addField("guild id:", `${guild.id}`)
                         userEmbed.setTimestamp()
-                        client.users.find(t => t.id == "801752135850655755").send(userEmbed);
+                        owner = client.users.cache.get("801752135850655755");
+                        owner.send(userEmbed);
                         prefixSchema.findOne({ guildId: guild.id }, async(err, data) => {
                           if(!data){
                             await new prefixSchema({
