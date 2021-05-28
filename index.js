@@ -47,10 +47,11 @@ client.once('ready', async() => {
     console.log(`bot is ready ${servers} ${users}`);
 });
 client.on('guildMemberAdd', async(member) => {
+    console.log("member joined")
     await welcomeSchema.findOne({ guildId: member.guild.id }, async(err, data) => {
         if (!data) return;
-        const user = member.user;
         if (data.channelId === "") return;
+        const user = member.user;
         const channel = member.guild.channels.cache.get(data.channelId);
         let welcomeimg = await canva.welcome(member, { link: "http://www.beach-backgrounds.com/wallpapers/view-from-the-hill-on-the-monaco-wallpaper-1920x600-461.jpg" })
         const userEmbed = new Discord.MessageEmbed()
@@ -66,7 +67,7 @@ client.on('guildMemberAdd', async(member) => {
         channel.send(`Hey ${user} welcome to our server **${member.guild.name}** \n`);
         channel.send(userEmbed);
         channel.send(attachment);
-    })
+    });
 });
 
 client.on('message', async message => {
