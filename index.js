@@ -48,7 +48,7 @@ client.once('ready', async() => {
     console.log(`bot is ready ${servers} ${users}`);
 });
 client.on('guildMemberAdd', async(member) => {
-    welcomeSchema.findOne({ guildId: member.guild.id }, async(err, data) => {
+    await welcomeSchema.findOne({ guildId: member.guild.id }, async(err, data) => {
         if (!data) return;
         const user = member.user;
         if (data.channelId === "") return;
@@ -71,7 +71,7 @@ client.on('guildMemberAdd', async(member) => {
 });
 
 client.on('message', async message => {
-    prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
+    await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
         if (!data) {
             await new prefixSchema({
                 guildId: message.guild.id,
