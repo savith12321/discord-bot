@@ -5,7 +5,7 @@ module.exports = {
     async execute(message, args, client){
         let done = message.channel.send('Resetting...')
         client.destroy()
-        client.login(botsettings.token);
+        client.login(config.token);
         message.channel.send("Reloaded");
         return;
 
