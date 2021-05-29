@@ -5,7 +5,6 @@ module.exports = {
     async execute(message, args, client){
         let done = message.channel.send('Resetting...')
         .then(message => client.destroy())
-        .then(() => client.login(config.token))
-        .then(() => await done.edit("Restarting hasbean done :)"))
+        .then(() => client.login(config.token));
     }
 }
