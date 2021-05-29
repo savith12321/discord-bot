@@ -43,7 +43,7 @@ mongoose
 client.once('ready', async() => {
     const servers = await client.guilds.cache.size;
     const users = await client.users.cache.siz;
-    client.user.setActivity(`[lol help] | Watching ${servers} servers | v1.0`, { type: "LISTENING" });
+    await client.user.setActivity(`[lol help] | Watching ${servers} servers | v1.0`, { type: "LISTENING" });
     console.log(`bot is ready ${servers} ${users}`);
 });
 client.on('guildMemberAdd', async(member) => {

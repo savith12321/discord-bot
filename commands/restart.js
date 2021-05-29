@@ -4,8 +4,8 @@ module.exports = {
     description: "restart bots conection to discord api",
     async execute(message, args, client){
         let done = message.channel.send('Resetting...')
-        await client.destroy()
-        await client.login(config.token);
+        client.destroy()
+        client.login(config.token);
         return;
 
     }
