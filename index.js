@@ -182,7 +182,7 @@ client.on("guildCreate", async guild => {
                         var embed = new Discord.MessageEmbed()
                         embed.setTitle(`Thank you for adding me!`)
                         embed.setColor("RANDOM")
-                        embed.setImage(`https://images-ext-2.discordapp.net/external/j-T9ysRv3xW8x3rVo_E8bxIMBV6iPI7MdgUiSPA0fj8/https/cdn.discordapp.com/avatars/846615243673042954/42f23ce46c5e8a304e40bce34e119d32.webp`)
+                        embed.setImage(`https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg`)
                         embed.addField("Prefix", "`lol `")
                         channel.send(embed)
                         const userEmbed = new Discord.MessageEmbed()

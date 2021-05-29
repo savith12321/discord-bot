@@ -7,7 +7,7 @@ module.exports = {
         const helpEmbed = new Discord.MessageEmbed()
             .setTitle("help for heat")
             .setAuthor(`Prefix = ${guildprefix}`)
-            .setThumbnail("https://images-ext-2.discordapp.net/external/j-T9ysRv3xW8x3rVo_E8bxIMBV6iPI7MdgUiSPA0fj8/https/cdn.discordapp.com/avatars/846615243673042954/42f23ce46c5e8a304e40bce34e119d32.webp")
+            .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
             .setURL(`https://discord.com/oauth2/authorize?client_id=846615243673042954&scope=bot&permissions=8589934591`)
             .addField(`About:`, "`help` - sends our commands\n`info` - bot's info")
             .addField(`Misc:`, "`setwelcome` - set a welcome message\n`removewelcome` - remove welcome message\n`setprefix` - change your guild prefix\n`feedback` - send us a feedback\n`bug` - report a bug")
