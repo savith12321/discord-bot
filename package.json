@@ -6,6 +6,8 @@
   "dependencies": {
     "all": "0.0.0",
     "axios": "^0.21.1",
+    "bindings": "^1.5.0",
+    "canvas": "^2.8.0",
     "canvas-senpai": "^2.0.3",
     "cheerio": "^1.0.0-rc.6",
     "discord.js": "^12.5.3",

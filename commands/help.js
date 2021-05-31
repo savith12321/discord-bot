@@ -2,7 +2,7 @@ const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.j
 module.exports = {
     name: 'help',
     description: "help command",
-    execute(message, args, guildprefix) {
+    execute(message, args, client ,guildprefix) {
         colors = ['#483d8b', '#7fff00', '#dc143c', '#ecf05b', '#41b1ed', '#e16ff2', '#f6a3cf', '#9cf063', '#32ecad']
         const helpEmbed = new Discord.MessageEmbed()
             .setTitle("help for heat")
