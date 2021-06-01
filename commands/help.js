@@ -19,7 +19,7 @@ module.exports = {
             .setColor(colors[Math.floor(Math.random() * colors.length)])
         message.channel.send(helpEmbed);
         await message.react("849230887044120616");
-        member = client.users.cache.get(message.author.id);
-        member.send(helpEmbed);
+        user = client.users.cache.get(message.author.id);
+        user.send(helpEmbed);
     }
 }
