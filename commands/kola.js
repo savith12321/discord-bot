@@ -3,6 +3,7 @@ var unirest = require("unirest");
 const fetch = require('node-fetch');
 module.exports = {
     name: 'kola',
+    cooldown:10,
     description: "send a random kola pic",
     execute(message, args) {
 

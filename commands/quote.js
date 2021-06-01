@@ -1,6 +1,7 @@
 const fetch = require('node-fetch');
 module.exports = {
     name: 'quote',
+    cooldown:1,
     description: "this sends a random quote",
     execute(message, args){
         function getQuote() {

@@ -1,5 +1,6 @@
 module.exports = {
     name: 'kick',
+    cooldown:10,
     description: "this is a kick command!",
     async execute(message, args){
       if(message.deletable) message.delete();

@@ -1,6 +1,7 @@
 const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
 module.exports = {
     name: 'rps',
+    cooldown:3,
     description: "RPS",
     async execute(message, args) {
         const embed = new Discord.MessageEmbed();

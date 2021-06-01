@@ -1,6 +1,7 @@
 const schema = require("../models/welcome-schema")
 module.exports = {
     name: 'removewelcome',
+    cooldown: 60,
     description: "this is a removewelcome command!",
     execute(message, args) {
         if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("you dont have perms to do that idiot");

@@ -1,6 +1,7 @@
 const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
 module.exports = {
     name: 'help',
+    cooldown:1,
     description: "help command",
     execute(message, args, client ,guildprefix) {
         colors = ['#483d8b', '#7fff00', '#dc143c', '#ecf05b', '#41b1ed', '#e16ff2', '#f6a3cf', '#9cf063', '#32ecad']

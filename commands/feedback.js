@@ -2,6 +2,7 @@ const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.j
 const feedback_data = require('../data/channels.json')
 module.exports = {
     name: 'feedback',
+    cooldown:5,
     description: "this is a feedback command!",
     execute(message, args, client) {
         if (!args[0]) return message.reply("plsease set a discription of the feedback");

@@ -3,6 +3,7 @@ var unirest = require("unirest");
 const fetch = require('node-fetch');
 module.exports = {
     name: 'binarydecode',
+    cooldown:10,
     description: "decode a binary to text",
     execute(message, args) {
 

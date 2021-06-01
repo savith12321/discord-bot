@@ -2,6 +2,7 @@ module.exports = {
   name: "ticket",
   aliases: [],
   permissions: [],
+  cooldown:10,
   description: "open a ticket!",
   async execute(message, args, client) {
     const channel = await message.guild.channels.create(`ticket: ${message.author.tag}`);

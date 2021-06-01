@@ -2,6 +2,7 @@ const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.j
 const request = require('node-superfetch')
 module.exports = {
     name: 'google',
+    cooldown:20,
     description: "this is a google command!",
     async execute(message, args) {
         let googleKey = "AIzaSyD6DHpSNGd4AhWAMMORvwPFcIAJkU7i2cg";

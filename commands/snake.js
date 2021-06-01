@@ -2,6 +2,7 @@ var unirest = require("unirest");
 const fetch = require('node-fetch');
 module.exports = {
     name: 'panda-fact',
+    cooldown:10,
     description: "send a random panda-fact",
     execute(message, args) {
 

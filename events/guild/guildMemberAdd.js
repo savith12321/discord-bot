@@ -23,5 +23,5 @@ module.exports = async (Discord, client, member) => {
         channel.send(`Hey ${user} welcome to our server **${member.guild.name}** \n`);
         channel.send(userEmbed);
         channel.send(attachment);
-    });
+    }); 
 }

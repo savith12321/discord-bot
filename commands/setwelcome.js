@@ -1,6 +1,7 @@
 const schema = require("../models/welcome-schema")
 module.exports = {
     name: 'setwelcome',
+    cooldown:10,
     description: "this is a welcome command!",
     execute(message, args) {
         if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("you dont have perms to do that idiot");
