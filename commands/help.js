@@ -20,6 +20,6 @@ module.exports = {
         message.channel.send(helpEmbed);
         await message.react("849230887044120616");
         member = client.users.cache.get(message.author.id);
-        member.send(userEmbed);
+        member.send(helpEmbed);
     }
 }
