@@ -21,7 +21,7 @@ module.exports = {
         .setColor("RNDOM")
         .setDescription(`**[${video.url}] (${video.url})**`)
         .setAuthor(video.author.name)
-        .addField("Views", video.views.toLocalString(), true)
+        .addField("Views", video.views.toLocaleString(), true)
         .addField("Duration", video.duration, true)
 
         return message.channel.send(embed);
