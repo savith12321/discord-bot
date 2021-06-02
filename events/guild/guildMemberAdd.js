@@ -1,8 +1,7 @@
 const welcomeSchema = require('../../models/welcome-schema')
-/*
 const { CanvasSenpai } = require("canvas-senpai")
 const canva = new CanvasSenpai();
-module.exports = async (Discord, client, member) => {
+module.exports = async(Discord, client, member) => {
     console.log("hi")
     console.log("member joined")
     await welcomeSchema.findOne({ guildId: member.guild.id }, async(err, data) => {
@@ -24,6 +23,5 @@ module.exports = async (Discord, client, member) => {
         channel.send(`Hey ${user} welcome to our server **${member.guild.name}** \n`);
         channel.send(userEmbed);
         channel.send(attachment);
-    }); 
+    });
 }
-*/
