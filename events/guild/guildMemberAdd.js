@@ -1,4 +1,5 @@
 const welcomeSchema = require('../../models/welcome-schema')
+/*
 const { CanvasSenpai } = require("canvas-senpai")
 const canva = new CanvasSenpai();
 module.exports = async (Discord, client, member) => {
@@ -25,3 +26,4 @@ module.exports = async (Discord, client, member) => {
         channel.send(attachment);
     }); 
 }
+*/
