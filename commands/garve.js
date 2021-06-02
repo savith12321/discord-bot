@@ -1,4 +1,3 @@
-//https://vacefron.nl/api/grave?user=https://cdn.discordapp.com/avatars/722417245640196126/a5b55ccf6045cd6e185b08ff1fdc493c.webp
 const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
 const { MessageButton } = require('discord-buttons');
 module.exports = {
