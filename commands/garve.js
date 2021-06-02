@@ -20,7 +20,7 @@ module.exports = {
     .setURL(encodeURI(`https://vacefron.nl/api/grave?user=${Member.user.displayAvatarURL({ format: "png" })}`))
     .setColor("green")
 
-      return message.channel.send(Embed);
+      return message.channel.send(Embed, button);
     }
 }
 
