@@ -2,6 +2,7 @@ const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.j
 const got = require('got');
 module.exports = {
     name: 'meme',
+    cooldown:1,
     description: "this command send a random meme",
     execute(message, args) {
         const embed = new Discord.MessageEmbed()

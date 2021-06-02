@@ -1,5 +1,6 @@
 module.exports = {
     name: 'clear',
+    cooldown:1,
     description: "this is a clear command!",
     async execute(message, args){
       if(message.deletable) message.delete();

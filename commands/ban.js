@@ -1,5 +1,6 @@
 module.exports = {
     name: 'ban',
+    cooldown:10,
     description: "this is a ban command!",
     async execute(message, args){
       if(message.deletable) message.delete();

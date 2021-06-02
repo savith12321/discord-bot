@@ -1,6 +1,7 @@
 const schema = require("../models/prefix-schema")
 module.exports = {
     name: 'setprefix',
+    cooldown:50,
     description: "this is changing the prefix belongs to the guild",
     execute(message, args) {
         if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("you dont have perms to do that idiot");

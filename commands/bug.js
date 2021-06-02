@@ -2,6 +2,7 @@ const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.j
 const bug_data = require('../data/channels.json')
 module.exports = {
     name: 'bug',
+    cooldown:5,
     description: "this is a bug command!",
     execute(message, args, client) {
         if (!args[0]) return message.reply("plsease set a discription of the bug");

@@ -2,6 +2,7 @@ const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.j
 const axios = require("axios");
 module.exports = {
     name: 'cat',
+    cooldown:10,
     description: "sends randome cat pics",
     execute(message, args){
       colors = ['#483d8b', '#7fff00', '#dc143c', '#ecf05b', '#41b1ed', '#e16ff2', '#f6a3cf', '#9cf063', '#32ecad']
