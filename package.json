@@ -10,6 +10,7 @@
     "canvas": "^2.8.0",
     "canvas-senpai": "^2.0.3",
     "cheerio": "^1.0.0-rc.6",
+    "discord-buttons": "^3.0.1",
     "discord.js": "^12.5.3",
     "got": "^11.8.2",
     "jshint": "^2.12.0",
