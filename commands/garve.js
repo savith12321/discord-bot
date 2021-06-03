@@ -13,11 +13,11 @@ module.exports = {
         Embed.setTimestamp();
 
 
-        const button = new MessageButton()
-        button.setLabel("to open image click me")
-        button.setID("grave_button")
-        button.setURL(encodeURI(`https://vacefron.nl/api/grave?user=${Member.user.displayAvatarURL({ format: "png" })}`))
-
-        await message.channel.send(`hi`, button);
+        let button = new MessageButton()
+            .setLabel("Vote")
+            .setStyle("url")
+            .setEmoji("🍔")
+            .setURL("https://discord-buttons.js.org")
+        await message.channel.send(`Ayo`, button);
     }
 }
