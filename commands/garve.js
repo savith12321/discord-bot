@@ -15,7 +15,7 @@ module.exports = {
 
         let btn = new MessageButton()
             .setStyle('green')
-            .setLabel('open image on web')
+            .setLabel('open image')
             .setURL(encodeURI(`https://vacefron.nl/api/grave?user=${Member.user.displayAvatarURL({ format: "png" })}`));
         message.channel.send({ component: btn, embed: Embed });
     }
