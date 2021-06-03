@@ -1,5 +1,5 @@
 const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
-const { MessageButton } = require('discord-buttons');
+const disbut = require('discord-buttons');
 module.exports = {
     name: 'grave',
     cooldown: 1,
