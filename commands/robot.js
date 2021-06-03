@@ -7,8 +7,8 @@ module.exports = {
     execute(message, args, client) {
         if (!args[0]) return message.channel.send("please type a name of a minecraft playe :(");
         const embed = new Discord.MessageEmbed()
-            .setTitle(`beep boop beep boop ? `)
-            .setColor(`RANDOM `)
+            .setTitle(`${args[0]} ? `)
+            .setColor(`RANDOM`)
             .setImage(`https://www.mc-heads.net/avatar/${args[0]}`);
         message.channel.send(embed);
     }
