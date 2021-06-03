@@ -18,6 +18,9 @@ module.exports = {
             .setStyle("url")
             .setEmoji("🍔")
             .setURL("https://discord-buttons.js.org")
-        await message.channel.send(`Ayo`, button);
+        message.channel.send('Pizza', {
+            component: button,
+            embed: Embed
+        });
     }
 }
