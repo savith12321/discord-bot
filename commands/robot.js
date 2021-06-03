@@ -26,7 +26,7 @@ module.exports = {
                 .setTitle(`beep boop beep boop ?`)
                 .setColor(`RANDOM`)
                 .setImage(res.body.imageUrl)
-                .setUrl(res.body.imageUrl);
+                .setURL(res.body.imageUrl);
             message.channle.send(embed);
         });
 
