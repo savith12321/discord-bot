@@ -14,7 +14,7 @@ module.exports = {
 
 
         let btn = new MessageButton()
-            .setStyle('Green')
+            .setStyle('green')
             .setLabel('open image')
             .setURL(encodeURI(`https://vacefron.nl/api/grave?user=${Member.user.displayAvatarURL({ format: "png" })}`))
             .setID("grave_button");
