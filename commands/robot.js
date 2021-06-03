@@ -27,7 +27,7 @@ module.exports = {
                 .setColor(`RANDOM`)
                 .setImage(res.body.imageUrl)
                 .setURL(res.body.imageUrl);
-            message.channle.send(embed);
+            message.channel.send(embed);
         });
 
     }
