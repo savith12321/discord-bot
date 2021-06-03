@@ -23,7 +23,7 @@ module.exports = {
 
             console.log(res.body);
             const embed = new Discord.MessageEmbed()
-                .setTitle(`beep boop beep boop ?`)
+                .setTitle(`beep boop beep boop?`)
                 .setColor(`RANDOM`)
                 .setImage(res.body.imageUrl)
                 .setURL(res.body.imageUrl);
