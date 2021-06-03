@@ -1,9 +1,9 @@
 var unirest = require("unirest");
 const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
 module.exports = {
-    name: 'ping',
+    name: 'robot',
     cooldown: 10,
-    description: "this is a ping command!",
+    description: "this is a robot command!",
     execute(message, args, client) {
         var req = unirest("GET", "https://robohash.p.rapidapi.com/index.php");
 
