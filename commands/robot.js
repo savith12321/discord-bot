@@ -9,8 +9,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setTitle(`beep boop beep boop ? `)
             .setColor(`RANDOM `)
-            .setImage(`https://www.mc-heads.net/avatar/${args[0]}`)
-            .setURL(res.body.imageUrl);
+            .setImage(`https://www.mc-heads.net/avatar/${args[0]}`);
         message.channel.send(embed);
     }
 }
