@@ -18,6 +18,6 @@ module.exports = {
             .setLabel('open image')
             .setURL(encodeURI(`https://vacefron.nl/api/grave?user=${Member.user.displayAvatarURL({ format: "png" })}`))
             .setID("grave_button");
-        message.channel.send({ component: btn, embed: Embed });
+        message.channel.send(" ", { component: btn, embed: Embed });
     }
 }
