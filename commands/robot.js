@@ -12,7 +12,7 @@ module.exports = {
         });
 
         req.headers({
-            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+            "x-rapidapi-key": "3bf5242cbcmshb9d36e4c02b7119p113cb8jsn1dce95748840",
             "x-rapidapi-host": "robohash.p.rapidapi.com",
             "useQueryString": true
         });
