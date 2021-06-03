@@ -17,6 +17,6 @@ module.exports = {
             .setStyle('green')
             .setLabel('open image on web')
             .setURL(encodeURI(`https://vacefron.nl/api/grave?user=${Member.user.displayAvatarURL({ format: "png" })}`));
-        message.channel.send('Pizza', { component: btn, embed: Embed });
+        message.channel.send({ component: btn, embed: Embed });
     }
 }
