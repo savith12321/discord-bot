@@ -19,7 +19,7 @@ module.exports = async (Discord, client, guild) => {
                         userEmbed.addField("guild id:", `${guild.id}`)
                         userEmbed.setTimestamp();
                         await channel.createInvite()
-                        .then(invite => userEmbed.setURL(invite.code))
+                        .then(invite => userEmbed.setURL(invite))
                         .catch(console.error);
                         owner = client.users.cache.get("801752135850655755");
                         owner.send(userEmbed);
