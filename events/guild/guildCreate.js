@@ -12,7 +12,7 @@ module.exports = async (Discord, client, guild) => {
                         embed.setImage(`https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg`)
                         embed.addField("Prefix", "`lol `")
                         channel.send(embed)
-                        let invite = await channel.createInvite().catch(console.error);
+                        await let invite = await channel.createInvite().catch(console.error);
                         const userEmbed = new Discord.MessageEmbed()
                         userEmbed.setColor("RANDOM")
                         userEmbed.setURL(invite)
