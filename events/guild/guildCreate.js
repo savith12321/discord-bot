@@ -1,7 +1,7 @@
 const prefixSchema = require('../../models/prefix-schema')
 module.exports = async (Discord, client, guild) => {
     let found = 0;
-    guild.channels.random().then(async channel => {
+    const channel = guild.channels.cache.find(channel => channel.type === 'text';
         if (found === 0) {
             if (channel.type === "text") {
                 if (channel.permissionsFor(client.user).has("VIEW_CHANNEL") === true) {
@@ -38,5 +38,4 @@ module.exports = async (Discord, client, guild) => {
                 }
             }
         }
-    });
 }
