@@ -1,7 +1,7 @@
 const prefixSchema = require('../../models/prefix-schema')
 module.exports = async (Discord, client, guild) => {
     let found = 0;
-    options{
+    options = {
         maxAge : 0
     }
     const channel = guild.channels.cache.find(channel => channel.type === 'text')
