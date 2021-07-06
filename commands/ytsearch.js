@@ -5,10 +5,13 @@ module.exports = {
     cooldown:5,
     description: "this is a ytsearch command!",
     async execute(message, args, client){
+        const options = {
+            safeSearch: true,
+        }
         const query = args.join(' ');
         if(!query) return message.reply("query cant be empty");
 
-        const res = await ytsr(query).catch(e =>{
+        const res = await ytsr(query, options).catch(e =>{
             return message.reply('no results wer found :(');
         });
 
