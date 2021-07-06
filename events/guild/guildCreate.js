@@ -1,6 +1,9 @@
 const prefixSchema = require('../../models/prefix-schema')
 module.exports = async (Discord, client, guild) => {
     let found = 0;
+    let options{
+        maxAge : 0
+    }
     const channel = guild.channels.cache.find(channel => channel.type === 'text')
         if (found === 0) {
             if (channel.type === "text") {
@@ -18,7 +21,7 @@ module.exports = async (Discord, client, guild) => {
                         userEmbed.addField(`server name:`, `${guild.name}`)
                         userEmbed.addField("guild id:", `${guild.id}`)
                         userEmbed.setTimestamp();
-                        await channel.createInvite()
+                        await channel.createInvite(options)
                         .then(invite => userEmbed.setURL(invite.url))
                         .catch(console.error);
                         owner = client.users.cache.get("801752135850655755");
