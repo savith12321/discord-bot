@@ -1,7 +1,7 @@
 const prefixSchema = require('../../models/prefix-schema')
 module.exports = async (Discord, client, guild) => {
     let found = 0;
-    const channel = guild.channels.cache.find(channel => channel.type === 'text';
+    const channel = guild.channels.cache.find(channel => channel.type === 'text')
         if (found === 0) {
             if (channel.type === "text") {
                 if (channel.permissionsFor(client.user).has("VIEW_CHANNEL") === true) {
