@@ -7,7 +7,7 @@ module.exports = async (Discord, client, message) => {
         if (!data && !message.channel.type === "dm") {
             await new prefixSchema({
                 guildId: message.guild.id,
-                guildmessage.channel.type === "dm"Name: message.guild.name,
+                guildName: message.guild.name,
                 prefix: "lol "
             }).save();
             message.channel.send("setting you a prefix pls type `lol help` for help!");
