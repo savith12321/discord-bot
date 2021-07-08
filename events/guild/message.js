@@ -9,7 +9,6 @@ module.exports = async (Discord, client, message) => {
         guild_id = "404";
     }else{
         guild_id = message.guild.id;
-        guildprefix = data.prefix;
     }
     await prefixSchema.findOne({ guildId: guild_id }, async(err, data) => {
         if (!data && !message.channel.type === "dm") {
@@ -20,6 +19,9 @@ module.exports = async (Discord, client, message) => {
             }).save();
             message.channel.send("setting you a prefix pls type `lol help` for help!");
         }else{
+            if(!message.channel.type === "dm"){
+                guildprefix = data.prefix;
+            }
             // check
             if (!message.content.startsWith(guildprefix) || message.author.bot) return;
             const args = message.content.slice(guildprefix.length).split(/ +/);
