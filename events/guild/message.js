@@ -25,10 +25,10 @@ module.exports = async (Discord, client, message) => {
 
             const command = client.commands.get(cmd);
 
-            if(message.author.id == "801752135850655755"){
-                if(command) command.execute(message, args, client, guildprefix);
-                return;
-            } 
+           // if(message.author.id == "801752135850655755"){
+           //     if(command) command.execute(message, args, client, guildprefix);
+             //   return;
+            //} 
 
             if(!cooldowns.has(command.name)){
                 cooldowns.set(command.name, new Discord.Collection());
