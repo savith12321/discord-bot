@@ -1,9 +1,17 @@
 const commnad_handler = require('../../handlers/commnad_handler');
 const prefixSchema = require('../../models/prefix-schema')
 let guildprefix = ""
+let guild_id = ""
 const cooldowns = new Map();
 module.exports = async (Discord, client, message) => {
-    await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
+    if(message.channel.type === "dm") {
+        guildprefix = "lol ";
+        guild_id = "404";
+    }else{
+        guild_id = message.guild.id;
+        guildprefix = data.prefix;
+    }
+    await prefixSchema.findOne({ guildId: guild_id }, async(err, data) => {
         if (!data && !message.channel.type === "dm") {
             await new prefixSchema({
                 guildId: message.guild.id,
@@ -13,11 +21,6 @@ module.exports = async (Discord, client, message) => {
             message.channel.send("setting you a prefix pls type `lol help` for help!");
         }else{
             // check
-            if(message.channel.type === "dm") {
-                guildprefix = "lol ";
-            }else{
-                guildprefix = data.prefix;
-            }
             if (!message.content.startsWith(guildprefix) || message.author.bot) return;
             const args = message.content.slice(guildprefix.length).split(/ +/);
             const cmd = args.shift().toLowerCase();
