@@ -1,3 +1,5 @@
 module.exports = async (Discord, client, messageReaction, user) => {
-    messageReaction.message.delete()
+    if(messageReaction.message.author.id == client.user.id &&messageReaction emoji){
+        messageReaction.message.delete()
+    }
 }
