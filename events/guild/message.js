@@ -4,10 +4,10 @@ let guildprefix = ""
 const cooldowns = new Map();
 module.exports = async (Discord, client, message) => {
     await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
-        if (!data) {
+        if (!data && !message.channel.type === "dm") {
             await new prefixSchema({
                 guildId: message.guild.id,
-                guildName: message.guild.name,
+                guildmessage.channel.type === "dm"Name: message.guild.name,
                 prefix: "lol "
             }).save();
             message.channel.send("setting you a prefix pls type `lol help` for help!");
