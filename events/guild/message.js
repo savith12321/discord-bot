@@ -14,9 +14,9 @@ module.exports = async (Discord, client, message) => {
         }else{
             // check
             if(message.channel.type === "dm") {
-                await guildprefix = "lol ";
+                guildprefix = "lol ";
             }else{
-                 await guildprefix = data.prefix;
+                guildprefix = data.prefix;
             }
             if (!message.content.startsWith(guildprefix) || message.author.bot) return;
             const args = message.content.slice(guildprefix.length).split(/ +/);
