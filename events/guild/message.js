@@ -21,7 +21,7 @@ module.exports = async (Discord, client, message) => {
             message.channel.send("setting you a prefix pls type `lol help` for help!");
         }else{
             if(!message.channel.type === "dm"){
-                console.log('NOOOOOOOOOOOOOOOOOOOOOO DMMMMMMMMMMMMMMMMMM)
+                console.log('NOOOOOOOOOOOOOOOOOOOOOO DMMMMMMMMMMMMMMMMMM')
                 guildprefix = "lol ";
             }else{ 
                 console.log('YO DM')
