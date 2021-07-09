@@ -1,9 +1,9 @@
 const commnad_handler = require('../../handlers/commnad_handler');
 const prefixSchema = require('../../models/prefix-schema')
-var guildprefix = ""
 var guild_id = ""
 const cooldowns = new Map();
 module.exports = async (Discord, client, message) => {
+    var guildprefix = "lol "
     if(message.channel.type === "dm") {
         //console.log('true')
         guild_id = "404";
@@ -21,11 +21,11 @@ module.exports = async (Discord, client, message) => {
             message.channel.send("setting you a prefix pls type `lol help` for help!");
         }else{
             if(!message.channel.type === "dm"){
-                console.log('NOOOOOOOOOOOOOOOOOOOOOO DMMMMMMMMMMMMMMMMMM')
-                guildprefix = data.prefix;
+                console.log('NOOOOOOOOOOOOOOOOOOOOOO DMMMMMMMMMMMMMMMMMM
+                guildprefix = "lol ";
             }else{ 
                 console.log('YO DM')
-                guildprefix = "lol ";
+                guildprefix = data.prefix
             }
             // check
             if (!message.content.startsWith(guildprefix) || message.author.bot) return;
