@@ -22,9 +22,6 @@ module.exports = async (Discord, client, message) => {
         }else{
             if(!message.channel.type === "dm"){
                 console.log('NOOOOOOOOOOOOOOOOOOOOOO DMMMMMMMMMMMMMMMMMM')
-                guildprefix = "lol ";
-            }else{ 
-                console.log('YO DM')
                 guildprefix = data.prefix
             }
             // check
