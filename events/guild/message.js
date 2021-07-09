@@ -5,10 +5,10 @@ var guild_id = ""
 const cooldowns = new Map();
 module.exports = async (Discord, client, message) => {
     if(message.channel.type === "dm") {
-        console.log('true')
+        //console.log('true')
         guild_id = "404";
     }else{
-        console.log('NOOOOOOOOOOOOOOOOOOOOOO')
+        //console.log('NOOOOOOOOOOOOOOOOOOOOOO')
         guild_id = message.guild.id;
     }
     await prefixSchema.findOne({ guildId: guild_id }, async(err, data) => {
