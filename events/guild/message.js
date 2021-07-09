@@ -1,7 +1,7 @@
 const commnad_handler = require('../../handlers/commnad_handler');
 const prefixSchema = require('../../models/prefix-schema')
-const guildprefix = ""
-const guild_id = ""
+var guildprefix = ""
+var guild_id = ""
 const cooldowns = new Map();
 module.exports = async (Discord, client, message) => {
     if(message.channel.type === "dm") {
