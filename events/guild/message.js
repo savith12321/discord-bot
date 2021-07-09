@@ -22,7 +22,7 @@ module.exports = async (Discord, client, message) => {
         }else{
             if(!message.channel.type === "dm"){
                 guildprefix = data.prefix;
-            }else {       
+            }else if(message.channel.type === "dm"){       
                 guildprefix = "lol ";
             }
             // check
