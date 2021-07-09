@@ -6,7 +6,6 @@ const cooldowns = new Map();
 module.exports = async (Discord, client, message) => {
     if(message.channel.type === "dm") {
         console.log('true')
-        guildprefix = "lol ";
         guild_id = "404";
     }else{
         console.log('NOOOOOOOOOOOOOOOOOOOOOO')
@@ -23,6 +22,8 @@ module.exports = async (Discord, client, message) => {
         }else{
             if(!message.channel.type === "dm"){
                 guildprefix = data.prefix;
+            }else {       
+                guildprefix = "lol ";
             }
             // check
             if (!message.content.startsWith(guildprefix) || message.author.bot) return;
