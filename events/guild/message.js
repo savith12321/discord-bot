@@ -3,7 +3,7 @@ const cooldowns = new Map();
 const prefixSchema = require('../../models/prefix-schema')
 module.exports = async (Discord, client, message) => {
     await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
-        if (!data && !message.channel.type === "dm") {
+        if (!data) {
             await new prefixSchema({
                 guildId: message.guild.id,
                 guildName: message.guild.name,
