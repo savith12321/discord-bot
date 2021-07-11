@@ -2,7 +2,7 @@ const commnad_handler = require('../../handlers/commnad_handler');
 const cooldowns = new Map();
 const prefixSchema = require('../../models/prefix-schema')
 module.exports = async (Discord, client, message) => {
-    await prefixSchema.findOne({ guildId: guild_id }, async(err, data) => {
+    await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
         if (!data && !message.channel.type === "dm") {
             await new prefixSchema({
                 guildId: message.guild.id,
