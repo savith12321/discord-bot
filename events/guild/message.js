@@ -11,7 +11,11 @@ module.exports = async (Discord, client, message) => {
             }).save();
             message.channel.send("setting you a prefix pls type `lol help` for help!");
         }else{
-            guildprefix = data.prefix;
+            if(!message.channel.type === "dm"){
+                guildprefix = data.prefix;
+            }if(message.channel.type === "dm"){
+                guildprefix = "lol "
+            }
             if (!message.content.startsWith(guildprefix) || message.author.bot) return;
             const args = message.content.slice(guildprefix.length).split(/ +/);
             const cmd = args.shift().toLowerCase();
