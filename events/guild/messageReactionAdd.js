@@ -1,6 +1,5 @@
 module.exports = async (Discord, client, messageReaction, user) => {
-    if(messageReaction.guild.id != null) return;
-    if(messageReaction.emoji.name == "❌"){
+    if(messageReaction.emoji.name == "❌" && messageReaction.guild.id == null){
         messageReaction.message.delete()
     }
 }
