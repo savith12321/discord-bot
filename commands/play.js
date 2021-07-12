@@ -21,7 +21,7 @@ module.exports = {
         const video = res.items.filter(i => i.type == "video")[0];
         if(!video) return message.reply("no results wer found :c")
             	async function play(connection, url) {
-	            connection.play(await ytdl(url), { type: 'opus' });
+	            const dispatcher = connection.play(await ytdl(url), { type: 'opus' });
             	}
            	 play(connection, video.url)
 	    	}else {
