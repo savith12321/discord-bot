@@ -31,7 +31,9 @@ module.exports = {
             var server = servers[message.guild.id];
 
             server.queue.push(video.url);
-                play(connection);
+             if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function (connection) {
+                play(connection, message);
+             });
             async function play(connection) {
                 console.log(message.constructor.name );
                 var server = servers[message.guild.id];
