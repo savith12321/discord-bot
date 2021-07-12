@@ -31,8 +31,8 @@ module.exports = {
             var server = servers[message.guild.id];
 
             server.queue.push(video.url);
-                play(connection, message);
-            async function play(connection, message) {
+                play(connection);
+            async function play(connection) {
                 console.log(message.constructor.name );
                 var server = servers[message.guild.id];
 
