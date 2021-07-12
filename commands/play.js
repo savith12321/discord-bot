@@ -36,7 +36,7 @@ module.exports = {
             async function play(connection, url) {
                 var server = servers[message.guild.id];
 
-                server.dispatcher = connection.playStream(ytdl(server.queue[0], {
+                server.dispatcher = connection.play(ytdl(server.queue[0], {
                     filter: "audioonly"
                 }));
 
