@@ -34,7 +34,7 @@ module.exports = {
 
             server.queue.push(video.url);
                 play(connection, message);
-            async function play(connection, url) {
+            async function play(connection, message) {
                 var server = servers[message.guild.id];
 
                server.dispatcher = connection.play(await ytdl(server.queue[0]), {
