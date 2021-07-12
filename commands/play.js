@@ -5,9 +5,7 @@ const Discord = {
     MessageEmbed,
     MessageAttachment
 } = require('discord.js');
-var servers = {
-
-};
+var servers = map();
 module.exports = {
     name: 'play',
     cooldown: 3,
