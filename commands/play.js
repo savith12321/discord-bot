@@ -42,7 +42,7 @@ module.exports = {
                     type: 'opus'
                 });
 
-                server.dispatcher.setVolume(0.2);
+                server.dispatcher.setVolume(1);
 
                 server.queue.shift();
 
