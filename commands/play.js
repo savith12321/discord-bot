@@ -18,7 +18,6 @@ module.exports = {
         const query = args.join(' ');
         if (!query) return message.reply(":warning: can not play a empty song!");
         if (message.member.voice.channel) {
-            const connection = await message.member.voice.channel.join();
             const res = await ytsr(query, options).catch(e => {
                 return message.reply('no results wer found :(');
             });
