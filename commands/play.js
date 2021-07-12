@@ -33,10 +33,15 @@ module.exports = {
             var server = servers[message.guild.id];
 
             server.queue.push(video.url);
+            if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+                play(connection, message);
+            });
             async function play(connection, url) {
                 var server = servers[message.guild.id];
 
-                connection.play(await ytdl(server.queue[0]), { type: 'opus' });
+                connection.play(await ytdl(server.queue[0]), {
+                    type: 'opus'
+                });
 
                 server.dispatcher.setVolume(0.2);
 
