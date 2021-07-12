@@ -7,6 +7,9 @@ module.exports = {
     description: "this is a ban command!",
     async execute(message, args){
       message.channel.send("This music command is under devolopment :musical_note:")
+	const options = {
+            safeSearch: true,
+        }
 	const query = args.join(' ');
         if(!query) return message.reply(":warning: can not play a empty song!");
         if (message.member.voice.channel) {
