@@ -37,7 +37,7 @@ module.exports = {
             async function play(connection, url) {
                 var server = servers[message.guild.id];
 
-                connection.play(await ytdl(server.queue[0]), {
+               server.dispatcher = connection.play(await ytdl(server.queue[0]), {
                     type: 'opus'
                 });
 
