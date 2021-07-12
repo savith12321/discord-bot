@@ -18,7 +18,7 @@ module.exports = {
         const query = args.join(' ');
         if (!query) return message.reply(":warning: can not play a empty song!");
         if (message.member.voice.channel) {
-            const connection = await voiceChannel.join();
+            const connection = await message.member.voice.channel.join();
             const res = await ytsr(query, options).catch(e => {
                 return message.reply('no results wer found :(');
             });
@@ -31,7 +31,7 @@ module.exports = {
             var server = servers[message.guild.id];
 
             server.queue.push(video.url);
-             if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function (connection) {
+             if (!message.guild.voiceConnection) message.member.voice.channel.join().then(function (connection) {
                 play(connection, message);
              });
             async function play(connection) {
