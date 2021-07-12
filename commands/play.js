@@ -38,9 +38,8 @@ module.exports = {
                 console.log(message.constructor.name );
                 var server = servers[message.guild.id];
 
-               server.dispatcher = connection.play(await ytdl(server.queue[0]), {
-                    type: 'opus'
-                });
+                server.dispatcher = connection.playStream(ytdl(server.queue[0], { filter: 
+                "audioonly" }));
 
                 server.dispatcher.setVolume(1);
 
@@ -53,7 +52,7 @@ module.exports = {
 
                 });
             }
-            play(connection, video.url)
+            play()
         } else {
             return message.channel.send(":warning: you mst join to a voice channel to use this command");
 
