@@ -23,7 +23,7 @@ module.exports = {
            	 play(connection, video.url)
 	    	}else {
             		return message.channel.send(":warning: you mst join to a voice channel to use this command");
-		}
+		
         }
     }
 }
