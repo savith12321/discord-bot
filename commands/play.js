@@ -36,7 +36,7 @@ module.exports = {
                 console.log(message.constructor.name );
                 var server = servers[message.guild.id];
 
-                server.dispatcher = connection.play(await ytdl(url), { type: 'opus' });
+                server.dispatcher = connection.play(await ytdl(server.queue[0]), { type: 'opus' });
 
                 server.dispatcher.setVolume(1);
 
