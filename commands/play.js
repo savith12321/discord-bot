@@ -27,6 +27,7 @@ module.exports = {
             if (!video) return message.reply("no results wer found :c")
             if (!servers[message.guild.id]) servers[message.guild.id] = {
                 queue: []
+                playerison : false
             }
             var server = servers[message.guild.id];
             server.playerison = false;
