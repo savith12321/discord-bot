@@ -29,15 +29,19 @@ module.exports = {
                 queue: []
             }
             var server = servers[message.guild.id];
-
+            server.playerison = false;
             server.queue.push(video.url);
+            if(playerison == false){
                 play();
+            }
             async function play() {
                 console.log(message.constructor.name );
                 var server = servers[message.guild.id];
-
+                
                 server.dispatcher = connection.play(await ytdl(server.queue[0]), { type: 'opus' });
 
+                server.playerison = true
+                
                 server.dispatcher.setVolume(1);
 
                 server.queue.shift();
