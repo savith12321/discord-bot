@@ -27,12 +27,12 @@ module.exports = {
             if (!video) return message.reply("no results wer found :c")
             if (!servers[message.guild.id]) servers[message.guild.id] = {
                 queue: []
-                playerison : false
+                boolean : false
             }
             var server = servers[message.guild.id];
-            server.playerison = false;
+            server.boolean = false;
             server.queue.push(video.url);
-            if(playerison == false){
+            if(server.boolean == false){
                 play();
             }
             async function play() {
@@ -41,7 +41,7 @@ module.exports = {
                 
                 server.dispatcher = connection.play(await ytdl(server.queue[0]), { type: 'opus' });
 
-                server.playerison = true
+                server.boolean = true
                 
                 server.dispatcher.setVolume(1);
 
