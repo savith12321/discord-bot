@@ -26,13 +26,13 @@ module.exports = {
             const video = res.items.filter(i => i.type == "video")[0];
             if (!video) return message.reply("no results wer found :c")
             if (!servers[message.guild.id]) servers[message.guild.id] = {
-                queue: []
-                boolean : false
+                queue: [],
+                isplayeron : false
             }
             var server = servers[message.guild.id];
-            server.boolean = false;
+            server.isplayeron = false;
             server.queue.push(video.url);
-            if(server.boolean == false){
+            if(server.isplayeron == false){
                 play();
             }
             async function play() {
@@ -41,7 +41,7 @@ module.exports = {
                 
                 server.dispatcher = connection.play(await ytdl(server.queue[0]), { type: 'opus' });
 
-                server.boolean = true
+                server.isplayeron = true
                 
                 server.dispatcher.setVolume(1);
 
