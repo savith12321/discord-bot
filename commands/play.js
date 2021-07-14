@@ -47,8 +47,8 @@ module.exports = {
                 server.queue.shift();
 
                 server.dispatcher.on("end", function() {
-
-                    if (server.queue[0]) {play(connection, message); server.isplayeron = false}
+                    server.isplayeron = false
+                    if (server.queue[0]) play(connection, message);
                     else connection.disconnect();
 
                 });
