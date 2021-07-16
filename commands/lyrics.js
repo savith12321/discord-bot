@@ -1,4 +1,5 @@
 const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
+var unirest = require("unirest");
 module.exports = {
     name: 'lyrics',
     cooldown:1,
