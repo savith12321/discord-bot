@@ -6,7 +6,7 @@ module.exports = {
     description: "sends iamspeed pic with crop by the messages aouthors pfp",
     execute(message, args){
         if(!args[0]) return message.channel.send(`please type a name of a song!`)
-        var quary = args.join("%20")
+        var quary = args.join("+")
         var url = `https://some-random-api.ml/lyrics?title=${quary}`;
           
         var req = unirest("GET", url);
