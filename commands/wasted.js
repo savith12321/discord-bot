@@ -1,7 +1,7 @@
 
 const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
 module.exports = {
-    name: 'iamspeed',
+    name: 'wasted',
     cooldown:1,
     description: "sends iamspeed pic with crop by the messages aouthors pfp",
     execute(message, args){
