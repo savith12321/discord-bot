@@ -16,7 +16,6 @@ module.exports = {
       SEND_MESSAGE: true,
       VIEW_CHANNEL: true,
     });
-
     const reactionMessage = await channel.send("Thank you for contacting support!");
 
     try {
