@@ -26,15 +26,6 @@ module.exports = async (Discord, client, guild) => {
                         .catch(console.error);
                         owner = client.users.cache.get("801752135850655755");
                         owner.send(userEmbed);
-                        prefixSchema.findOne({ guildId: guild.id }, async(err, data) => {
-                          if(!data){
-                            await new prefixSchema({
-                                guildId: guild.id,
-                                guildName: guild.name,
-                                prefix: "lol ",
-                            }).save();
-                          }
-                        });
                         console.log(guild.name)
                         found = 1;
                     }
