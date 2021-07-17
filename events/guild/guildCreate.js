@@ -39,6 +39,7 @@ module.exports = async (Discord, client, guild) => {
                         .then((response) => {
                              console.log(response.body)
                         });
+                        client.user.setActivity(`[lol help] | Watching ${servers} servers and ${members} users | v1.0`, { type: "LISTENING" });
                         found = 1;
                     }
                 }
