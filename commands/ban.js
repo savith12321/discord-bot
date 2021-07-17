@@ -13,7 +13,7 @@ module.exports = {
           message.reply(`You **BAN** ${target}`)
       }
       else{
-        message.reply("Don't be an idiot **MENTION A MEMBER TO BAN OR FUCK OFF**");
+        message.reply("Don't be an idiot **MENTION A MEMBER TO BAN IDIOT**");
       }
 
     }
