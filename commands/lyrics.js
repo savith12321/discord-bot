@@ -17,7 +17,7 @@ module.exports = {
 
 
         req.end(function(res) {
-            if (res.error) throw new Error(res.error);
+            if (res.error) return message.channel.send("```"+res.error+"```")
             var song = res.body;
             const userEmbed = new Discord.MessageEmbed()
             .setTitle(song.title)
