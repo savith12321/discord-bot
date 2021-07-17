@@ -13,7 +13,7 @@ module.exports = {
           message.reply(`You **KICK** ${target}`)
       }
       else{
-        message.reply("Don't be an idiot **MENTION A MEMBER TO KICK OR FUCK OFF**")
+        message.reply("Don't be an idiot **MENTION A MEMBER TO KICK IDIOT**")
       }
 
     }
