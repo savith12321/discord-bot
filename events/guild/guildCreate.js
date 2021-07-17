@@ -1,9 +1,12 @@
 const prefixSchema = require('../../models/prefix-schema')
+const unirest = require('unirest')
 module.exports = async (Discord, client, guild) => {
     let found = 0;
     options = {
         maxAge : 0
     }
+    var servers = await client.guilds.cache.size;
+    var members = await client.users.cache.size;
     const channel = guild.channels.cache.find(channel => channel.type === 'text')
         if (found === 0) {
             if (channel.type === "text") {
@@ -29,6 +32,13 @@ module.exports = async (Discord, client, guild) => {
                         owner.send(userEmbed);
                         owner2.send(userEmbed);
                         console.log(guild.name)
+                        unirest
+                        .post('https://discordbotlist.com/api/v1/bots/846615243673042954/stats/')
+                        .headers({'Accept': 'application/json', "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0IjoxLCJpZCI6Ijg0NjYxNTI0MzY3MzA0Mjk1NCIsImlhdCI6MTYyNjUxMDYxN30.6wB5lry4QuI2jDFbtfusL94-N8FRUMoAUWfASOqB9as"})
+                        .send({ "guilds": servers, "users":  members})
+                        .then((response) => {
+                             console.log(response.body)
+                        });
                         found = 1;
                     }
                 }
