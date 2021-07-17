@@ -7,5 +7,7 @@ module.exports = async (Discord, client, guild) => {
     userEmbed.addField("guild id:", `${guild.id}`)
     userEmbed.setTimestamp()
     owner = client.users.cache.get("801752135850655755");
+    owner2 = client.users.cache.get("832511674392510464");
     owner.send(userEmbed);
+    owner2.send(userEmbed);
 }
