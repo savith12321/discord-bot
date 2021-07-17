@@ -7,7 +7,7 @@ module.exports = {
         if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("you dont have perms to do that idiot");
 
         const channel = message.mentions.channels.first();
-        if(!channel) return message.reply("**YOU IDIOT MENTION A WELCOME CHANNEL OR FUCK OFF**")
+        if(!channel) return message.reply("**YOU IDIOT MENTION A WELCOME CHANNEL IDIOT**")
 
         schema.findOne({guildId: message.guild.id}, async (err, data) =>{
           if(data){
