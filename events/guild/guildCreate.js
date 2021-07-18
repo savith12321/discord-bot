@@ -1,10 +1,11 @@
 const prefixSchema = require('../../models/prefix-schema')
 const unirest = require('unirest')
+const { AutoPoster } = require('topgg-autoposter')
 module.exports = async (Discord, client, guild) => {
     let found = 0;
     options = {
         maxAge : 0
-    }
+    }//hello
     var servers = await client.guilds.cache.size;
     var members = await client.users.cache.size;
     const channel = guild.channels.cache.find(channel => channel.type === 'text')
@@ -40,6 +41,7 @@ module.exports = async (Discord, client, guild) => {
                         .then((response) => {
                              console.log(response.body)
                         });
+                        const ap = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg0NjYxNTI0MzY3MzA0Mjk1NCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjI2NjE3MTM4fQ.oXqIGdXYYSIQvt1HHrrLZI-eyFTPCYty_xKWCmWLlw4', client)
                         client.user.setActivity(`[lol help] | Watching ${servers} servers and ${members} users | v1.0`, { type: "LISTENING" });
                         found = 1;
                     }
