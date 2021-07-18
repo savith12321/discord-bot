@@ -17,6 +17,7 @@ module.exports = async (Discord, client, guild) => {
                         embed.setColor("RANDOM")
                         embed.setImage(`https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg`)
                         embed.addField("Prefix", "`lol `")
+                        embed.addField("PS:", "**The bot will make a invite in this server for devolopment purpose If it is a problem it is ok to remove the invite :)**")
                         channel.send(embed)
                         const userEmbed = new Discord.MessageEmbed()
                         userEmbed.setColor("RANDOM")
