@@ -4,8 +4,8 @@ module.exports = {
     cooldown:1,
     description: "this is a ping command!",
     execute(message, args, client){
-
-        let link = `https://some-random-api.ml/canvas/triggered/?avatar=${message.author.avatarURL({ format: 'png'})}`
+        const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
+        let link = `https://some-random-api.ml/canvas/triggered/?avatar=${Member.avatarURL({ format: 'png'})}`
         const attachment = new MessageAttachment(link, 'triggered.gif');
         const embed = new MessageEmbed()
           .setTitle(`triggered`)
