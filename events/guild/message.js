@@ -14,7 +14,7 @@ module.exports = async (Discord, client, message) => {
         }else{
             guildprefix = data.prefix;
             if (message.guild == null) guildprefix = "lol ";
-            if (!message.content.shift().toLowerCase().startsWith(guildprefix) || message.author.bot) return;
+            if (!message.content.toLowerCase().startsWith(guildprefix) || message.author.bot) return;
             const args = message.content.slice(guildprefix.length).split(/ +/);
             const cmd = args.shift().toLowerCase();
 
