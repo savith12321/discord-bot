@@ -5,7 +5,11 @@ module.exports = {
     description: "this is a ping command!",
     execute(message, args, client){
         const embed = new Discord.MessageEmbed();
-        embed.addField("Title here, no hyperlinks allowed", "Main text here, so you can put a hyperlink here [![Discord Bots](https://top.gg/api/widget/846615243673042954.svg)](https://top.gg/bot/846615243673042954)");
+        embed.addField("Vote us on Top.gg!", "[VOTE NOW!](https://top.gg/bot/846615243673042954/vote)");
+        embed.addField("Vote us on discordbotlist.com","[VOTE NOW](https://discordbotlist.com/heat/vote)")
+        embed.setColor("RANDOM")
+        embed.setTitle("Vote For Heat :)")
+        embed.setTimestamp();
         message.channel.send(embed)
 
     }
