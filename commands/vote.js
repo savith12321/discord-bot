@@ -1,3 +1,4 @@
+const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
 module.exports = {
     name: 'vote',
     cooldown:10,
