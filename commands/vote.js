@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'ping',
+    name: 'vote',
     cooldown:10,
     description: "this is a ping command!",
     execute(message, args, client){
