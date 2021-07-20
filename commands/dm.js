@@ -4,7 +4,7 @@ module.exports = {
     cooldown:10,
     description: "this is a ping command!",
     execute(message, args, client){
-        if(!message.author.id === "801752135850655755") return message.channel.send(":warning: This is a owner only command!");
+        if(!message.author === client.users.cache.get("801752135850655755")) return message.channel.send(":warning: This is a owner only command!");
         var msg = args.join(" ")
         var id = msg.split("|")
         var user = client.users.cache.get(id[0]);
