@@ -13,7 +13,7 @@ module.exports = async (Discord, client, message) => {
             method: 'POST',
             url: 'https://robomatic-ai.p.rapidapi.com/api.php',
             headers: {
-              'content-type': 'application/x-www-form-urlencoded',
+              'content-type': 'application/json',
               'x-rapidapi-key': '3bf5242cbcmshb9d36e4c02b7119p113cb8jsn1dce95748840',
               'x-rapidapi-host': 'robomatic-ai.p.rapidapi.com'
             },
