@@ -1,8 +1,42 @@
 const commnad_handler = require('../../handlers/commnad_handler');
 const cooldowns = new Map();
 const prefixSchema = require('../../models/prefix-schema')
+const chatbotSchema = require('../../models/chatbot-schema')
+  var axios = require("axios").default;
 module.exports = async (Discord, client, message) => {
 
+    await chatbotSchema.findOne({guildId: message.guild.id }, async(error, data) =>{
+      if(data.isEnable == true){
+        if(message.channel.id == data.channelId){
+
+          var options = {
+            method: 'POST',
+            url: 'https://robomatic-ai.p.rapidapi.com/api.php',
+            headers: {
+              'content-type': 'application/x-www-form-urlencoded',
+              'x-rapidapi-key': '3bf5242cbcmshb9d36e4c02b7119p113cb8jsn1dce95748840',
+              'x-rapidapi-host': 'robomatic-ai.p.rapidapi.com'
+            },
+            data: {
+              key: 'RHMN5hnQ4wTYZBGCF3dfxzypt68rVP',
+              cbid: '1',
+              ChatSource: 'RapidAPI',
+              SessionID: 'RapidAPI1',
+              cbot: '1',
+              op: 'in',
+              in: message.content
+            }
+          };
+
+          axios.request(options).then(function (response) {
+          	console.log(response.data);
+            message.channel.send(response.data.out)
+          }).catch(function (error) {
+          	console.error(error);
+          });
+        }
+      }
+    });
     await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
         if (!data) {
             await new prefixSchema({
