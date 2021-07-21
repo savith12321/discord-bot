@@ -4,7 +4,7 @@ module.exports = {
     cooldown:10,
     description: "this is a welcome command!",
     execute(message, args) {
-        if (!message.member.hasPermission("ADMINISTRATOR") or !message.member.hasPermission("MANAGE_SERVER")) return message.reply("you dont have perms to do that idiot");
+        if (!message.member.hasPermission("ADMINISTRATOR") || !message.member.hasPermission("MANAGE_SERVER")) return message.reply("you dont have perms to do that idiot");
 
         const channel = message.mentions.channels.first();
         if(!channel) return message.reply("**YOU IDIOT MENTION A CHANEL TO SET CHATBOT**")
