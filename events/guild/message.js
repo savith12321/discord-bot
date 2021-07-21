@@ -8,7 +8,7 @@ module.exports = async (Discord, client, message) => {
     await chatbotSchema.findOne({guildId: message.guild.id }, async(error, data) =>{
       if(data.isEnable == true){
         if(message.channel.id == data.channelId){
-
+          if(message.author.bot) return;
           var options = {
             method: 'POST',
             url: 'https://robomatic-ai.p.rapidapi.com/api.php',
