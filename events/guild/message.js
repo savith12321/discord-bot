@@ -2,7 +2,7 @@ const commnad_handler = require('../../handlers/commnad_handler');
 const cooldowns = new Map();
 const prefixSchema = require('../../models/prefix-schema')
 const chatbotSchema = require('../../models/chatbot-schema')
-  var axios = require("axios").default;
+var axios = require("axios").default;
 module.exports = async (Discord, client, message) => {
     await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
         if (!data) {
