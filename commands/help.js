@@ -17,7 +17,7 @@ module.exports = {
             .addField(`Memy:`, "`meme` - random meme\n`chuck-joke` - random chuck joke")
             .addField(`Ticket:`, "`ticket` - create a ticket")
             .setColor(colors[Math.floor(Math.random() * colors.length)])
-        await message.react("849230887044120616");
+        await message.react("✅");
         user = client.users.cache.get(message.author.id);
         user.send(helpEmbed);
     }
