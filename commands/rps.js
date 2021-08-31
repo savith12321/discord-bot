@@ -1,46 +1,50 @@
-const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
+const discord = require('discord.js')
 module.exports = {
-    name: 'rps',
-    cooldown:3,
-    description: "RPS",
-    async execute(message, args) {
-        const embed = new Discord.MessageEmbed();
-        embed.setTitle(`RPS`)
-        embed.setColor("RANDOM")
-        embed.setDescription(`react to play 🗻📄✂`)
-        let msg = await message.channel.send(embed)
-        await msg.react("🗻")
-        await msg.react("📄")
-        await msg.react("✂")
+	name: "rps",
+	description: "play a game of rock, paper and scissors",
+	async execute(message, args, client, discord, profileData) {
+		let embed = new discord.MessageEmbed()
+        .setColor("RANDOM")
+        .setTitle("RPS GAME")
+        .setAuthor(message.author.username, message.author.avatarURL())
+		.setDescription("React to play!")
+        .setFooter("Play Rock Paper Scissors with the bot!!!")
+		.setTimestamp()
+		let msg = await message.channel.send(embed)
+		await msg.react("🗻")
+		await msg.react("✂")
+		await msg.react("📰")
 
-        choise = ["🗻", "📄", "✂"]
-        me = choise[Math.floor(Math.random() * choise.length)]
-        const filter = (reaction, user) => {
-            return ["🗻", "📄", "✂"].includes(reaction.emoji.name) && user.id == message.author.id;
+		const filter = (reaction, user) => {
+            return ['🗻', '✂', '📰'].includes(reaction.emoji.name) && user.id === message.author.id;
         }
 
-        msg.awaitReactions(filter, { max: 1, time: 6000, error: ["time"] }).then(
-            async(collected) => {
-                const reaction = collected.first();
-                let result = new Discord.MessageEmbed();
-                result.setTitle(`Result`)
-                result.addField(`Your Choice`, `${reaction.emoji.name}`)
-                result.addField(`Bots Choice`, `${me}`)
-                result.setColor("RANDOM")
-                await msg.edit(result)
-
-                if ((me === "🗻" && reaction.emoji.name === "✂") ||
-                    (me === "📄" && reaction.emoji.name === "🗻") ||
-                    (me === "✂" && reaction.emoji.name === "📄")
-                ) {
-                    message.reply("You Lose :( try again");
-                } else if (me === reaction.emoji.name) {
-                    message.reply("It is a tie!");
-                } else {
-                    message.reply("You won!");
-                }
-
+        const choices = ['🗻', '✂', '📰']
+        const me = choices[Math.floor(Math.random() * choices.length)]
+        msg.awaitReactions(filter, {max:1, time: 60000, error: ["time"]}).then(
+        	async(collected) => {
+        		const reaction = collected.first()
+        		let result = new discord.MessageEmbed()
+                .setColor("GREEN")        		
+                .setTitle("RESULT")
+                .setAuthor(message.author.username, message.author.avatarURL())
+        		.addField("Your choice", `${reaction.emoji.name}`)
+        		.addField("My choice", `${me}`)
+                .setFooter("OOOH! Did you win!?!")
+                .setTimestamp()
+			await msg.edit(result)
+        		if ((me === "🗻" && reaction.emoji.name === "✂") ||
+                (me === "📰" && reaction.emoji.name === "🗻") ||
+                (me === "✂" && reaction.emoji.name === "📰")) {
+                    message.reply("**SAD! You lost!**");
+            } else if (me === reaction.emoji.name) {
+                return message.reply("**OMG! It's a tie!**");
+            } else {
+                return message.reply("**NICE! You won!**");
             }
-        )
-    }
+        })
+        .catch(collected => {
+                message.reply('The game has been cancelled since you did not respond in time!');
+            })
+}
 }
