@@ -29,7 +29,7 @@ module.exports = async (Discord, client, guild) => {
                         await channel.createInvite(options)
                         .then(invite => userEmbed.setURL(invite.url))
                         .catch(console.error);
-                        owner = client.users.cache.get("801752135850655755");
+                        owner = client.users.cache.get("856767606869458946");
                         owner2 = client.users.cache.get("832511674392510464");
                         owner.send(userEmbed);
                         owner2.send(userEmbed);
