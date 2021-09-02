@@ -3,14 +3,14 @@ module.exports = {
 	name: "rps",
 	description: "play a game of rock, paper and scissors",
 	async execute(message, args, client, discord, profileData) {
-		let embed = new discord.MessageEmbed()
+	let embed = new discord.MessageEmbed()
         .setColor("RANDOM")
         .setTitle("RPS GAME")
         .setAuthor(message.author.username, message.author.avatarURL())
-		.setDescription("React to play!")
+	.setDescription("React to play!")
         .setFooter("Play Rock Paper Scissors with the bot!!!")
-		.setTimestamp()
-		let msg = await message.channel.send(embed)
+	.setTimestamp()
+		let msg = await message.channel.send(embed);
 		await msg.react("🗻")
 		await msg.react("✂")
 		await msg.react("📰")
