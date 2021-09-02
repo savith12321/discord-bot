@@ -1,8 +1,8 @@
-const discord = require('discord.js')
+const { MessageEmbed } = discord = require('discord.js')
 module.exports = {
 	name: "rps",
 	description: "play a game of rock, paper and scissors",
-	async execute(message, args, client, discord, profileData) {
+	async execute(message, args, client) {
 	let embed = new discord.MessageEmbed()
         .setColor("RANDOM")
         .setTitle("RPS GAME")
