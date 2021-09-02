@@ -4,7 +4,7 @@ module.exports = {
     cooldown:10,
     description: "this is a ping command!",
     execute(message, args, client){
-        if(message.author.id == '801752135850655755'){
+        if(message.author.id == '856767606869458946'){
         console.log(message.author.id)
         var msg = args.join(" ")
         var id = msg.split("|")
