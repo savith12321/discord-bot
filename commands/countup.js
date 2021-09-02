@@ -8,7 +8,7 @@ module.exports = {
         
         let msg = await message.channel.send(args[0])
         for(let i = args[0]; i <= 0; i--){
-          await msg.edit(i);
+          await msg.edit(i.toString());
         }
     }
 }
