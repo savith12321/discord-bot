@@ -36,7 +36,7 @@ module.exports = async (Discord, client, guild) => {
                         console.log(guild.name)
                         unirest
                         .post('https://discordbotlist.com/api/v1/bots/846615243673042954/stats/')
-                        .headers({'Accept': 'application/json', "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0IjoxLCJpZCI6Ijg0NjYxNTI0MzY3MzA0Mjk1NCIsImlhdCI6MTYyNjUxMDYxN30.6wB5lry4QuI2jDFbtfusL94-N8FRUMoAUWfASOqB9as"})
+                        .headers({'Accept': 'application/json', "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0IjoxLCJpZCI6Ijg3NDEzMTY1MjkyMDYxNDk0MiIsImlhdCI6MTYzMDU2MDQ1MH0.OwEnTsKsMKkUIsnTrpFPP9VMYj-XI4uCh8dlUm2xhDc"})
                         .send({ "guilds": servers, "users":  members})
                         .then((response) => {
                              console.log(response.body)
