@@ -2,7 +2,7 @@ module.exports = {
     name: 'countup',
     cooldown:10,
     description: "this is a ping command!",
-    execute(message, args, client){
+    async execute(message, args, client){
         if (!args[0])return message.channel.send(":warning: quary cant be null");
         if (args[0].isNaN)return message.channel.send(":warning: you should give a number");
         
