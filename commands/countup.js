@@ -10,7 +10,7 @@ module.exports = {
         let msg = await message.channel.send(args[0])
         for(let i = args[0]; i >= 0; i--){
             await delay(1000)
-            await msg.edit(i.toString());
+            await msg.edit(i);
         }
     }
 }
