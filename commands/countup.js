@@ -8,7 +8,7 @@ module.exports = {
         
         let message2= message.channel.send(args[0])
         for(let i = args[0]; i <= 0; i--){
-            message2.edit(i);
+          await message2.edit(i);
         }
     }
 }
