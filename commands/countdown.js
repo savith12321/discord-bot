@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'countup',
+    name: 'countdown',
     cooldown:10,
     description: "this is a ping command!",
     async execute(message, args, client){
