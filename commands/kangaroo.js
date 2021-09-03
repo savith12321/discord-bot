@@ -13,7 +13,7 @@ module.exports = {
                 const cat = res.data[0].url
                 const embed = new MessageEmbed()
                     .setTitle("kangaroo ?")
-                    .setImage(res.data[0].image)
+                    .setImage(res.image)
                     .setTimestamp()
                     .setColor(colors[Math.floor(Math.random() * colors.length)])
                     .setFooter("For kangaroo <3 only")
