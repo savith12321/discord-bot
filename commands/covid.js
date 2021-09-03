@@ -10,7 +10,7 @@ module.exports = {
         if (!args[0]) countury = 'world'
         let url = `https://coronavirus-19-api.herokuapp.com/countries/`;
         axios
-            .get('https://some-random-api.ml/animal/kangaroo')
+            .get(url)
             .then((res) => {
                 console.log("RES:", res.data.image)
                 const embed = new MessageEmbed()
