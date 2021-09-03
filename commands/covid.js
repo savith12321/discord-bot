@@ -6,7 +6,7 @@ module.exports = {
     cooldown:10,
     description: "sends randome dog pics",
     execute(message, args) {
-        let countury = = args.join("%20");
+        let countury = args.join("%20");
         if (!args[0]) countury = 'world'
         let url = `https://coronavirus-19-api.herokuapp.com/countries/`;
         axios
