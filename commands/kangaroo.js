@@ -11,7 +11,7 @@ module.exports = {
             .then((res) => {
                 console.log("RES:", res.image)
                 const cat = res.url
-                const embed = new MessageEmbed()
+                const embed = new MessageEmbed()//hi
                     .setTitle("kangaroo ?")
                     .setImage(res.data.image)
                     .setTimestamp()
