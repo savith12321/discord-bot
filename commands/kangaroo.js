@@ -15,6 +15,7 @@ module.exports = {
                     .setTitle("kangaroo ?")
                     .setImage(res.data.image)
                     .setTimestamp()
+                    .setDescription(`DID YOU KNOW ${res.data.fact}`)
                     .setColor(colors[Math.floor(Math.random() * colors.length)])
                     .setFooter("For kangaroo <3 only")
 
