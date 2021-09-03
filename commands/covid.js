@@ -8,7 +8,7 @@ module.exports = {
     execute(message, args) {
         let countury = args.join("%20");
         if (!args[0]) countury = 'world'
-        let url = `https://coronavirus-19-api.herokuapp.com/countries/`;
+        let url = `https://coronavirus-19-api.herokuapp.com/countries/${countury}`;
         axios
             .get(url)
             .then((res) => {
