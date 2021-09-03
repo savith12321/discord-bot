@@ -17,6 +17,7 @@ module.exports = {
                 const embed = new MessageEmbed()
                     .setTitle(res.data.country)
                     .addField("cases:", res.data.cases)
+                    .setThumbnail()
                     .addField("today cases:", res.data.todayCases)
                     .addField("deaths", res.data.deaths)
                     .addField("today deaths", res.data.todayDeaths)
