@@ -12,7 +12,8 @@ module.exports = {
         axios
             .get(url)
             .then((res) => {
-                console.log("RES:", res.data.image)
+                //console.log("RES:", res.data.image)
+                if (res.data.country == undefined) return message.channel.send(":warning: this country dos not exsists")
                 const embed = new MessageEmbed()
                     .setTitle(res.data.country)
                     .addField("cases:", res.data.cases)
