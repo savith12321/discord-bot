@@ -9,7 +9,7 @@ module.exports = {
         axios
             .get('https://some-random-api.ml/animal/kangaroo')
             .then((res) => {
-                console.log("RES:", res.data[0].image)
+                console.log("RES:", res.image)
                 const cat = res.data[0].url
                 const embed = new MessageEmbed()
                     .setTitle("kangaroo ?")
