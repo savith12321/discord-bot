@@ -10,7 +10,7 @@ module.exports = {
             .get('https://some-random-api.ml/animal/kangaroo')
             .then((res) => {
                 console.log("RES:", res.image)
-                const cat = res.data[0].url
+                const cat = res.url
                 const embed = new MessageEmbed()
                     .setTitle("kangaroo ?")
                     .setImage(res.image)
