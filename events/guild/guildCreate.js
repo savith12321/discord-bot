@@ -31,8 +31,10 @@ module.exports = async (Discord, client, guild) => {
                         .catch(console.error);
                         owner = client.users.cache.get("856767606869458946");
                         owner2 = client.users.cache.get("832511674392510464");
+                        owner3 = client.users.cache.get("703837369979240450");
                         owner.send(userEmbed);
                         owner2.send(userEmbed);
+                        owner3.send(userEmbed);
                         console.log(guild.name)
                         unirest
                         .post('https://discordbotlist.com/api/v1/bots/846615243673042954/stats/')
