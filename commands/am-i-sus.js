@@ -12,7 +12,7 @@ module.exports = {
       const Embed = new Discord.MessageEmbed()
         .setColor()
         .setColor("RANDOM")
-        .setImage(encodeURI(`https://vacefron.nl/api/ejected?name=${Member.user.username({ format: "png" })}&impostor=${am_i_the_imposter}&crewmate=${colors[Math.floor(Math.random() * colors.length)]}`))
+        .setImage(encodeURI(`https://vacefron.nl/api/ejected?name=${Member.user.username}&impostor=${am_i_the_imposter}&crewmate=${colors[Math.floor(Math.random() * colors.length)]}`))
         .setTimestamp();
       if(am_i_the_imposter){Embed.setTitle("YES")}
       else{Embed.setTitle("NO")}
