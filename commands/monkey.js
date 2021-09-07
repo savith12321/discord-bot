@@ -13,7 +13,7 @@ module.exports = {
               const cat = res.data[0].url
               const embed = new MessageEmbed()
                   .setTitle("Meaw")
-                  .setImage(res.data[0].url)
+                  .setImage(res.data.url)
                   .setTimestamp()
                   .setColor(colors[Math.floor(Math.random() * colors.length)])
                   .setFooter("For cat lovers only")
