@@ -10,7 +10,7 @@ module.exports = {
           .get('https://api.monkedev.com/attachments/monkey')
           .then((res) => {
               console.log("RES:", res.data[0].url)
-              const cat = res.data[0].url
+              //const cat = res.data[0].url
               const embed = new MessageEmbed()
                   .setTitle("Meaw")
                   .setImage(res.data.url)
