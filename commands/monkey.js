@@ -1,7 +1,7 @@
 var unirest = require("unirest");
 const fetch = require('node-fetch');
 module.exports = {
-    name: 'chuck-joke',
+    name: 'monkey',
     cooldown:10,
     description: "send a random chuck-joke",
     execute(message, args) {
