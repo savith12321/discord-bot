@@ -10,7 +10,7 @@ module.exports = async(Discord, client, member) => {
       profileData = await profileSchema.findOne({ userID: member.id });
       if (!profileData) {
         let profile = await profileSchema.create({
-          userID: member.id,
+          UserID: member.id,
           UserName: member.displayName,
           wollet: 1000,
           bank: 0,
