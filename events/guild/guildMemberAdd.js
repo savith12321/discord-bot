@@ -7,7 +7,7 @@ module.exports = async(Discord, client, member) => {
     console.log("member joined")
     let profileData;
     try {
-      profileData = await profileSchema.findOne({ userID: member.id });
+      profileData = await profileSchema.findOne({ UserID: member.id });
       if (!profileData) {
         let profile = await profileSchema.create({
           UserID: member.id,

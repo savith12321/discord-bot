@@ -8,7 +8,7 @@ module.exports = async (Discord, client, message) => {
     await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
         let profileData;
         try {
-          profileData = await profileSchema.findOne({ userID: message.author.id });
+          profileData = await profileSchema.findOne({ UserID: message.author.id });
           if (!profileData) {
             let profile = await profileSchema.create({
               UserID: message.author.id,

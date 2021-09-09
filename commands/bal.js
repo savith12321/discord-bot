@@ -6,7 +6,7 @@ module.exports = {
     description: "this is a ping command!",
     async execute(message, args, client){
         try {
-            await profileSchema.findOne({ userID: message.author.id }, async (err, data) =>{
+            await profileSchema.findOne({ UserID: message.author.id }, async (err, data) =>{
                 if (!data) {
                     let profile = await profileSchema.create({
                     UserID: message.author.id,
