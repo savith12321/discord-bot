@@ -16,14 +16,14 @@ module.exports = {
               bank: 0,
             });
             profile.save();
-          }
+          }else{
           let embed = new Discord.MessageEmbed()
           .setTitle("Balance")
           .setColor("RANDOM")
           .setTimestamp()
           .addField("Wollet:", profileData.wollet)
-          .addField("Bank", profileData.bank)
-  
+          .addField("Bank", profileData.bank);
+          }
           message.channel.send(embed);
         } catch (err) {
           console.log(err);
