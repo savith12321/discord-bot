@@ -7,4 +7,4 @@ let Schema = new mongoose.Schema({
     bank:{type: Number}
 });
 
-module.exports = mongoose.model('PrifileModle', Schema);
+module.exports = mongoose.model('profileSchema', Schema);
