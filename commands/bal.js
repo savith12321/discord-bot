@@ -24,6 +24,8 @@ module.exports = {
         .setTitle("Balance")
         .setColor("RANDOM")
         .setTimestamp()
+        .addField("Wollet:", data.wollet)
+        .addField("Bank", data.bank)
 
     }
 }
