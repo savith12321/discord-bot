@@ -1,9 +1,10 @@
 const profileSchema = require('../../models/profile-schema');
+const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
 module.exports = {
     name: 'bal',
     cooldown:1,
     description: "this is a ping command!",
-    execute(message, args, client){
+    async execute(message, args, client){
         let profileData;
         try {
           profileData = await profileSchema.findOne({ userID: message.author.id });
@@ -19,6 +20,10 @@ module.exports = {
         } catch (err) {
           console.log(err);
         }
+        let embed = new Discord.MessageEmbed()
+        .setTitle("Balance")
+        .setColor("RANDOM")
+        .setTimestamp()
 
     }
 }
