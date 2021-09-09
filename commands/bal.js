@@ -1,4 +1,4 @@
-const profileSchema = require('../../models/profile-schema');
+const profileSchema = require('../models/profile-schema');
 const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
 module.exports = {
     name: 'bal',
