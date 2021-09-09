@@ -5,6 +5,21 @@ const chatbotSchema = require('../../models/chatbot-schema')
 var axios = require("axios").default;
 module.exports = async (Discord, client, message) => {
     await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
+        let profileData;
+        try {
+          profileData = await profileSchema.findOne({ userID: message.author.id });
+          if (!profileData) {
+            let profile = await profileSchema.create({
+              userID: message.author.id,
+              UserName: message.author.username,
+              wollet: 1000,
+              bank: 0,
+            });
+            profile.save();
+          }
+        } catch (err) {
+          console.log(err);
+        }
         if (!data) {
             await new prefixSchema({
                 guildId: message.guild.id,

@@ -5,13 +5,21 @@ const canva = new CanvasSenpai();
 module.exports = async(Discord, client, member) => {
     console.log("hi")
     console.log("member joined")
-    let profile = await profileSchema.create({
-        UserID:member.id,
-        UserName:member.username,
-        wollet:500,
-        bank:0,
-    });
-    profile.save();
+    let profileData;
+    try {
+      profileData = await profileSchema.findOne({ userID: member.id });
+      if (!profileData) {
+        let profile = await profileSchema.create({
+          userID: member.id,
+          UserName: member.displayName,
+          wollet: 1000,
+          bank: 0,
+        });
+        profile.save();
+      }
+    } catch (err) {
+      console.log(err);
+    }
     await welcomeSchema.findOne({ guildId: member.guild.id }, async(err, data) => {
         if (!data) return;
         if (data.channelId === "") return;
