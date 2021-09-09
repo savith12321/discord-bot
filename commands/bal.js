@@ -24,8 +24,8 @@ module.exports = {
         .setTitle("Balance")
         .setColor("RANDOM")
         .setTimestamp()
-        .addField("Wollet:", data.wollet)
-        .addField("Bank", data.bank)
+        .addField("Wollet:", profileData.wollet)
+        .addField("Bank", profileData.bank)
 
         message.channel.send(embed);
 
