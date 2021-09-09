@@ -1,9 +1,17 @@
-const welcomeSchema = require('../../models/welcome-schema')
-const { CanvasSenpai } = require("canvas-senpai")
+const welcomeSchema = require('../../models/welcome-schema');
+const profileSchema = require('../../models/profile-schema');
+const { CanvasSenpai } = require("canvas-senpai");
 const canva = new CanvasSenpai();
 module.exports = async(Discord, client, member) => {
     console.log("hi")
     console.log("member joined")
+    let profile = await profileSchema.create({
+        UserID:message.author.id,
+        UserName:message.author.username,
+        wollet:500,
+        bank:0,
+    });
+    profile.save();
     await welcomeSchema.findOne({ guildId: member.guild.id }, async(err, data) => {
         if (!data) return;
         if (data.channelId === "") return;
