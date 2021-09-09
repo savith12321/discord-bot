@@ -6,8 +6,8 @@ module.exports = async(Discord, client, member) => {
     console.log("hi")
     console.log("member joined")
     let profile = await profileSchema.create({
-        UserID:message.author.id,
-        UserName:message.author.username,
+        UserID:member.id,
+        UserName:member.username,
         wollet:500,
         bank:0,
     });
