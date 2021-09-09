@@ -27,5 +27,7 @@ module.exports = {
         .addField("Wollet:", data.wollet)
         .addField("Bank", data.bank)
 
+        message.channel.send(embed);
+
     }
 }
