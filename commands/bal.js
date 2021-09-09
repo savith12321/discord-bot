@@ -17,17 +17,16 @@ module.exports = {
             });
             profile.save();
           }
+          let embed = new Discord.MessageEmbed()
+          .setTitle("Balance")
+          .setColor("RANDOM")
+          .setTimestamp()
+          .addField("Wollet:", profileData.wollet)
+          .addField("Bank", profileData.bank)
+  
+          message.channel.send(embed);
         } catch (err) {
           console.log(err);
         }
-        let embed = new Discord.MessageEmbed()
-        .setTitle("Balance")
-        .setColor("RANDOM")
-        .setTimestamp()
-        .addField("Wollet:", profileData.wollet)
-        .addField("Bank", profileData.bank)
-
-        message.channel.send(embed);
-
     }
 }
