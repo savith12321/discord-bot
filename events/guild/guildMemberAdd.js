@@ -12,7 +12,7 @@ module.exports = async(Discord, client, member) => {
         let profile = await profileSchema.create({
           UserID: member.id,
           UserName: member.displayName,
-          wollet: 1000,
+          wollet: 500,
           bank: 0,
         });
         profile.save();
