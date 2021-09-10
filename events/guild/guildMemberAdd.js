@@ -8,7 +8,7 @@ module.exports = async(Discord, client, member) => {
     let profileData;
     try {
       profileData = await profileSchema.findOne({ UserID: member.id });
-      if (!profileData) {
+      if (!profileData && message.author.bot == false) {
         let profile = await profileSchema.create({
           UserID: member.id,
           UserName: member.displayName,
