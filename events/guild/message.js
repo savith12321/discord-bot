@@ -66,7 +66,7 @@ module.exports = async (Discord, client, message) => {
                 if(!data){
                     if(command) command.execute(message, args, client, guildprefix);
                 }else{
-                    message.reply("you have bean black listed because of " + data.reason)
+                    message.reply("you have bean black listed because of ```" + data.reason + "``` and if you think this is a mistake pls contact `885819392535986206`")
                 }
             });
         }
