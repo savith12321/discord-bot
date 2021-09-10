@@ -14,6 +14,7 @@ var log_file_err=fs.createWriteStream('./error.log',{flags:'a'});
 
 process.on('TypeError', function(err) {
         log_file_err.write('Caught exception: '+err+"\n");
+        console.log(err);
 });
 mongoose
     .connect(config.mongosrv, {
