@@ -17,7 +17,7 @@ module.exports = async (Discord, client, message) => {
             let profileData;
             try {
               profileData = await profileSchema.findOne({ UserID: message.author.id });
-              if (!profileData || message.author.bot == false) {
+              if (!profileData && message.author.bot == false) {
                 let profile = await profileSchema.create({
                   UserID: message.author.id,
                   UserName: message.author.username,
