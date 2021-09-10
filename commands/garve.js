@@ -1,5 +1,4 @@
 const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
-const { MessageButton } = require('discord-buttons');
 module.exports = {
     name: 'grave',
     cooldown: 1,
@@ -11,12 +10,6 @@ module.exports = {
         Embed.setColor(colors[Math.floor(Math.random() * colors.length)]);
         Embed.setImage(encodeURI(`https://vacefron.nl/api/grave?user=${Member.user.displayAvatarURL({ format: "png" })}`));
         Embed.setTimestamp();
-
-
-        let btn = new MessageButton()
-            .setStyle('url')
-            .setLabel('open image')
-            .setURL(encodeURI(`https://vacefron.nl/api/grave?user=${Member.user.displayAvatarURL({ format: "png" })}`))
-        message.channel.send("rip", { component: btn, embed: Embed });
+        message.channel.send("rip", {embed: Embed });
     }
 }
