@@ -1,6 +1,7 @@
 const commnad_handler = require('../../handlers/commnad_handler');
 const cooldowns = new Map();
 const prefixSchema = require('../../models/prefix-schema')
+const blacklistSchema = require('../../models/blacklist-schema')
 const profileSchema = require('../../models/profile-schema');
 const chatbotSchema = require('../../models/chatbot-schema')
 var axios = require("axios").default;
@@ -61,7 +62,13 @@ module.exports = async (Discord, client, message) => {
             }
             time_stamps.set(message.author.id, current_time);
             setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
-            if(command) command.execute(message, args, client, guildprefix);
+            await blacklistSchema.findOne({ userID: message.author.id }, async(err, data) => {
+                if(!data){
+                    if(command) command.execute(message, args, client, guildprefix);
+                }else{
+                    message.reply("you have bean black listed because of " + data.reason)
+                }
+            });
         }
     });
 
