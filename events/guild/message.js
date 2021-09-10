@@ -6,21 +6,6 @@ const chatbotSchema = require('../../models/chatbot-schema')
 var axios = require("axios").default;
 module.exports = async (Discord, client, message) => {
     await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
-        let profileData;
-        try {
-          profileData = await profileSchema.findOne({ UserID: message.author.id });
-          if (!profileData) {
-            let profile = await profileSchema.create({
-              UserID: message.author.id,
-              UserName: message.author.username,
-              wollet: 500,
-              bank: 0,
-            });
-            profile.save();
-          }
-        } catch (err) {
-          console.log(err);
-        }
         if (!data) {
             await new prefixSchema({
                 guildId: message.guild.id,
@@ -29,6 +14,21 @@ module.exports = async (Discord, client, message) => {
             }).save();
             message.channel.send("setting you a prefix pls type `lol help` for help!");
         }else{
+            let profileData;
+            try {
+              profileData = await profileSchema.findOne({ UserID: message.author.id });
+              if (!profileData || message.author.bot == false) {
+                let profile = await profileSchema.create({
+                  UserID: message.author.id,
+                  UserName: message.author.username,
+                  wollet: 500,
+                  bank: 0,
+                });
+                profile.save();
+              }
+            } catch (err) {
+              console.log(err);
+            }
             guildprefix = data.prefix;
             if (message.guild == null) guildprefix = "lol ";
             if (!message.content.toLowerCase().startsWith(guildprefix) || message.author.bot) return;
