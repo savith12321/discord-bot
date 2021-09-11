@@ -34,7 +34,7 @@ module.exports = async (Discord, client, guild) => {
                             if(data){
                               data.membercount = guild.memberCount;
                               data.save();
-                            }if(!data){
+                            }if(!data){////////////////////////////////////////////
                                 await new serverdataSchema({
                                     name:guild.name,
                                     guildId: guild.id,
