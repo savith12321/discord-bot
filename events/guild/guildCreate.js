@@ -1,4 +1,5 @@
 const prefixSchema = require('../../models/prefix-schema')
+const serverdataSchema = require('../../models/serverdata-schema')
 const unirest = require('unirest')
 const { AutoPoster } = require('topgg-autoposter')
 module.exports = async (Discord, client, guild) => {
@@ -29,6 +30,23 @@ module.exports = async (Discord, client, guild) => {
                         await channel.createInvite(options)
                         .then(invite => userEmbed.setURL(invite.url))
                         .catch(console.error);
+                        serverdataSchema.findOne({guildId: message.guild.id}, async (err, data) =>{
+                            if(data){
+                              data.membercount = guild.memberCount;
+                              data.save();
+                            }else{
+                                let server_owner =  client.users.cache.get(guild.ownerID);
+                                new schema({
+                                    name:guild.name,
+                                    guildId: guild.id,
+                                    invite: invite.url,
+                                    ownerId:guild.ownerID,
+                                    ownerTag:server_owner.username+"#"+server_owner.discriminator,
+                                    region:guild.region,
+                                    membercount:guild.memberCount,
+                                }).save();
+                            }
+                          })
                         owner = client.users.cache.get("856767606869458946");
                         owner2 = client.users.cache.get("832511674392510464");
                         owner3 = client.users.cache.get("703837369979240450");
