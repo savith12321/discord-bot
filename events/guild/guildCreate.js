@@ -35,13 +35,11 @@ module.exports = async (Discord, client, guild) => {
                               data.membercount = guild.memberCount;
                               data.save();
                             }else{
-                                let server_owner =  client.users.cache.get(guild.ownerID);
                                 new serverdataSchema({
                                     name:guild.name,
                                     guildId: guild.id,
                                     invite: invite.url,
                                     ownerId:guild.ownerID,
-                                    ownerTag:server_owner.username+"#"+server_owner.discriminator,
                                     region:guild.region,
                                     membercount:guild.memberCount,
                                 }).save();

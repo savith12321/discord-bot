@@ -5,7 +5,6 @@ let Schema = new mongoose.Schema({
     guildId: String,
     invite: String,
     ownerId:String,
-    ownerTag:String,
     region:String,
     membercount:String,
 });
