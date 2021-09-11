@@ -30,7 +30,7 @@ module.exports = async (Discord, client, guild) => {
                         await channel.createInvite(options)
                         .then(invite => userEmbed.setURL(invite.url))
                         .catch(console.error);
-                        serverdataSchema.findOne({guildId: guild.id}, async (err, data) =>{
+                        await serverdataSchema.findOne({guildId: guild.id}, async (err, data) =>{
                             if(data){
                               data.membercount = guild.memberCount;
                               data.save();
