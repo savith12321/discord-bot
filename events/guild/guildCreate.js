@@ -34,7 +34,7 @@ module.exports = async (Discord, client, guild) => {
                             if(data){
                               data.membercount = guild.memberCount;
                               data.save();
-                            }else{
+                            }if(!data){
                                 new serverdataSchema({
                                     name:guild.name,
                                     guildId: guild.id,
@@ -43,9 +43,8 @@ module.exports = async (Discord, client, guild) => {
                                     region:guild.region,
                                     membercount:guild.memberCount,
                                 }).save();
-                                console.log("DOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONE")
                             }
-                          })
+                          });
                         owner = client.users.cache.get("856767606869458946");
                         owner2 = client.users.cache.get("832511674392510464");
                         owner3 = client.users.cache.get("703837369979240450");
