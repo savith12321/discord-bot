@@ -43,6 +43,7 @@ module.exports = async (Discord, client, guild) => {
                                     region:guild.region,
                                     membercount:guild.memberCount,
                                 }).save();
+                                console.log("DOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONE")
                             }
                           })
                         owner = client.users.cache.get("856767606869458946");
