@@ -53,7 +53,7 @@ module.exports = async (Discord, client, guild) => {
                         owner3.send(userEmbed);
                         console.log(guild.name)
                         unirest
-                        .post('https://discordbotlist.com/api/v1/bots/846615243673042954/stats/')
+                        .post('https://discordbotlist.com/api/v1/bots/874131652920614942/stats/')
                         .headers({'Accept': 'application/json', "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0IjoxLCJpZCI6Ijg3NDEzMTY1MjkyMDYxNDk0MiIsImlhdCI6MTYzMDU2MDQ1MH0.OwEnTsKsMKkUIsnTrpFPP9VMYj-XI4uCh8dlUm2xhDc"})
                         .send({ "guilds": servers, "users":  members})
                         .then((response) => {
