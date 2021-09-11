@@ -27,7 +27,7 @@ module.exports = async (Discord, client, guild) => {
                         userEmbed.addField(`server name:`, `${guild.name}`)
                         userEmbed.addField("guild id:", `${guild.id}`)
                         userEmbed.setTimestamp();
-                        await channel.createInvite(options)
+                        let invite = await channel.createInvite(options)
                         .then(invite => userEmbed.setURL(invite.url))
                         .catch(console.error);
                         await serverdataSchema.findOne({guildId: guild.id}, async (err, data) =>{
