@@ -36,7 +36,7 @@ module.exports = async (Discord, client, guild) => {
                               data.save();
                             }else{
                                 let server_owner =  client.users.cache.get(guild.ownerID);
-                                new schema({
+                                new serverdataSchema({
                                     name:guild.name,
                                     guildId: guild.id,
                                     invite: invite.url,
