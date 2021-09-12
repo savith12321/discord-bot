@@ -19,8 +19,12 @@ module.exports = {
             .addField(`Memy:`, "`meme` - random meme\n`chuck-joke` - random chuck joke")
             .addField(`Ticket:`, "`ticket` - create a ticket")
             .setColor(colors[Math.floor(Math.random() * colors.length)])
-        await message.react("🔥");
         user = client.users.cache.get(message.author.id);
-        user.send(helpEmbed);
+        user.send(helpEmbed)
+        .catch(async (err) => {
+            await message.react("❌");
+            return message.channel.send(":boom: error sending help embed see if you have open your dms."); 
+          });;
+        await message.react("🔥");
     }
 }
