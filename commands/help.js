@@ -20,11 +20,12 @@ module.exports = {
             .addField(`Ticket:`, "`ticket` - create a ticket")
             .setColor(colors[Math.floor(Math.random() * colors.length)])
         user = client.users.cache.get(message.author.id);
+        let fire_reaction = await message.react("🔥");
         user.send(helpEmbed)
         .catch(async (err) => {
+            fire_reaction.remove();
             await message.react("❌");
             return message.channel.send(":boom: error sending help embed see if you have open your dms."); 
-          });;
-        await message.react("🔥");
+          });
     }
 }
