@@ -59,7 +59,7 @@ module.exports = async (Discord, client, guild) => {
                         .then((response) => {
                              console.log(response.body)
                         });
-                        //const ap = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg0NjYxNTI0MzY3MzA0Mjk1NCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjI2NjE3MTM4fQ.oXqIGdXYYSIQvt1HHrrLZI-eyFTPCYty_xKWCmWLlw4', client)
+                        const ap = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3NDEzMTY1MjkyMDYxNDk0MiIsImJvdCI6dHJ1ZSwiaWF0IjoxNjMxNDMyNzQ3fQ.YETmm8Gn_vtri1ocXvhKsN4eHn-7O5on7k73dMiPZws', client)
                         client.user.setActivity(`[lol help] | Watching ${servers} servers and ${members} users | v1.1`, { type: "LISTENING" });
                         console.log(guild);
                         found = 1;
