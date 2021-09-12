@@ -12,7 +12,7 @@ module.exports = async (Discord, client, guild) => {
     .then((response) => {
          console.log(response.body)
     });
-    const ap = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3NDEzMTY1MjkyMDYxNDk0MiIsImJvdCI6dHJ1ZSwiaWF0IjoxNjMxNDMyNzQ3fQ.YETmm8Gn_vtri1ocXvhKsN4eHn-7O5on7k73dMiPZws', client)
+    const ap = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0IjoxLCJpZCI6Ijg3NDEzMTY1MjkyMDYxNDk0MiIsImlhdCI6MTYzMDU2MDQ1MH0.OwEnTsKsMKkUIsnTrpFPP9VMYj-XI4uCh8dlUm2xhDc', client)
     client.user.setActivity(`[lol help] | Watching ${servers} servers and ${members} users | v1.1`, { type: "LISTENING" });
     const userEmbed = new Discord.MessageEmbed()
     userEmbed.setColor("RANDOM")
