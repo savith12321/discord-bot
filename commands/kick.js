@@ -10,7 +10,7 @@ module.exports = {
           var target = message.guild.members.cache.get(member.id);
           await target.kick().catch(async (err) => {
             await message.react("❌");
-            return message.channel.send(":boom: I could not kick that ban that member see do i have perms or he/she have higher perms thane me"); 
+            return message.channel.send(":boom: I could not kick that ban that member see do i have perms or he/she have higher perms thane me")
           });
           message.reply(`You **KICK** ${target}`)
       }
