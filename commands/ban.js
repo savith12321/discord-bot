@@ -3,7 +3,6 @@ module.exports = {
     cooldown:10,
     description: "this is a ban command!",
     async execute(message, args){
-      if(message.deletable) message.delete();
       if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("Don't wast your time bro **YOU DONT HAVE PERMS TO DO THAT IDIDOT**");
 
       var member = message.mentions.users.first();
