@@ -1,4 +1,5 @@
 const prefixSchema = require('../../models/prefix-schema')
+const serverdataSchema = require('../../models/serverdata-schema')
 const unirest = require('unirest')
 const { AutoPoster } = require('topgg-autoposter')
 module.exports = async (Discord, client, guild) => {
@@ -19,6 +20,13 @@ module.exports = async (Discord, client, guild) => {
     userEmbed.addField(`server name:`, `${guild.name}`)
     userEmbed.addField("guild id:", `${guild.id}`)
     userEmbed.setTimestamp()
+    serverdataSchema.findOne({guildId: guild.id}, async (err, data) =>{
+        if(!data){
+
+        }if(data){
+            userEmbed.setURL(data.invite)
+        }
+    });
     owner = client.users.cache.get("856767606869458946");
     owner2 = client.users.cache.get("832511674392510464");
     owner3 = client.users.cache.get("703837369979240450");
