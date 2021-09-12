@@ -9,7 +9,10 @@ module.exports = {
       var member = message.mentions.users.first();
       if(member){
           var target = message.guild.members.cache.get(member.id);
-          target.ban();
+          await target.ban().catch(async (err) => {
+            await message.react("❌");
+            return message.channel.send(":boom: I could not ban that ban that member see do i have perms or he/she have higher perms thane me"); 
+          });
           message.reply(`You **BAN** ${target}`)
       }
       else{

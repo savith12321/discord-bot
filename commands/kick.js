@@ -9,7 +9,10 @@ module.exports = {
       var member = message.mentions.users.first();
       if(member){
           var target = message.guild.members.cache.get(member.id);
-          target.kick();
+          await target.kick().catch(async (err) => {
+            await message.react("❌");
+            return message.channel.send(":boom: I could not kick that ban that member see do i have perms or he/she have higher perms thane me"); 
+          });
           message.reply(`You **KICK** ${target}`)
       }
       else{
