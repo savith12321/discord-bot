@@ -21,7 +21,7 @@ module.exports = {
             .setColor(colors[Math.floor(Math.random() * colors.length)])
         user = client.users.cache.get(message.author.id);
         let fire_reaction = await message.react("🔥");
-        if (args[0] === "no-dm") return message.reply({embeds:[helpEmbed]});
+        if (args[0] === "no-dm") return message.reply({embeds:[helpEmbed], ephemeral: true});
         user.send({embeds:[helpEmbed]})
         .catch(async (err) => {
             console.log(err)
