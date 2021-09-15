@@ -4,16 +4,19 @@ const prefixSchema = require('../../models/prefix-schema')
 const blacklistSchema = require('../../models/blacklist-schema')
 const profileSchema = require('../../models/profile-schema');
 const chatbotSchema = require('../../models/chatbot-schema')
-var axios = require("axios").default;
+var axios = require('axios').default;
 module.exports = async (Discord, client, message) => {
+    //console.log('message');
+    if(message.author.bot)return;
+    if (message.guild == null) return message.reply("sorry we spport guild commands for now.");
     await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
         if (!data) {
             await new prefixSchema({
                 guildId: message.guild.id,
                 guildName: message.guild.name,
-                prefix: "lol "
+                prefix: 'lol '
             }).save();
-            message.channel.send("setting you a prefix pls type `lol help` for help!");
+            message.channel.send('setting you a prefix pls type `lol help` for help!');
         }else{
             let profileData;
             try {
@@ -31,20 +34,22 @@ module.exports = async (Discord, client, message) => {
               console.log(err);
             }
             guildprefix = data.prefix;
-            if (message.guild == null) guildprefix = "lol ";
+            if (message.guild == null) guildprefix = 'lol ';
+            //console.log(guildprefix)
             if (!message.content.toLowerCase().startsWith(guildprefix) || message.author.bot) return;
             const args = message.content.slice(guildprefix.length).split(/ +/);
             const cmd = args.shift().toLowerCase();
 
-
             const command = client.commands.get(cmd);
-
-            if(message.author.id == "801752135850655755"){
+            if(!command){
+              return;
+            }
+            if(message.author.id == '801752135850655755'){
                 if(command) command.execute(message, args, client, guildprefix);
                 return;
             }
-
-            if(!cooldowns.has(command.name)){
+            
+            if(!cooldowns.has(command.name.catch)){
                 cooldowns.set(command.name, new Discord.Collection());
             }
 
@@ -71,9 +76,9 @@ module.exports = async (Discord, client, message) => {
             setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
             await blacklistSchema.findOne({ userID: message.author.id }, async(err, data) => {
                 if(!data){
-                    if(command) command.execute(message, args, client, guildprefix);
+                    if(command) command.execute(message, args, client, guildprefix)
                 }else{
-                    message.reply("you have bean black listed because of ```" + data.reason + "``` and if you think this is a mistake pls contact `superN00b#7400`")
+                    message.reply('you have bean black listed because of ```' + data.reason + '``` and if you think this is a mistake pls contact `superN00b#7400`')
                     .then((msg) => {
                         setTimeout(() => msg.delete(), 7000);
                         setTimeout(() => message.delete(), 3000);

@@ -18,7 +18,7 @@ module.exports = {
                   .setColor(colors[Math.floor(Math.random() * colors.length)])
                   .setFooter("For cat lovers only")
 
-              message.channel.send(embed);
+              message.channel.send({embeds:[embed]});
 
           })
 

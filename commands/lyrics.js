@@ -27,7 +27,11 @@ module.exports = {
             .setURL(song.links.genius)
             .setTimestamp()
             .setColor("RANDOM");
-            message.channel.send(userEmbed)
+            try{
+            message.channel.send({embeds:[userEmbed]}).catch(err =>{console.log(err); message.reply("sorry the song is too big but here is the link:- " + song.links.genius)});
+            }catch(e){
+                console.log(e)
+            }
 
         });
         

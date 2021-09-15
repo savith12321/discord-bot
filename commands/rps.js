@@ -10,7 +10,7 @@ module.exports = {
 	.setDescription("React to play!")
         .setFooter("Play Rock Paper Scissors with the bot!!!")
 	.setTimestamp()
-		let msg = await message.channel.send(embed);
+		let msg = await message.channel.send({embeds:[embed]});
 		await msg.react("🗻")
 		await msg.react("✂")
 		await msg.react("📰")
@@ -18,10 +18,10 @@ module.exports = {
 		const filter = (reaction, user) => {
             return ['🗻', '✂', '📰'].includes(reaction.emoji.name) && user.id === message.author.id;
         }
-
+        console.log("https://aka.ms/")
         const choices = ['🗻', '✂', '📰']
         const me = choices[Math.floor(Math.random() * choices.length)]
-        msg.awaitReactions(filter, {max:1, time: 60000, error: ["time"]}).then(
+        msg.awaitReactions({filter, max:1, time: 60000, error: ["time"]}).then(
         	async(collected) => {
         		const reaction = collected.first()
         		let result = new discord.MessageEmbed()
@@ -32,7 +32,7 @@ module.exports = {
         		.addField("My choice", `${me}`)
                 .setFooter("OOOH! Did you win!?!")
                 .setTimestamp()
-			await msg.edit(result)
+			await msg.edit({embeds:[result]});
         		if ((me === "🗻" && reaction.emoji.name === "✂") ||
                 (me === "📰" && reaction.emoji.name === "🗻") ||
                 (me === "✂" && reaction.emoji.name === "📰")) {
@@ -44,6 +44,7 @@ module.exports = {
             }
         })
         .catch(collected => {
+                console.log(collected)
                 message.reply('The game has been cancelled since you did not respond in time!');
             })
 }

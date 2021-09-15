@@ -16,6 +16,6 @@ module.exports = {
         .setTimestamp();
       if(am_i_the_imposter){Embed.setTitle("YES")}
       else{Embed.setTitle("NO")}
-      return message.channel.send(Embed);
+      return message.channel.send({embeds:[Embed]});
     }
 }

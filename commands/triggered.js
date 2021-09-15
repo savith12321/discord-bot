@@ -9,10 +9,9 @@ module.exports = {
         const attachment = new MessageAttachment(link, 'triggered.gif');
         const embed = new MessageEmbed()
           .setTitle(`triggered`)
-          .attachFiles(attachment)
           .setColor("RANDOM")
           .setTimestamp()
           .setImage('attachment://triggered.gif')
-        message.channel.send(embed);
+        message.channel.send({embeds:[embed], files: [attachment]});
     }
 }

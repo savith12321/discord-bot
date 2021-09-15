@@ -44,9 +44,9 @@ module.exports = async (Discord, client, guild) => {
             }).save();
         }
     });
-    owner = await client.users.fetch('856767606869458946');
-    owner2 = await client.users.fetch('832511674392510464');
-    owner3 = await client.users.fetch('703837369979240450');
+    owner = await https://discord.com/channels/222078108977594368/874431116533178459/887293106167382076('856767606869458946');
+    owner2 = await client.users.cache.filter('832511674392510464');
+    owner3 = await client.users.cache.filter('703837369979240450');
     owner.send({embeds:[userEmbed]});
     owner2.send({embeds:[userEmbed]});
     owner3.send({embeds:[userEmbed]});

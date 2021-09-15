@@ -6,7 +6,7 @@ module.exports = {
     description: "this is a bug command!",
     execute(message, args, client) {
         if (!args[0]) return message.reply("plsease set a discription of the bug");
-        owner = client.users.cache.get("801752135850655755");
+        owner = client.users.cache.get("856767606869458946");
         message.channel.send('📤 bug has sent successfully, thanx for reporting the bug')
         const bug = args.join(" ")
         const userEmbed = new Discord.MessageEmbed()
@@ -17,8 +17,8 @@ module.exports = {
             .addField("From:", `${message.guild.name} (${message.guild.id})`)
             .setTimestamp()
 
-        client.channels.cache.get(bug_data.bug).send(userEmbed);
-        owner.send(userEmbed);
+        client.channels.cache.get(bug_data.bug).send({embeds:[userEmbed]});
+        owner.send({embeds:[userEmbed]});
 
     }
 }

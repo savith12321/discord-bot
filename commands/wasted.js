@@ -12,6 +12,6 @@ module.exports = {
         .setImage(encodeURI(`https://some-random-api.ml/canvas/wasted?avatar=${Member.user.displayAvatarURL({ format: "png" })}`))
         .setTimestamp();
 
-      return message.channel.send(Embed);
+      return message.channel.send({embeds:[Embed]});
     }
 }

@@ -27,6 +27,6 @@ module.exports = {
         .addField("Views", video.views.toLocaleString(), true)
         .addField("Duration", video.duration, true)
 
-        return message.channel.send(embed);
+        return message.channel.send({embeds:[embed]});
     }
 }

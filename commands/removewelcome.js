@@ -4,7 +4,7 @@ module.exports = {
     cooldown: 60,
     description: "this is a removewelcome command!",
     execute(message, args) {
-        if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("you dont have perms to do that idiot");
+        if (!message.member.permissions.has("ADMINISTRATOR")) return message.reply("you dont have perms to do that idiot");
         schema.findOne({guildId: message.guild.id}, async (err, data) =>{
           if(data){
             data.channelId = "";

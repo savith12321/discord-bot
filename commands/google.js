@@ -24,7 +24,7 @@ module.exports = {
         embed.setFooter("Powerd by google")
         embed.setTimestamp()
 
-        return message.channel.send(embed);
+        return message.channel.send({embeds:[embed]});
 
         async function search(query) {
 

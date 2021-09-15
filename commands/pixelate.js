@@ -11,6 +11,6 @@ module.exports = {
         .setImage(encodeURI(`https://api.monkedev.com/canvas/pixelate?imgUrl=${Member.user.displayAvatarURL({ format: "png" })}`))
         .setTimestamp();
 
-      return message.channel.send(Embed);
+      return message.channel.send({embeds:[Embed]});
     }
 }

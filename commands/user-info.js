@@ -17,13 +17,11 @@ module.exports = {
           .addField(`Joind the server at:`, `${mentiondMember.joinedAt}`)
           .addField(`Nick name:`, `${mentiondMember.nickname}`)
           .addField(`region:`, `${mentiondUser.region}`)
-          .addField(`User Status:`, `${mentiondUser.presence.status}`)
           .setTimestamp()
           .setFooter("User info of " + `${mentiondUser.username}`)
       console.log(mentiondUser);
       console.log(mentiondMember);
-      console.log(mentiondUser.presence.status)
 
-      message.channel.send(userEmbed).catch(err => console.log(err));
+      message.channel.send({embeds:[userEmbed]}).catch(err => console.log(err));
     }
 }

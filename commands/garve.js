@@ -10,6 +10,6 @@ module.exports = {
         Embed.setColor(colors[Math.floor(Math.random() * colors.length)]);
         Embed.setImage(encodeURI(`https://vacefron.nl/api/grave?user=${Member.user.displayAvatarURL({ format: "png" })}`));
         Embed.setTimestamp();
-        message.channel.send("rip", {embed: Embed });
+        message.channel.send({embeds:[Embed]});
     }
 }

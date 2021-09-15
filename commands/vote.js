@@ -10,7 +10,7 @@ module.exports = {
         embed.setColor("RANDOM")
         embed.setTitle("Vote For Heat :)")
         embed.setTimestamp();
-        message.channel.send(embed)
+        message.channel.send({embeds:[embed]})
 
     }
 }

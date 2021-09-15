@@ -8,12 +8,12 @@ module.exports = {
     const channel = await message.guild.channels.create(`ticket: ${message.author.tag}`);
 
 
-    channel.updateOverwrite(message.guild.id, {
-      SEND_MESSAGE: false,
+    channel.permissionOverwrites.edit(message.guild.id, {
+      SEND_MESSAGES: false,
       VIEW_CHANNEL: false,
     });
-    channel.updateOverwrite(message.author, {
-      SEND_MESSAGE: true,
+    channel.permissionOverwrites.edit(message.author, {
+      SEND_MESSAGES: true,
       VIEW_CHANNEL: true,
     });
     const reactionMessage = await channel.send("Thank you for contacting support!");
@@ -27,18 +27,18 @@ module.exports = {
     }
 
     const collector = reactionMessage.createReactionCollector(
-      (reaction, user) => message.guild.members.cache.find((member) => member.id === user.id).hasPermission("ADMINISTRATOR"),
+      (reaction, user) => message.guild.members.cache.find((member) => member.id === user.id).permissions.has("ADMINISTRATOR"),
       { dispose: true }
     );
 
     collector.on("collect", (reaction, user) => {
       switch (reaction.emoji.name) {
         case "🔒":
-          channel.updateOverwrite(message.author, { SEND_MESSAGES: false });
+          channel.permissionOverwrites.edit(message.author, { SEND_MESSAGES: false }).catch(err => {console.log(err)});
           break;
         case "⛔":
           channel.send("Deleting this channel in 5 seconds!");
-          setTimeout(() => channel.delete(), 5000);
+          setTimeout(() => channel.delete(), 5000).catch(err => {console.log(err)});
           break;
       }
     });
@@ -46,11 +46,15 @@ module.exports = {
     message.channel
       .send(`We will be right with you! ${channel}`)
       .then((msg) => {
-        setTimeout(() => msg.delete(), 7000);
-        setTimeout(() => message.delete(), 3000);
+        setTimeout(() => msg.delete(), 7000).catch((err) => {
+          console.log(err)
+        });
+        setTimeout(() => message.delete(), 3000).catch((err) => {
+          console.log(err)
+        });
       })
       .catch((err) => {
-        throw err;
+        console.log(err)
       });
   },
 };

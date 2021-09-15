@@ -11,6 +11,6 @@ module.exports = {
         .setImage(encodeURI(`https://vacefron.nl/api/heaven?user=${Member.user.displayAvatarURL({ format: "png" })}`))
         .setTimestamp();
 
-      return message.channel.send(Embed);
+      return message.channel.send({embeds:[Embed]});
     }
 }

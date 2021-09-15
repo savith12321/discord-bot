@@ -4,7 +4,7 @@ module.exports = {
     description: "this is a kick command!",
     async execute(message, args){
       let error = false;
-      if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Don't wast your time bro **YOU DONT HAVE PERMS TO DO THAT IDIDOT**").then(m => m.delete(5000));
+      if(!message.member.permissions.has("KICK_MEMBERS")) return message.reply("Don't wast your time bro **YOU DONT HAVE PERMS TO DO THAT IDIDOT**").then(m => m.delete(5000));
 
       var member = message.mentions.users.first();
       if(member){

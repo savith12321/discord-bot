@@ -20,9 +20,9 @@ module.exports = {
                 .setTitle("Balance")
                 .setColor("RANDOM")
                 .setTimestamp()
-                .addField("Wollet:", data.wollet)
-                .addField("Bank", data.bank);
-                message.channel.send(embed);
+                .addField("Wollet:", data.wollet.toString())
+                .addField("Bank", data.bank.toString());
+                message.channel.send({embeds:[embed]});
                 }
             });
         } catch (err) {

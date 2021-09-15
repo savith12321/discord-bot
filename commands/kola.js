@@ -23,7 +23,7 @@ module.exports = {
             .setColor("RANDOM")
             .setImage(res.body.link)
             .setTimestamp()
-            message.channel.send(userEmbed)
+            message.channel.send({embeds:[userEmbed]})
         });
 
     }

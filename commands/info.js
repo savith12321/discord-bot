@@ -15,7 +15,7 @@ module.exports = {
       .setTimestamp()
       .setColor(colors[Math.floor(Math.random() * colors.length)])
 
-          message.channel.send(userEmbed)
+          message.channel.send({embeds:[userEmbed]})
 
     }
 }

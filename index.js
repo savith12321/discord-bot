@@ -1,6 +1,6 @@
-const Discord = require('discord.js');
+const {Intents} = Discord = require('discord.js');
 const fs = require("fs");
-const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
+const client = new Discord.Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.DIRECT_MESSAGES, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.GUILD_INTEGRATIONS] });
 const config = require('./config');
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
@@ -21,7 +21,9 @@ mongoose
         useUnifiedTopology: true
     }).then(() => {
         console.log("connected to mongo db")
-        client.login(config.token);
+        client.login(config.token).catch((err) =>{
+            console.log(err)
+        });
     }).catch((err) => {
         console.log(err);
     });

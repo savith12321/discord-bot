@@ -12,6 +12,6 @@ module.exports = {
         .setDescription(`You flipped a **${choice}**!`)
         .setFooter("You Flipped A Coin!!!")
         .setTimestamp()
-        message.channel.send(embed)
+        message.channel.send({embeds:[embed]})
     }
 }

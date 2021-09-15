@@ -11,6 +11,6 @@ module.exports = {
         .setImage(encodeURI(`https://vacefron.nl/api/iamspeed?user=${Member.user.displayAvatarURL({ format: "png" })}`))
         .setTimestamp();
 
-      return message.channel.send(Embed);
+      return message.channel.send({embeds:[Embed]});
     }
 }
