@@ -6,7 +6,7 @@ module.exports = async (Discord, client, guild) => {
     var servers = await client.guilds.cache.size;
     var members = await client.users.cache.size;
     const ap = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3NDEzMTY1MjkyMDYxNDk0MiIsImJvdCI6dHJ1ZSwiaWF0IjoxNjMxNDMyNzQ3fQ.YETmm8Gn_vtri1ocXvhKsN4eHn-7O5on7k73dMiPZws', client)
-    client.user.setActivity(`[lol help] | Watching ${servers} servers and ${members} users | v1.1`, { type: 'LISTENING' });
+    client.user.setActivity(`[lol help] | Watching ${servers} servers | v1.1`, { type: 'LISTENING' });
     const userEmbed = new Discord.MessageEmbed()
     userEmbed.setColor('RANDOM')
     userEmbed.setTitle(`i got removed from a server`)
@@ -24,6 +24,6 @@ module.exports = async (Discord, client, guild) => {
     var owner2 = await client.users.fetch('832511674392510464').catch(() => console.log("lollollllll"));
     var owner3 = await client.users.fetch('703837369979240450').catch(() => console.log("lollollllll"));
     owner.send({embeds: [userEmbed]});
-    //owner2.send({embeds: [userEmbed]});
-    //owner3.send({embeds: [userEmbed]});
+    owner2.send({embeds: [userEmbed]});
+    owner3.send({embeds: [userEmbed]});
 }
