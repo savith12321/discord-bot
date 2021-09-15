@@ -1,6 +1,6 @@
 module.exports = async (Discord, client, interaction) => {
     if (interaction.isCommand()) {
-        await interaction.deferReply({ ephemeral: false }).catch(() => {});
+        await interaction.deferReply().catch(() => {});
 
         const cmd = client.slashCommands.get(interaction.commandName);
         if (!cmd)

@@ -4,6 +4,7 @@ const client = new Discord.Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAG
 const config = require('./config');
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
+client.slashCommands = new Discord.Collection();
 const mongoose = require('mongoose');
 ["commnad_handler", "event_handler"].forEach(handler => {
     require(`./handlers/${handler}`)(Discord, client)

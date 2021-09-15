@@ -11,7 +11,7 @@ module.exports = {
         axios
             .get(url)
             .then((res) => {
-                message.channel.send("```"+res.data+"```");
+                message.channel.send("```"+res.data+"```").catch(() =>{});
             })
 
     }
