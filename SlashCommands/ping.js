@@ -1,9 +1,8 @@
 const { Client, CommandInteraction } = require("discord.js");
-
+const {SlashCommandBuilder} = require("@discordjs/bilders")
 module.exports = {
-    name: "ping",
-    description: "returns websocket ping",
-    async exports (client, interaction, args)  {
+    ...new SlashCommandBuilder().setName("ping").setDescription("pong lol"),
+    run: async (client, interaction, args) => {
         interaction.followUp({ content: `${client.ws.ping}ms!` });
     }
 };
