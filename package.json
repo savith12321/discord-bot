@@ -7,6 +7,7 @@
   "description": "moring-bot",
   "main": "index.js",
   "dependencies": {
+    "@discordjs/builders": "^0.5.0",
     "all": "0.0.0",
     "axios": "^0.21.1",
     "bindings": "^1.5.0",
@@ -14,6 +15,7 @@
     "canvas-senpai": "^2.0.3",
     "cheerio": "^1.0.0-rc.6",
     "discord.js": "^13.1.0",
+    "glob": "^7.1.7",
     "got": "^11.8.2",
     "jshint": "^2.12.0",
     "mongoose": "^5.12.12",
