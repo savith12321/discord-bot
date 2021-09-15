@@ -39,7 +39,7 @@ module.exports = async (Discord , client) => {
     client.on("ready", async () => {
         // Register for a single guild
         await client.guilds.cache
-            .get("replace this with your guild id")
+            .get("882850079533309962")
             .commands.set(arrayOfSlashCommands);
 
         // Register for all the guilds the bot is in
