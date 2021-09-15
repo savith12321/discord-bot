@@ -19,9 +19,15 @@ module.exports = {
             .addField(`Memy:`, "`meme` - random meme\n`chuck-joke` - random chuck joke")
             .addField(`Ticket:`, "`ticket` - create a ticket")
             .setColor(colors[Math.floor(Math.random() * colors.length)])
+            const row = new Discord.MessageActionRow().addComponents(
+                new Discord.MessageButton()
+                .setCustomId("random")
+                .setLabel("priamary")
+                .setStyle("PRIAMARY")
+            )
         user = client.users.cache.get(message.author.id);
         let fire_reaction = await message.react("🔥");
-        if (args[0] === "no-dm") return message.reply({embeds:[helpEmbed], ephemeral: true});
+        if (args[0] === "no-dm") return message.reply({embeds:[helpEmbed], components:[row]});
         user.send({embeds:[helpEmbed]})
         .catch(async (err) => {
             console.log(err)
