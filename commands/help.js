@@ -23,7 +23,7 @@ module.exports = {
                 new Discord.MessageButton()
                 .setCustomId("random")
                 .setLabel("priamary")
-                .setStyle("PRIAMARY")
+                .setStyle("PRIMARY")
             )
         user = client.users.cache.get(message.author.id);
         let fire_reaction = await message.react("🔥");
