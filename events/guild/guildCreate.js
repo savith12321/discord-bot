@@ -1,7 +1,10 @@
-const prefixSchema = require('../../models/prefix-schema')
-const serverdataSchema = require('../../models/serverdata-schema')
-const unirest = require('unirest')
-const { AutoPoster } = require('topgg-autoposter')
+const prefixSchema = require('../../models/prefix-schema');
+const serverdataSchema = require('../../models/serverdata-schema');
+const unirest = require('unirest');
+const { AutoPoster } = require('topgg-autoposter');
+const { glob } = require("glob");
+const { promisify } = require("util");
+const globPromise = promisify(glob);
 module.exports = async (Discord, client, guild) => {
     let found = 0;
     options = {
@@ -53,4 +56,21 @@ module.exports = async (Discord, client, guild) => {
     console.log(guild.name)
     const ap = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3NDEzMTY1MjkyMDYxNDk0MiIsImJvdCI6dHJ1ZSwiaWF0IjoxNjMxNDMyNzQ3fQ.YETmm8Gn_vtri1ocXvhKsN4eHn-7O5on7k73dMiPZws', client)
     client.user.setActivity(`[lol help] | Watching ${servers} servers | v1.1`, { type: 'LISTENING' });
+
+    const slashCommands = await globPromise(
+        `${process.cwd()}/SlashCommands/*.js`
+    );
+
+    const arrayOfSlashCommands = [];
+    slashCommands.map((value) => {
+        const file = require(value);
+        if (!file?.name) return;
+        client.slashCommands.set(file.name, file);
+
+        if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
+        arrayOfSlashCommands.push(file);
+    });
+    await client.guilds.cache
+    .get(guild.id)
+    .commands.set(arrayOfSlashCommands).catch(() => {});
 }
