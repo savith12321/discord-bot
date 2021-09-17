@@ -10,7 +10,24 @@ module.exports = {
         embed.setColor("RANDOM")
         embed.setTitle("Vote For Heat :)")
         embed.setTimestamp();
-        message.channel.send({embeds:[embed]})
+        const row = new Discord.MessageActionRow().addComponents(
+            new Discord.MessageButton()
+            .setLabel("Vote us on Top.gg")
+            .setURL("https://top.gg/bot/874131652920614942/vote")
+            .setStyle("URL"),
+
+            new Discord.MessageButton()
+            .setLabel("Vote us on discordbotlist.com")
+            .setStyle("URL")
+            .setURL("https://discordbotlist.com/bots/heat-5417/upvote"),
+
+            new Discord.MessageButton()
+            .setURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+            .setLabel("probably not rick roll")
+            .setStyle("URL")
+
+        )
+        message.channel.send({embeds:[embed], components:[row]})
 
     }
 }
