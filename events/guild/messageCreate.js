@@ -6,9 +6,9 @@ const profileSchema = require('../../models/profile-schema');
 const chatbotSchema = require('../../models/chatbot-schema')
 var axios = require('axios').default;
 module.exports = async (Discord, client, message) => {
-    require('../../functions/logger')(Discord, client, `${message.author.username}#${message.author.discriminator} sent :- ${message.content}`);
     //console.log('message');
     if(message.author.bot)return;
+    require('../../functions/logger')(Discord, client, `${message.author.username}#${message.author.discriminator} sent :- ${message.content}`);
     if (message.guild == null) return message.reply("sorry we spport guild commands for now.");
     await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
         if (!data) {
