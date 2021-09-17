@@ -2,9 +2,6 @@ const prefixSchema = require('../../models/prefix-schema');
 const serverdataSchema = require('../../models/serverdata-schema');
 const unirest = require('unirest');
 const { AutoPoster } = require('topgg-autoposter');
-const { glob } = require("glob");
-const { promisify } = require("util");
-const globPromise = promisify(glob);
 module.exports = async (Discord, client, guild) => {
     let found = 0;
     options = {
@@ -18,7 +15,7 @@ module.exports = async (Discord, client, guild) => {
     embed.addField('PS:', '**The bot will make a invite in this server for devolopment purpose If it is a problem it is ok to remove the invite :)**')
 
     const channel = guild.channels.cache.filter(c => c.type === 'GUILD_TEXT').find(x => x.position == 0);
-    channel.send({embeds:[embed]});
+    channel.send({embeds:[embed]}).catch(() => {});
 
     var servers = await client.guilds.cache.size;
     var members = await client.users.cache.size;
@@ -47,30 +44,13 @@ module.exports = async (Discord, client, guild) => {
             }).save();
         }
     });
-    owner = await client.users.fetch('856767606869458946');
-    owner2 = await client.users.fetch('832511674392510464');
-    owner3 = await client.users.fetch('703837369979240450');
+    owner = await client.users.fetch('856767606869458946').catch(() => {});
+    owner2 = await client.users.fetch('832511674392510464').catch(() => {});
+    owner3 = await client.users.fetch('703837369979240450').catch(() => {});
     owner.send({embeds:[userEmbed]});
     owner2.send({embeds:[userEmbed]});
     owner3.send({embeds:[userEmbed]});
     console.log(guild.name)
     const ap = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3NDEzMTY1MjkyMDYxNDk0MiIsImJvdCI6dHJ1ZSwiaWF0IjoxNjMxNDMyNzQ3fQ.YETmm8Gn_vtri1ocXvhKsN4eHn-7O5on7k73dMiPZws', client)
     client.user.setActivity(`[lol help] | Watching ${servers} servers | v1.1`, { type: 'LISTENING' });
-
-    const slashCommands = await globPromise(
-        `${process.cwd()}/SlashCommands/*.js`
-    );
-
-    const arrayOfSlashCommands = [];
-    slashCommands.map((value) => {
-        const file = require(value);
-        if (!file?.name) return;
-        client.slashCommands.set(file.name, file);
-
-        if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
-        arrayOfSlashCommands.push(file);
-    });
-    await client.guilds.cache
-    .get(guild.id)
-    .commands.set(arrayOfSlashCommands).catch(() => {});
 }
