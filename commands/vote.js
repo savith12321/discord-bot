@@ -21,7 +21,7 @@ module.exports = {
             .setStyle("LINK")
 
         );
-        message.channel.send({content: "<:y8:888314189616128000> hey you want to vote for us, thank you <:y8:888314189616128000>", components : [row]})
+        message.channel.send({content: "❤️ hey you want to vote for us, thank you ❤️", components : [row]})
 
     }
 }

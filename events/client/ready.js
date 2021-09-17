@@ -1,9 +1,8 @@
 const { glob } = require("glob");
 const { promisify } = require("util");
-
 const globPromise = promisify(glob);
 module.exports = async (_, client) => {
-
+    require('../../functions/logger')(_, client, 'Bot is online.')
     const slashCommands = await globPromise(
         `${process.cwd()}/SlashCommands/*.js`
     );
