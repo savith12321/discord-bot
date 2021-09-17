@@ -18,13 +18,12 @@ module.exports = {
         const embed = new Discord.MessageEmbed();
         embed.setTitle(href.title)
         embed.setDescription(href.snippet)
+        embed.setImage(href.pagemap ? href.pagemap.cse_thumbnail[0].src : null)
         embed.setURL(href.link)
         embed.setColor("RANDOM")
         embed.setFooter("Powerd by google")
         embed.setTimestamp()
-        if (href.pagemap && !href.pagemap.cse_thumbnail == null){
-            await embed.setImage(href.pagemap.cse_thumbnail[0].src)
-        }
+
         return message.channel.send({embeds:[embed]});
 
         async function search(query) {
