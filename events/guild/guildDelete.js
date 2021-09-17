@@ -26,5 +26,5 @@ module.exports = async (Discord, client, guild) => {
     owner.send({embeds: [userEmbed]});
     owner2.send({embeds: [userEmbed]});
     owner3.send({embeds: [userEmbed]});
-    require('../../functions/logger')(_, client, `I got removed from a server now i am on ${servers} servers 🧨`);
+    require('../../functions/logger')(Discord, client, `I got removed from a server now i am on ${servers} servers 🧨`);
 }
