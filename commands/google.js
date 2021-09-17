@@ -22,8 +22,8 @@ module.exports = {
         embed.setColor("RANDOM")
         embed.setFooter("Powerd by google")
         embed.setTimestamp()
-        if (href.pagemap && !href.pagemap.cse_thumbnail[0].src == null){
-            embed.setImage(href.pagemap.cse_thumbnail[0].src)
+        if (href.pagemap && !href.pagemap.cse_thumbnail[0] == null){
+            embed.setImage(href.pagemap.cse_thumbnail[0])
         }
         return message.channel.send({embeds:[embed]});
 
