@@ -32,7 +32,7 @@ module.exports = {
             const { body } = await request.get('https://www.googleapis.com/customsearch/v1').query({
                 key: googleKey,
                 cx: cxs,
-                safe: "on",
+                safe: "off",
                 q: query
             });
 
