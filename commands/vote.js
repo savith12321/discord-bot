@@ -4,12 +4,6 @@ module.exports = {
     cooldown:10,
     description: "this is a ping command!",
     execute(message, args, client){
-        const embed = new Discord.MessageEmbed();
-        embed.addField("Vote us on Top.gg!", "[`VOTE NOW!`](https://top.gg/bot/874131652920614942/vote)");
-        embed.addField("Vote us on discordbotlist.com","[`VOTE NOW!`](https://discordbotlist.com/bots/heat-5417/upvote)")
-        embed.setColor("RANDOM")
-        embed.setTitle("Vote For Heat :)")
-        embed.setTimestamp();
         const row = new Discord.MessageActionRow().addComponents(
             new Discord.MessageButton()
             .setLabel("Vote us on Top.gg")
@@ -27,7 +21,7 @@ module.exports = {
             .setStyle("LINK")
 
         );
-        message.channel.send({embeds:[embed], components : [row]})
+        message.channel.send({content: ":888314189616128000: hey you want to vote for us, thank you :888314189616128000:", components : [row]})
 
     }
 }
