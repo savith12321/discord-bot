@@ -18,7 +18,7 @@ module.exports = {
                     .setFooter("For dog lovers only")
 
                     interaction.followUp({embeds:[embed]});
-
+                
             })
     }
 };
