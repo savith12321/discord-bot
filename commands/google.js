@@ -23,7 +23,7 @@ module.exports = {
         embed.setFooter("Powerd by google")
         embed.setTimestamp()
         if (href.pagemap && !href.pagemap.cse_thumbnail == null){
-            await embed.setImage(href.pagemap.cse_thumbnail[0])
+            await embed.setImage(href.pagemap.cse_thumbnail[0].src)
         }
         return message.channel.send({embeds:[embed]});
 
