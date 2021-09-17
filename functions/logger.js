@@ -1,5 +1,5 @@
 const {log} = require("../data/channels")
-module.exports =(Discord, client, log_body) => {
+module.exports = async (Discord, client, log_body) => {
     const channel = await client.channels.fetch(log).catch(() =>{});
     let date_ob = new Date();
 
