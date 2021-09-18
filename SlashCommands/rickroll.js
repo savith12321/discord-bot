@@ -5,6 +5,6 @@ module.exports = {
     run: async (client, interaction, args) => {
         const user  = interaction.options.getString("user");
 
-        interaction.followUp({ content: `rick roll bait sent to ${user.username}`, ephemeral: true });
+        interaction.followUp({ content: `rick roll bait sent to ${user}`, ephemeral: true });
     }
 };
