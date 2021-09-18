@@ -8,7 +8,7 @@ var axios = require('axios').default;
 module.exports = async (Discord, client, message) => {
     //console.log('message');
     if(message.author.bot)return;
-    require('../../functions/logger')(Discord, client, `${message.author.username}#${message.author.discriminator} sent :- ${message.content} on ${message.guild.name}(${message.guild.id}) at ${message.channel}`);
+    //require('../../functions/logger')(Discord, client, `${message.author.username}#${message.author.discriminator} sent :- ${message.content} on ${message.guild.name}(${message.guild.id}) at ${message.channel}`);
     if (message.guild == null) return message.reply("sorry we spport guild commands for now.");
     await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
         if (!data) {
