@@ -5,7 +5,7 @@ const canva = new CanvasSenpai();
 module.exports = async(Discord, client, member) => {
     console.log('hi')
     console.log('member joined')
-    require('../../functions/logger')(Discord, client, `${member.displayName} Joind a new server.`);
+    //require('../../functions/logger')(Discord, client, `${member.displayName} Joind a new server.`);
     let profileData;
     try {
       profileData = await profileSchema.findOne({ UserID: member.id });
