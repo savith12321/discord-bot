@@ -8,9 +8,9 @@ module.exports = {
         .setDescription(interaction.options.getString("description"))
         .setTimestamp()
         .setColor("RANDOM")
-        let msg = await interaction.followUp({ embeds:[pollEmbed]});
-
-        await msg.react("👍️")
-        await msg.react("👎️")
+        let msg = await interaction.channel.send({ embeds:[pollEmbed]});
+        interaction.followUp("poll created")
+        await msg.react("👍️");
+        await msg.react("👎️");
     }
 };
