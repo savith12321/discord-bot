@@ -1,4 +1,4 @@
-const prefixSchema = require('../models/prefix-schema');
+const prefixSchema = require('../../models/prefix-schema');
 module.exports = async (Discord, client, interaction) => {
     if (interaction.isCommand()) {
         await interaction.deferReply().catch(() => {});
