@@ -18,7 +18,7 @@ module.exports = async (Discord, client, message) => {
                 prefix: 'lol '
             }).save();
             message.channel.send('setting you a prefix pls type `lol help` for help!');
-        }
+        }else{
         let profileData;
         try {
           profileData = await profileSchema.findOne({ UserID: message.author.id });
@@ -89,7 +89,7 @@ module.exports = async (Discord, client, message) => {
                   });
             }
         });
-        
+      }
     });
 
 }

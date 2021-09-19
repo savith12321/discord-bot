@@ -25,9 +25,11 @@ module.exports = async (Discord, client, interaction) => {
                     guildName: interaction.guild.name,
                     prefix: 'lol '
                 }).save();
-            }
+                interaction.followUp("setting you a prefix pls type `lol help` for help!");
+            }else{
             let guildprefix = data.prefix;
             cmd.run(client, interaction, args, guildprefix);
+            }
         });
     }
 }
