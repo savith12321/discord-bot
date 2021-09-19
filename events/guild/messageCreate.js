@@ -18,78 +18,78 @@ module.exports = async (Discord, client, message) => {
                 prefix: 'lol '
             }).save();
             message.channel.send('setting you a prefix pls type `lol help` for help!');
-        }else{
-            let profileData;
-            try {
-              profileData = await profileSchema.findOne({ UserID: message.author.id });
-              if (!profileData && message.author.bot == false) {
-                let profile = await profileSchema.create({
-                  UserID: message.author.id,
-                  UserName: message.author.username,
-                  wollet: 500,
-                  bank: 0,
-                });
-                profile.save();
-              }
-            } catch (err) {
-              console.log(err);
-            }
-            guildprefix = data.prefix;
-            if (message.guild == null) guildprefix = 'lol ';
-            //console.log(guildprefix)
-            if (!message.content.toLowerCase().startsWith(guildprefix) || message.author.bot) return;
-            const args = message.content.slice(guildprefix.length).split(/ +/);
-            const cmd = args.shift().toLowerCase();
-
-            const command = client.commands.get(cmd);
-            if(!command){
-              return;
-            }
-            if(message.author.id == '801752135850655755'){
-                if(command) command.execute(message, args, client, guildprefix);
-                return;
-            }
-            
-            if(!cooldowns.has(command.name.catch)){
-                cooldowns.set(command.name, new Discord.Collection());
-            }
-
-            const current_time = Date.now();
-            const time_stamps = cooldowns.get(command.name);
-            const cooldown_amount = (command.cooldown) * 1000;
-            if(time_stamps.has(message.author.id) ){
-                const expiration_time = time_stamps.get(message.author.id) + cooldown_amount;
-
-                if(current_time < expiration_time){
-                    const time_left = (expiration_time - current_time) / 1000;
-
-                    return message.reply(`Please wait ${time_left.toFixed(1)} more seconds before using ${command.name} command (if command cooldowns are too long please feedback me with 'lol feedback <content>')`)
-                    .then((msg) => {
-                        setTimeout(() => msg.delete(), 7000);
-                        setTimeout(() => message.delete(), 3000);
-                      })
-                      .catch((err) => {
-                        throw err;
-                      });
-                }
-            }
-            time_stamps.set(message.author.id, current_time);
-            setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
-            await blacklistSchema.findOne({ userID: message.author.id }, async(err, data) => {
-                if(!data){
-                    if(command) command.execute(message, args, client, guildprefix)
-                }else{
-                    message.reply('you have bean black listed because of ```' + data.reason + '``` and if you think this is a mistake pls contact `superN00b#7400`')
-                    .then((msg) => {
-                        setTimeout(() => msg.delete(), 7000);
-                        setTimeout(() => message.delete(), 3000);
-                      })
-                      .catch((err) => {
-                        throw err;
-                      });
-                }
-            });
         }
+        let profileData;
+        try {
+          profileData = await profileSchema.findOne({ UserID: message.author.id });
+          if (!profileData && message.author.bot == false) {
+            let profile = await profileSchema.create({
+              UserID: message.author.id,
+              UserName: message.author.username,
+              wollet: 500,
+              bank: 0,
+            });
+            profile.save();
+          }
+        } catch (err) {
+          console.log(err);
+        }
+        guildprefix = data.prefix;
+        if (message.guild == null) guildprefix = 'lol ';
+        //console.log(guildprefix)
+        if (!message.content.toLowerCase().startsWith(guildprefix) || message.author.bot) return;
+        const args = message.content.slice(guildprefix.length).split(/ +/);
+        const cmd = args.shift().toLowerCase();
+
+        const command = client.commands.get(cmd);
+        if(!command){
+          return;
+        }
+        if(message.author.id == '801752135850655755'){
+            if(command) command.execute(message, args, client, guildprefix);
+            return;
+        }
+        
+        if(!cooldowns.has(command.name.catch)){
+            cooldowns.set(command.name, new Discord.Collection());
+        }
+
+        const current_time = Date.now();
+        const time_stamps = cooldowns.get(command.name);
+        const cooldown_amount = (command.cooldown) * 1000;
+        if(time_stamps.has(message.author.id) ){
+            const expiration_time = time_stamps.get(message.author.id) + cooldown_amount;
+
+            if(current_time < expiration_time){
+                const time_left = (expiration_time - current_time) / 1000;
+
+                return message.reply(`Please wait ${time_left.toFixed(1)} more seconds before using ${command.name} command (if command cooldowns are too long please feedback me with 'lol feedback <content>')`)
+                .then((msg) => {
+                    setTimeout(() => msg.delete(), 7000);
+                    setTimeout(() => message.delete(), 3000);
+                  })
+                  .catch((err) => {
+                    throw err;
+                  });
+            }
+        }
+        time_stamps.set(message.author.id, current_time);
+        setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
+        await blacklistSchema.findOne({ userID: message.author.id }, async(err, data) => {
+            if(!data){
+                if(command) command.execute(message, args, client, guildprefix)
+            }else{
+                message.reply('you have bean black listed because of ```' + data.reason + '``` and if you think this is a mistake pls contact `superN00b#7400`')
+                .then((msg) => {
+                    setTimeout(() => msg.delete(), 7000);
+                    setTimeout(() => message.delete(), 3000);
+                  })
+                  .catch((err) => {
+                    throw err;
+                  });
+            }
+        });
+        
     });
 
 }
