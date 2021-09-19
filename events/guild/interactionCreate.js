@@ -18,14 +18,13 @@ module.exports = async (Discord, client, interaction) => {
             } else if (option.value) args.push(option.value);
         }
         interaction.member = interaction.guild.members.cache.get(interaction.user.id);
-        await prefixSchema.findOne({ guildId: message.guild.id }, async(err, data) => {
+        await prefixSchema.findOne({ guildId: interaction.guild.id }, async(err, data) => {
             if (!data) {
                 await new prefixSchema({
-                    guildId: message.guild.id,
-                    guildName: message.guild.name,
+                    guildId: interaction.guild.id,
+                    guildName: interaction.guild.name,
                     prefix: 'lol '
                 }).save();
-                message.channel.send('setting you a prefix pls type `lol help` for help!');
             }
             let guildprefix = data.prefix;
             cmd.run(client, interaction, args, guildprefix);
