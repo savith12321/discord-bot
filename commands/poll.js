@@ -13,7 +13,7 @@ module.exports = {
        .setColor("RANDOM");
 
        let reactionMessage = await message.channel.send({embeds : [pollEmbed]});
-       await reactionMessage.react("👍️");
-       await reactionMessage.react("👎️");//lol
+       await reactionMessage.react("👍");
+       await reactionMessage.react("👎");//lol
     }
 }
