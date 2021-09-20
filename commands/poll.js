@@ -14,6 +14,6 @@ module.exports = {
 
        let reactionMessage = message.channel.send({embeds : [pollEmbed]});
        reactionMessage.react("👍️");
-       reactionMessage.react("👎️");
+       reactionMessage.react("👎️");//lol
     }
 }
