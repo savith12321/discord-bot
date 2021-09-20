@@ -3,7 +3,7 @@ module.exports = {
     name: 'poll',
     cooldown:10,
     description: "this is a ping command!",
-    execute(message, args, client){
+    async execute(message, args, client){
        if(!args) return message.reply("poll can be null");
        const title_and_body = args.join(" ").split('|');
        let pollEmbed = new Discord.MessageEmbed()
@@ -12,8 +12,8 @@ module.exports = {
        .setTimestamp()
        .setColor("RANDOM");
 
-       let reactionMessage = message.channel.send({embeds : [pollEmbed]});
-       reactionMessage.react("👍️");
-       reactionMessage.react("👎️");//lol
+       let reactionMessage = await message.channel.send({embeds : [pollEmbed]});
+       await reactionMessage.react("👍️");
+       await reactionMessage.react("👎️");//lol
     }
 }
