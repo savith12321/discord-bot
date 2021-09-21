@@ -10,7 +10,7 @@ module.exports = {
             .get(url)
             .then(async (res) => {
                 interaction.followUp("```"+res.data[0]+" is your new nick name```").catch((err) =>{ console.log(err)});
-                await interaction.member.setNickname(res.data[0]);
+                await interaction.guild.members.get(client.user.id).setNickname(res.data[0]);
             });
         //interaction.followUp({ content: `lol`, ephemeral: true });
     }
