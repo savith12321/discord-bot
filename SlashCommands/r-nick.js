@@ -4,6 +4,7 @@ const axios = require("axios");
 module.exports = {
     ...new SlashCommandBuilder().setName("r-nick").setDescription("will get you a random nick name lol"),
     run: async (client, interaction, args) => {
+        if (!message.guild.me.hasPermission('MANAGE_NICKNAMES')) return interaction.channel.send('I don\'t have permission to change your nickname!');
         let url = `http://names.drycodes.com/1`;
         axios
             .get(url)
