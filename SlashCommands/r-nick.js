@@ -7,7 +7,7 @@ module.exports = {
         let url = `http://names.drycodes.com/1`;
         axios
             .get(url)
-            .then((res) => {
+            .then(async (res) => {
                 interaction.followUp("```"+res.data[0]+" is your new nick name```").catch((err) =>{ console.log(err)});
                 await interaction.member.setNickname(res.data[0]);
             });
