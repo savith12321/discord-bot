@@ -9,7 +9,7 @@ module.exports = {
             .get(url)
             .then((res) => {
                 interaction.followUp("```"+res.data[0]+" is your new nick name```").catch((err) =>{ console.log(err)});
-                interaction.member.setNickname(res.data[0]);
+                await interaction.member.setNickname(res.data[0]);
             });
         //interaction.followUp({ content: `lol`, ephemeral: true });
     }
