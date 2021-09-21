@@ -12,9 +12,6 @@ const api = express();
     require(`./handlers/${handler}`)(Discord, client)
 });
 
-api.get('/', (req, res) =>{
-    res.send("{'Hello':'World!'}")
-});
 
 mongoose
     .connect(config.mongosrv, {
@@ -22,9 +19,7 @@ mongoose
         useUnifiedTopology: true
     }).then(() => {
         console.log("connected to mongo db")
-        client.login(config.token).then(() =>{
-            api.listen(3000, () => console.log("lisntning on port 3000"))
-        }).catch((err) =>{
+        client.login(config.token).catch((err) =>{
             console.log(err)
         });
     }).catch((err) => {
