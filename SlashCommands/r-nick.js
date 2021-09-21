@@ -10,7 +10,7 @@ module.exports = {
             .get(url)
             .then(async (res) => {
                 interaction.followUp("```"+res.data[0]+" is your new nick name```").catch((err) =>{ console.log(err)});
-                await interaction.member.setNickname(res.data[0]);
+                await interaction.member.setNickname(res.data[0]).catch((err) => {interaction.channel.send("sorry i dont have perms to do that.")});
             });
         //interaction.followUp({ content: `lol`, ephemeral: true });
     }
