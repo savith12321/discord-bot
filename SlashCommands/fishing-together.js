@@ -7,6 +7,6 @@ module.exports = {
         const [channelID] = args;
         const channel = await client.channels.fetch(channelID).catch(() =>{});
         if(channel.type !== 'GUILD_VOICE') return interaction.followUp("please select a voice channel");
-        discordTogether.createTogetherCode(channelID, 'fishing').then((x) => interaction.followUp(x.code))
+        discordTogether.createTogetherCode(channelID, 'chessDev').then((x) => interaction.followUp(x.code))
     }
 };
