@@ -6,7 +6,7 @@ module.exports = {
     run: async (client, interaction, args) => {
         const [channelID] = args;
         const channel = await client.channels.fetch(channelID).catch(() =>{});
-        if(channel.type !== 'GUILD_VOICE') return interaction.flowUp("please select a voice channel");
-        discordTogether.createTogetherCode(channelID, 'youtube').then((x) => interaction.flowUp(x.code))
+        if(channel.type !== 'GUILD_VOICE') return interaction.followUp("please select a voice channel");
+        discordTogether.createTogetherCode(channelID, 'youtube').then((x) => interaction.followUp(x.code))
     }
 };
