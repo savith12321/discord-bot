@@ -27,7 +27,7 @@ module.exports = {
             )
         user = client.users.cache.get(message.author.id);
         let fire_reaction = await message.react("🔥");
-        if (args[0] === "no-dm") return message.reply({embeds:[helpEmbed], components:[row]});
+        if (args[0] === "no-dm") return message.reply({embeds:[helpEmbed]});
         user.send({embeds:[helpEmbed]})
         .catch(async (err) => {
             console.log(err)
