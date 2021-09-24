@@ -7,6 +7,6 @@ module.exports = {
         const [channelID] = args;
         const channel = await client.channels.fetch(channelID).catch(() =>{});
         if(channel.type !== 'GUILD_VOICE') return interaction.followUp("please select a voice channel");
-        discordTogether.createTogetherCode(channelID, 'poker').then((x) => interaction.followUp(`[click here to play the activity](${x.code})`))
+        discordTogether.createTogetherCode(channelID, 'poker').then((x) => interaction.followUp(`[click here to play the activity on (${channel.name})](${x.code})`))
     }
 };
