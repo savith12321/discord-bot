@@ -7,7 +7,7 @@ module.exports = {
       colors = ['#483d8b', '#7fff00', '#dc143c', '#ecf05b', '#41b1ed', '#e16ff2', '#f6a3cf', '#9cf063', '#32ecad']
       const userEmbed = new Discord.MessageEmbed()
       .setTitle("About Heat")
-      .addField("Made by:", "superN00b#7400, Naman#7653, SniproGamer#1045", true)
+      .addField("Made by:", "superN00b#7400, Naman#7653, SniproGamer#1045")
       .addField("Server Count", `${client.guilds.cache.size}`, true)
       .addField("Member Count", `${client.users.cache.size}`, true)
       .addField("Ping", `${Math.round(client.ws.ping)}ms`, true)
