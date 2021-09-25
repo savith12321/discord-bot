@@ -8,6 +8,8 @@ module.exports = {
       const userEmbed = new Discord.MessageEmbed()
       .setTitle("About Heat")
       .addField("👑 Made by:", "┕superN00b#7400, Naman#7653, SniproGamer#1045")
+      .addField("🤖 Bot Name", "┕Heat", true)
+      .addField("🏷️ Bot Tag", `┕${client.user.tag}`, true)
       .addField("📂 Server Count", `┕${client.guilds.cache.size}`, true)
       .addField("📂 Member Count", `┕${client.users.cache.size}`, true)
       .addField("🏓 Ping", `┕${Math.round(client.ws.ping)}ms`, true)
