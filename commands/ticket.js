@@ -32,6 +32,7 @@ module.exports = {
     );
 
     collector.on("collect", (reaction, user) => {
+      if(user.bot)return;
       switch (reaction.emoji.name) {
         case "🔒":
           channel.permissionOverwrites.edit(message.author, { SEND_MESSAGES: false })
