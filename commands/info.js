@@ -12,6 +12,8 @@ module.exports = {
       .addField("📂 Member Count", `┕${client.users.cache.size}`, true)
       .addField("🏓 Ping", `┕${Math.round(client.ws.ping)}ms`, true)
       .addField("🏵️ Latency", `┕${Date.now() - message.createdTimestamp}ms`, true)
+      .addField("📘 node", "┕v16.x")
+      .addField("📗 discord.js", "┕v13.x")
       .setThumbnail("https://media.discordapp.net/attachments/834658912422592553/835052092766158899/Untitled_design_1.png")
       .setFooter("Thanx for adding our bot c:")
       .setTimestamp()
