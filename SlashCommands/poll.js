@@ -1,16 +1,3 @@
-/*
-const title_and_body = args.join(" ").split('|');
-       let pollEmbed = new Discord.MessageEmbed()
-       .setTitle(title_and_body[0])
-       .setDescription(title_and_body[1])
-       .setTimestamp()
-       .setColor("RANDOM");
-
-       let reactionMessage = await message.channel.send({embeds : [pollEmbed]});
-       await reactionMessage.react("👍");
-       await reactionMessage.react("👎");
-*/
-
 const { Client, CommandInteraction } = require("discord.js");
 const {SlashCommandBuilder} = require("@discordjs/builders")
 module.exports = {

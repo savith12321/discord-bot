@@ -46,12 +46,8 @@ module.exports = {
     message.channel
       .send(`We will be right with you! ${channel}`)
       .then((msg) => {
-        setTimeout(() => msg.delete(), 7000).catch((err) => {
-          console.log(err)
-        });
-        setTimeout(() => message.delete(), 3000).catch((err) => {
-          console.log(err)
-        });
+        setTimeout(() => msg.delete(), 7000)
+        setTimeout(() => message.delete(), 3000)
       })
       .catch((err) => {
         console.log(err)
