@@ -34,11 +34,11 @@ module.exports = {
     collector.on("collect", (reaction, user) => {
       switch (reaction.emoji.name) {
         case "🔒":
-          channel.permissionOverwrites.edit(message.author, { SEND_MESSAGES: false }).catch(err => {console.log(err)});
+          channel.permissionOverwrites.edit(message.author, { SEND_MESSAGES: false })
           break;
         case "⛔":
           channel.send("Deleting this channel in 5 seconds!");
-          setTimeout(() => channel.delete(), 5000).catch(err => {console.log(err)});
+          setTimeout(() => channel.delete(), 5000)
           break;
       }
     });
