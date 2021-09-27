@@ -1,6 +1,7 @@
 const { glob } = require("glob");
 const { promisify } = require("util");
 const globPromise = promisify(glob);
+ 
 module.exports = async (_, client) => {
     require('../../functions/logger')(_, client, 'Bot is online.');
     const slashCommands = await globPromise(
@@ -23,9 +24,9 @@ module.exports = async (_, client) => {
     console.log(`bot is ready ${servers} ${members}`);
     //await client.application.commands.set([]);
     //await client.application.commands.set(arrayOfSlashCommands);
-    //await client.guilds.cache
-    //.get("882850079533309962")
-    //.commands.set(arrayOfSlashCommands);
+    await client.guilds.cache
+    .get("882850079533309962")
+    .commands.set(arrayOfSlashCommands);
 
 
 }
