@@ -23,12 +23,59 @@ module.exports = {
                 new Discord.MessageSelectMenu()
                 .setCustomId("help-message-select-menu")
                 .setPlaceholder("please select something")
-                .addOptions([{
-                    label: 'lol',
-                    value: 'lol',
-                    description: "lol lol lol lol"
-                }])
-            )
+                .addOptions(
+                    [
+                        {
+                            label: 'About',
+                            value: 'about',
+                            description: "this will show you bots About commands",
+                            emoji: 'ℹ️'
+                        },
+                        {
+                            label: 'Misc',
+                            value: 'misc',
+                            description: "this will show you bots Miscellaneous commands",
+                            emoji: '🎈'
+                        },
+                        {
+                            label: 'Fun',
+                            value: 'fun',
+                            description: "this will show you bots Fun commands",
+                            emoji: '🎪'
+                        },
+                        {
+                            label: 'Animals',
+                            value: 'animals',
+                            description: "this will show you bots animals commands",
+                            emoji: '🐯'
+                        },
+                        {
+                            label: 'Social media',
+                            value: 'social',
+                            description: "this will show you bots Social media commands",
+                            emoji: '🌐'
+                        },
+                        {
+                            label: 'Moderation',
+                            value: 'mod',
+                            description: "this will show you bots Moderation commands",
+                            emoji: '🔨'
+                        },
+                        {
+                            label: 'Memy',
+                            value: 'meme',
+                            description: "this will show you bots Meme commands",
+                            emoji: '😂'
+                        },
+                        {
+                            label: 'Ticket',
+                            value: 'ticket',
+                            description: "this will show you bots ticket commands",
+                            emoji: '😂'
+                        },
+                    ]
+                )
+            ),
         user = client.users.cache.get(message.author.id);
         let fire_reaction = await message.react("🔥");
         if (args[0] === "no-dm") return message.reply({embeds:[helpEmbed] , components : [row]});
