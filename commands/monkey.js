@@ -16,7 +16,7 @@ module.exports = {
                     .setImage(res.data.url)
                     .setTimestamp()
                     .setColor(colors[Math.floor(Math.random() * colors.length)])
-                    .setFooter("For monkeys lovers only altho if ur a monkey")
+                    .setFooter("For monkeys lovers only altho ur a monkey")
   
                 message.channel.send({embeds:[embed]});
   
