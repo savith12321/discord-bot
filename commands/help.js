@@ -152,6 +152,7 @@ module.exports = {
             }else if(value == 'ticket'){
                 edit_msg.edit({embeds: [Ticket], components : [row]})
             }
+            collected.deferUpdate();
         });
     }
 }
