@@ -70,7 +70,7 @@ module.exports = {
                 )
             )
         let fire_reaction = await message.react("🔥");
-        let edit_msg = message.channel.send({embeds:[helpEmbed] , components : [row]});
+        let edit_msg = await message.channel.send({embeds:[helpEmbed] , components : [row]});
 
         let About = new Discord.MessageEmbed()
         .setTitle("ℹ️ About")
