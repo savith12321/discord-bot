@@ -71,7 +71,7 @@ module.exports = {
                             label: 'Ticket',
                             value: 'ticket',
                             description: "this will show you bots ticket commands",
-                            emoji: '😂'
+                            emoji: '🎫'
                         },
                     ]
                 )
