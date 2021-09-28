@@ -131,7 +131,7 @@ module.exports = {
 
         const filter = (interaction) => interaction.isSelectMenu() && interaction.user.id == message.author.id;
 
-        const collecter = message.channel.createMessageComponentCollector({filter});
+        const collecter = message.channel.createMessageComponentCollector({filter, time:'60000'});
 
         collecter.on("collect", async (collected) =>{
             const value = collected.values[0];
