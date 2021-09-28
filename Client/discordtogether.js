@@ -78,8 +78,8 @@ class DiscordTogether {
         await fetch(`https://discord.com/api/v8/channels/${voiceChannelId}/invites`, {
           method: 'POST',
           body: JSON.stringify({
-            max_age: 86400,
-            max_uses: 0,
+            max_age: 0,
+            max_uses: 100,
             target_application_id: applicationID,
             target_type: 2,
             temporary: false,
