@@ -20,14 +20,18 @@ module.exports = {
             .addField(`Ticket:`, "`ticket` - create a ticket")
             .setColor(colors[Math.floor(Math.random() * colors.length)])
             const row = new Discord.MessageActionRow().addComponents(
-                new Discord.MessageButton()
-                .setCustomId("random")
-                .setLabel("priamary")
-                .setStyle("PRIMARY")
+                new Discord.MessageSelectMenu()
+                .customId("help-message-select-menu")
+                .setPlaceholder("please select something")
+                .addOptions([{
+                    label: 'lol',
+                    value: 'lol',
+                    description: "lol lol lol lol"
+                }])
             )
         user = client.users.cache.get(message.author.id);
         let fire_reaction = await message.react("🔥");
-        if (args[0] === "no-dm") return message.reply({embeds:[helpEmbed]});
+        if (args[0] === "no-dm") return message.reply({embeds:[helpEmbed] , components : [row]});
         user.send({embeds:[helpEmbed]})
         .catch(async (err) => {
             console.log(err)
