@@ -131,7 +131,7 @@ module.exports = {
 
         const filter = (interaction) => interaction.isSelectMenu() && interaction.user.id == message.author.id;
 
-        const collecter = message.channel.createMessageComponentCollector({filter, time:'60000'});
+        const collecter = message.channel.createMessageComponentCollector({filter, time:'180000'});
 
         collecter.on("collect", async (collected) =>{
             const value = collected.values[0];
@@ -152,6 +152,7 @@ module.exports = {
             }else if(value == 'ticket'){
                 await edit_msg.edit({embeds: [Ticket], components : [row]})
             }
+            
             collected.deferUpdate();
         });
     }
