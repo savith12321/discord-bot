@@ -21,7 +21,7 @@ module.exports = {
             .setColor(colors[Math.floor(Math.random() * colors.length)])
             const row = new Discord.MessageActionRow().addComponents(
                 new Discord.MessageSelectMenu()
-                .customId("help-message-select-menu")
+                .setCustomId("help-message-select-menu")
                 .setPlaceholder("please select something")
                 .addOptions([{
                     label: 'lol',
