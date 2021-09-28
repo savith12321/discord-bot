@@ -136,21 +136,21 @@ module.exports = {
         collecter.on("collect", async (collected) =>{
             const value = collected.values[0];
             if(value == 'about'){
-                edit_msg.edit({embeds: [About], components : [row]})
+                await edit_msg.edit({embeds: [About], components : [row]})
             }else if(value == 'misc'){
-                edit_msg.edit({embeds: [Misc], components : [row]})
+                await edit_msg.edit({embeds: [Misc], components : [row]})
             }else if(value == 'fun'){
-                edit_msg.edit({embeds: [Fun], components : [row]})
+                await edit_msg.edit({embeds: [Fun], components : [row]})
             }else if(value == 'animals'){
-                edit_msg.edit({embeds: [Animals], components : [row]})
+                await edit_msg.edit({embeds: [Animals], components : [row]})
             }else if(value == 'social'){
-                edit_msg.edit({embeds: [Social], components : [row]})
+                await edit_msg.edit({embeds: [Social], components : [row]})
             }else if(value == 'mod'){
-                edit_msg.edit({embeds: [Moderation], components : [row]})
+                await edit_msg.edit({embeds: [Moderation], components : [row]})
             }else if(value == 'meme'){
-                edit_msg.edit({embeds: [meme], components : [row]})
+                await edit_msg.edit({embeds: [meme], components : [row]})
             }else if(value == 'ticket'){
-                edit_msg.edit({embeds: [Ticket], components : [row]})
+                await edit_msg.edit({embeds: [Ticket], components : [row]})
             }
             collected.deferUpdate();
         });
