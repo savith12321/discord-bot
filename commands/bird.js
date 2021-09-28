@@ -9,11 +9,11 @@ module.exports = {
         axios
             .get('https://api.monkedev.com/attachments/monkey')
             .then((res) => {
-                console.log("RES:", res.data[0].url)
-                const cat = res.data[0].url
+                console.log("RES:", res.data.url)
+                const cat = res.data.url
                 const embed = new MessageEmbed()
                     .setTitle("u like birds ?")
-                    .setImage(res.data[0].url)
+                    .setImage(res.data.url)
                     .setTimestamp()
                     .setColor(colors[Math.floor(Math.random() * colors.length)])
                     .setFooter("For bird lovers only")
