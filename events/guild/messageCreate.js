@@ -63,10 +63,9 @@ module.exports = async (Discord, client, message) => {
             if(current_time < expiration_time){
                 const time_left = (expiration_time - current_time) / 1000;
 
-                return message.reply(`Please wait ${time_left.toFixed(1)} more seconds before using ${command.name} command (if command cooldowns are too long please feedback me with 'lol feedback <content>')`)
+                return message.reply(`Please wait ${time_left.toFixed(1)} more seconds before using ${command.name} command`)
                 .then((msg) => {
                     setTimeout(() => msg.delete(), 7000);
-                    setTimeout(() => message.delete(), 3000);
                   })
                   .catch((err) => {
                     throw err;
