@@ -50,7 +50,7 @@ module.exports = async (Discord, client, message) => {
             return;
         }
         
-        if(!cooldowns.has(command.name.catch)){
+        if(!cooldowns.has(command.name)){
             cooldowns.set(command.name, new Discord.Collection());
         }
 
