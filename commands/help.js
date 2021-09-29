@@ -71,14 +71,12 @@ module.exports = {
             )
             const row2 = new Discord.MessageActionRow().addComponents(
                 new Discord.MessageButton()
-                .setCustomId("invite-me-button")
                 .setStyle("LINK")
                 .setURL("https://discord.com/oauth2/authorize?client_id=874131652920614942&permissions=8589934591&scope=bot%20applications.commands")
                 .setLabel("invite me")
                 .setEmoji("📎"),
 
                 new Discord.MessageButton()
-                .setCustomId("join-my-support-server-button")
                 .setStyle("LINK")
                 .setURL("https://discord.gg/uJ3ThhyTvP")
                 .setLabel("support server")
