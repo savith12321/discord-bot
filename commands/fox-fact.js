@@ -12,7 +12,7 @@ module.exports = {
                 console.log("RES:", res.data.fact)
                 const cat = res.data.fact
                 const embed = new MessageEmbed()
-                    .setTitle(res.data.fact)
+                    .setDescription(res.data.fact)
                     .setTimestamp()
                     .setColor(colors[Math.floor(Math.random() * colors.length)])
   
