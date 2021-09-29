@@ -107,7 +107,7 @@ module.exports = {
 
         let Animals = new Discord.MessageEmbed()
         .setTitle("🐯 Animals")
-        .setDescription("`cat` - send a random image of cat\n`dog` - send a random image of a dog\n`kangaroo` - return a random image of kangaroo \n `kola` - return a random image of kola \n `monkey` - send's a image of you \n `bird` - sends a image of a bird \n `cat-fact` - sends a fact about cats \n `dog-fact` - sends a fact about dogs \n `monkey-fact` - sends a fact about monkeys")
+        .setDescription("`cat` - send a random image of cat\n`dog` - send a random image of a dog\n`kangaroo` - return a random image of kangaroo \n `kola` - return a random image of kola \n `monkey` - send's a image of you \n `bird` - sends a image of a bird \n `cat-fact` - sends a fact about cats \n `dog-fact` - sends a fact about dogs \n `monkey-fact` - sends a fact about monkeys \n `panda-fact` - sends a fact about pandas \n `fox-fact` - sends facts about foxes \n `bird-fact` - sends facts about birds \n `koala-fact` - sends facts about koalas")
         .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
