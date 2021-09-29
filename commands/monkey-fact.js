@@ -1,7 +1,7 @@
 const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
 const axios = require("axios");
 module.exports = {
-    name: 'cat-fact',
+    name: 'monkey-fact',
     cooldown: 3,
     description: 'send a random monkey image',
     async execute (message, args, client){
