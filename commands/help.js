@@ -129,7 +129,7 @@ module.exports = {
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
 
 
-        const filter = (interaction) => interaction.isSelectMenu() && interaction.user.id == message.author.id;
+        const filter = (interaction) => interaction.isSelectMenu() && interaction.user.id == message.author.id && interaction.message.id == message.id ;
 
         const collecter = message.channel.createMessageComponentCollector({filter, time:'180000'});
 
