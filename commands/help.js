@@ -167,7 +167,7 @@ module.exports = {
             collected.deferUpdate();
         });
         collecter.on("end", () =>{
-            edit_msg.edit({content:"this message has bean expired please type `lol help` for a new one", embeds:[], components : [row]})
+            edit_msg.edit({content:"this message has bean expired please type `lol help` for a new one", embeds:[], components : []})
         })
     }
 }
