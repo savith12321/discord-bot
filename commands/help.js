@@ -145,7 +145,7 @@ module.exports = {
 
         const collecter = message.channel.createMessageComponentCollector({filter, time:'180000'});
         setTimeout(() =>{
-            await edit_msg.edit("This message has bean expired please use `lol help` to get this command back!")
+            edit_msg.edit("This message has bean expired please use `lol help` to get this command back!")
         }, 180)
         collecter.on("collect", async (collected) =>{
             const value = collected.values[0];
