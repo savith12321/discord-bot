@@ -143,7 +143,7 @@ module.exports = {
 
         const filter = (interaction) => interaction.isSelectMenu() && interaction.user.id == message.author.id && interaction.message.id == edit_msg.id ;
 
-        const collecter = message.channel.createMessageComponentCollector({filter, time:'180000'}).then(async () =>{ await edit_msg.edit("this command has bean expired please type `lol help to get this back`")});
+        const collecter = message.channel.createMessageComponentCollector({filter, time:'180000'})
         collecter.on("collect", async (collected) =>{
             const value = collected.values[0];
             if(value == 'about'){
@@ -166,5 +166,8 @@ module.exports = {
             
             collected.deferUpdate();
         });
+        collecter.on("end", () =>{
+            edit_msg.edit("this message has bean expired please type `lol help` for a new one")
+        })
     }
 }
