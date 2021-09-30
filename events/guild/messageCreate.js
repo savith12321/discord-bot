@@ -82,7 +82,6 @@ module.exports = async (Discord, client, message) => {
                 message.reply('you have bean black listed because of ```' + data.reason + '``` and if you think this is a mistake pls contact `superN00b#7400`')
                 .then((msg) => {
                     setTimeout(() => msg.delete(), 7000);
-                    setTimeout(() => message.delete(), 3000);
                   })
                   .catch((err) => {
                     throw err;
