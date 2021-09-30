@@ -15,7 +15,7 @@ module.exports = {
             const row = new Discord.MessageActionRow().addComponents(
                 new Discord.MessageSelectMenu()
                 .setCustomId("help-message-select-menu")
-                .setPlaceholder("please select something")
+                .setPlaceholder("click here to see the commands")
                 .addOptions(
                     [
                         {
@@ -100,7 +100,7 @@ module.exports = {
 
         let Fun = new Discord.MessageEmbed()
         .setTitle("🎪 Fun")
-        .setDescription("`heaven <@user>` - create a image of a heaven\n`iamspeed <@user>` - create a image of a iamspeed\n `triggered <@user>` - send a triggerd image with a users avatar \n`quote`- send a random quote\n`rps` - play rock paper scissors\n `grave` - send's a grave image \n `wasted` - make a GTA wasted image \n `80s <@user>` - sends <@user>'s avatar in 1980 style \n`ascii <text>` - sends <text> in ascii style\n`gay <@user>` - sends <@user>'s avatar in gay style \n`gun <@user>` - sends a image that <@user> is holding a gun \n`invert <@user>` - sends the avatar of <@user> in inverted colors \n `pixelate <@user>` - pixelate <@user>'s avatar \n`lyrics <name of a song>` - send lyrics of a song! \n `binaryencode <text>` - encode a text to binary \n `binarydecode <binary code>` - decode binary to text \n `countdown <number>` - count down from `<number>` to 0 \n `reverse <string>` - reverce the string from back to front \n `coinflip` - return Head or Tail \n `covid <country>` - send <country>'s covid19 statistics")
+        .setDescription("`heaven <@user>` - create a image of a heaven\n`iamspeed <@user>` - create a image of a iamspeed\n `triggered <@user>` - send a triggerd image with a users avatar \n`quote`- send a random quote\n`rps` - play rock paper scissors\n `grave` - send's a grave image \n `wasted` - make a GTA wasted image \n `80s <@user>` - sends <@user>'s avatar in 1980 style \n`ascii <text>` - sends <text> in ascii style\n`gay <@user>` - sends <@user>'s avatar in gay style \n`gun <@user>` - sends a image that <@user> is holding a gun \n`invert <@user>` - sends the avatar of <@user> in inverted colors \n `pixelate <@user>` - pixelate <@user>'s avatar \n`lyrics <name of a song>` - send lyrics of a song! \n `binaryencode <text>` - encode a text to binary \n `binarydecode <binary code>` - decode binary to text \n `countdown <number>` - count down from `<number>` to 0 \n `reverse <string>` - reverce the string from back to front \n `coinflip` - return Head or Tail \n `covid <country>` - send <country>'s covid19 statistics \n `emojify <text>` - convert <text> to emoji")
         .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
@@ -144,7 +144,9 @@ module.exports = {
         const filter = (interaction) => interaction.isSelectMenu() && interaction.user.id == message.author.id && interaction.message.id == edit_msg.id ;
 
         const collecter = message.channel.createMessageComponentCollector({filter, time:'180000'});
-
+        setTimeout(() =>{
+            await edit_msg.edit("This message has bean expired please use `lol help` to get this command back!")
+        }, 180)
         collecter.on("collect", async (collected) =>{
             const value = collected.values[0];
             if(value == 'about'){
