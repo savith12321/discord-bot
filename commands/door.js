@@ -11,7 +11,7 @@ module.exports = {
             // This gives you a 'Buffer', for Discord to create an attachment
             
             var attachment = new Discord.MessageAttachment(image, "youtube.png");
-            message.channel.send(attachment)
+            message.channel.send({files:[attachment]})
         })
     }
 }
