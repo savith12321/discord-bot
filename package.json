@@ -20,6 +20,7 @@
     "glob": "^7.1.7",
     "got": "^11.8.2",
     "jshint": "^2.12.0",
+    "memer-api": "^4.0.0",
     "minecraft-api": "^0.0.3",
     "mongoose": "^5.12.12",
     "node-fetch": "^2.6.1",
