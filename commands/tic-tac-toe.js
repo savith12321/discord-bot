@@ -8,7 +8,7 @@ module.exports = {
         const opponent = message.mentions.users.first();
         if (!opponent) return message.channel.send(`:Cross: **Please mention who you want to challenge at tictactoe.**`);
         const { TicTacToe } = require('weky')
-        const game = TicTacToe({
+        const game = new Calculator({
             message: message,
             opponent: opponent, // opponent
             xColor: 'red', // x's color
