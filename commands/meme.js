@@ -21,6 +21,6 @@ module.exports = {
             embed.setColor('RANDOM')
             embed.setFooter(`👍 ${memeUpvotes} 💬 ${memeNumComments}`)
             message.channel.send({embeds:[embed]});
-        })
+        });
     }
 }
