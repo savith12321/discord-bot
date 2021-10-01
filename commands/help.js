@@ -100,7 +100,7 @@ module.exports = {
 
         let Fun = new Discord.MessageEmbed()
         .setTitle("🎪 Fun")
-        .setDescription("`heaven <@user>` - create a image of a heaven\n`iamspeed <@user>` - create a image of a iamspeed\n `triggered <@user>` - send a triggerd image with a users avatar \n`quote`- send a random quote\n`rps` - play rock paper scissors\n `grave` - send's a grave image \n `wasted` - make a GTA wasted image \n `80s <@user>` - sends <@user>'s avatar in 1980 style \n`ascii <text>` - sends <text> in ascii style\n`gay <@user>` - sends <@user>'s avatar in gay style \n`gun <@user>` - sends a image that <@user> is holding a gun \n`invert <@user>` - sends the avatar of <@user> in inverted colors \n `pixelate <@user>` - pixelate <@user>'s avatar \n`lyrics <name of a song>` - send lyrics of a song! \n `binaryencode <text>` - encode a text to binary \n `binarydecode <binary code>` - decode binary to text \n `countdown <number>` - count down from `<number>` to 0 \n `reverse <string>` - reverce the string from back to front \n `coinflip` - return Head or Tail \n `covid <country>` - send <country>'s covid19 statistics \n `emojify <text>` - convert <text> to emoji")
+        .setDescription("`heaven <@user>` - create a image of a heaven\n`iamspeed <@user>` - create a image of a iamspeed\n `triggered <@user>` - send a triggerd image with a users avatar \n`quote`- send a random quote\n`rps` - play rock paper scissors\n `grave` - send's a grave image \n `wasted` - make a GTA wasted image \n `80s <@user>` - sends <@user>'s avatar in 1980 style \n`ascii <text>` - sends <text> in ascii style\n`gay <@user>` - sends <@user>'s avatar in gay style \n`gun <@user>` - sends a image that <@user> is holding a gun \n`invert <@user>` - sends the avatar of <@user> in inverted colors \n `pixelate <@user>` - pixelate <@user>'s avatar \n`lyrics <name of a song>` - send lyrics of a song! \n `binaryencode <text>` - encode a text to binary \n `binarydecode <binary code>` - decode binary to text \n `countdown <number>` - count down from `<number>` to 0 \n `reverse <string>` - reverce the string from back to front \n `coinflip` - return Head or Tail \n `covid <country>` - send <country>'s covid19 statistics \n `emojify <text>` - convert <text> to emoji \n `snake` - play snake!!")
         .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
@@ -128,7 +128,7 @@ module.exports = {
 
         let meme = new Discord.MessageEmbed()
         .setTitle("😂 Memey")
-        .setDescription("`meme` - random meme\n`chuck-joke` - random chuck joke")
+        .setDescription("`meme` - random meme\n`chuck-joke` - random chuck joke \n `door <@user>` - sends a door meme image \n `delete <@user>` - sends a meme delete image \n `hitler <@user>` - sends a hitler meme image \n `egg <@user> - sends egg meme image`")
         .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
