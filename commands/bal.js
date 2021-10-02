@@ -17,11 +17,11 @@ module.exports = {
                     profile.save();
                 }else{
                 let embed = new Discord.MessageEmbed()
-                .setTitle("🏦 Balance")
+                .setTitle("🏦・Balance")
                 .setColor("RANDOM")
                 .setTimestamp()
-                .addField("💶 Wollet:", data.wollet.toString())
-                .addField("💰️ Bank:", data.bank.toString());
+                .addField("💶・Wollet:", data.wollet.toString())
+                .addField("💰️・Bank:", data.bank.toString());
                 message.channel.send({embeds:[embed]});
                 }
             });
