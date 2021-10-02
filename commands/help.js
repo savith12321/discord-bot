@@ -128,7 +128,7 @@ module.exports = {
 
         let meme = new Discord.MessageEmbed()
         .setTitle("😂 Memey")
-        .setDescription("`meme` - random meme\n`chuck-joke` - random chuck joke \n `door <@user>` - sends a door meme image \n `delete <@user>` - sends a meme delete image \n `hitler <@user>` - sends a hitler meme image \n `egg <@user>` - sends egg meme image")
+        .setDescription("`meme` - random meme\n`chuck-joke` - random chuck joke \n `door <@user>` - sends a door meme image \n `delete <@user>` - sends a meme delete image \n `hitler <@user>` - sends a hitler meme image \n `egg <@user>` - sends egg meme image \n `wanted <@user>` - sens a wanted meme image \n `cancer <@user>` - sends a cancer meme image")
         .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
