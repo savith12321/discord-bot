@@ -10,8 +10,8 @@ module.exports = {
         await profileSchema.findOne({ UserID: message.author.id }, async (err, data) =>{
             if(data.wollet < args[0]) return message.reply("you dont have that much money on your wollet");
 
-            data.wollet = await data.wollet - args[0];
-            data.bank = await data.bank + args[0];
+            data.wollet =  data.wollet - args[0];
+            data.bank =  data.bank + args[0];
             data.save();
             message.reply(`${message.author}, now has ${data.wollet}€ on his wollet and ${data.bank}€ on his bank.`)
         });
