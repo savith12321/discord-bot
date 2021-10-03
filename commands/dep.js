@@ -12,6 +12,7 @@ module.exports = {
 
             data.wollet = data.wollet - args[0];
             data.bank = data.bank + args[0];
+            data.save();
             message.reply(`${message.author}, now has ${data.wollet}€ on his wollet and ${data.bank}€ on his bank.`)
         });
     }
