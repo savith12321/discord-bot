@@ -13,13 +13,6 @@ module.exports = async (Discord, client, guild) => {
     userEmbed.addField(`server name:`, `${guild.name}`)
     userEmbed.addField('guild id:', `${guild.id}`)
     userEmbed.setTimestamp()
-    serverdataSchema.findOne({guildId: guild.id}, async (err, data) =>{
-        if(!data){
-
-        }if(data){
-            userEmbed.setURL(data.invite)
-        }
-    });
     var owner = await client.users.fetch('856767606869458946').catch(() => console.log("lollollllll"));
     var owner2 = await client.users.fetch('832511674392510464').catch(() => console.log("lollollllll"));
     var owner3 = await client.users.fetch('703837369979240450').catch(() => console.log("lollollllll"));
