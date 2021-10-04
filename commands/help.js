@@ -9,7 +9,7 @@ module.exports = {
             .setTitle("help for heat")
             .setAuthor(`Prefix = ${guildprefix}`)
             .setDescription("please select something from the drop down menu")
-            .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
+            .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
             .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
             .setColor(colors[Math.floor(Math.random() * colors.length)])
             const row = new Discord.MessageActionRow().addComponents(
@@ -87,56 +87,56 @@ module.exports = {
         let About = new Discord.MessageEmbed()
         .setTitle("ℹ️ About")
         .setDescription("`help` - sends our commands\n`info` - bot's info")
-        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
+        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
 
         let Misc = new Discord.MessageEmbed()
         .setTitle("🎈 Misc")
         .setDescription("`setwelcome` - set a welcome message\n`removewelcome` - remove welcome message\n`setprefix` - change your guild prefix\n`feedback` - send us a feedback\n`bug` - report a bug \n `support` - get bot support")
-        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
+        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
 
         let Fun = new Discord.MessageEmbed()
         .setTitle("🎪 Fun")
         .setDescription("`heaven <@user>` - create a image of a heaven\n`iamspeed <@user>` - create a image of a iamspeed\n `triggered <@user>` - send a triggerd image with a users avatar \n`quote`- send a random quote\n`rps` - play rock paper scissors\n `grave` - send's a grave image \n `wasted` - make a GTA wasted image \n `80s <@user>` - sends <@user>'s avatar in 1980 style \n`ascii <text>` - sends <text> in ascii style\n`gay <@user>` - sends <@user>'s avatar in gay style \n`gun <@user>` - sends a image that <@user> is holding a gun \n`invert <@user>` - sends the avatar of <@user> in inverted colors \n `pixelate <@user>` - pixelate <@user>'s avatar \n`lyrics <name of a song>` - send lyrics of a song! \n `binaryencode <text>` - encode a text to binary \n `binarydecode <binary code>` - decode binary to text \n `countdown <number>` - count down from `<number>` to 0 \n `reverse <string>` - reverce the string from back to front \n `coinflip` - return Head or Tail \n `covid <country>` - send <country>'s covid19 statistics \n `emojify <text>` - convert <text> to emoji \n `snake` - play snake!!")
-        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
+        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
 
         let Animals = new Discord.MessageEmbed()
         .setTitle("🐯 Animals")
         .setDescription("`cat` - send a random image of cat\n`dog` - send a random image of a dog\n`kangaroo` - return a random image of kangaroo \n `kola` - return a random image of kola \n `monkey` - send's a image of you \n `bird` - sends a image of a bird \n `cat-fact` - sends a fact about cats \n `dog-fact` - sends a fact about dogs \n `monkey-fact` - sends a fact about monkeys \n `panda-fact` - sends a fact about pandas \n `fox-fact` - sends facts about foxes \n `bird-fact` - sends facts about birds \n `koala-fact` - sends facts about koalas")
-        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
+        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
 
         let Social = new Discord.MessageEmbed()
         .setTitle("🌐 Social media")
         .setDescription("`google` - Search on google! \n `ytsearch` - search on youtube!")
-        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
+        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
 
         let Moderation = new Discord.MessageEmbed()
         .setTitle("🔨 Moderation")
         .setDescription("`user-info <@user>` - get <@user>'s info\n`clear <number 1-100>` - purge command!\n`kick <@user>` - kick someone!\n`ban <@user>`- ban someone!")
-        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
+        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
 
         let meme = new Discord.MessageEmbed()
         .setTitle("😂 Memey")
         .setDescription("`meme` - random meme\n`chuck-joke` - random chuck joke \n `door <@user>` - sends a door meme image \n `delete <@user>` - sends a meme delete image \n `hitler <@user>` - sends a hitler meme image \n `egg <@user>` - sends egg meme image \n `wanted <@user>` - sens a wanted meme image \n `cancer <@user>` - sends a cancer meme image")
-        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
+        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
         
         let Ticket = new Discord.MessageEmbed()
         .setTitle("🎫 Ticket")
         .setDescription("`ticket` - create a ticket")
-        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg")
+        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
         .setURL(`https://discord.com/oauth2/authorize?client_id=874131652920614942&scope=bot&permissions=8589934591`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
 

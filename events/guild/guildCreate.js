@@ -3,6 +3,8 @@ const serverdataSchema = require('../../models/serverdata-schema');
 const unirest = require('unirest');
 const { AutoPoster } = require('topgg-autoposter');
 module.exports = async (Discord, client, guild) => {
+    const channel = guild.channels.cache.filter(c => c.type === 'GUILD_TEXT').find(x => x.position == 0);
+    if(guild.memberCount < 10) return guild.leave() && channel.send("sorry u dont have enouf membes to add this bot")
     let found = 0;
     options = {
         maxAge : 0
@@ -10,7 +12,7 @@ module.exports = async (Discord, client, guild) => {
     var embed = new Discord.MessageEmbed()
     embed.setTitle(`Thank you for adding me!`)
     embed.setColor('RANDOM')
-    embed.setImage(`https://static.vecteezy.com/system/resources/previews/002/195/017/original/fire-flame-logo-icon-illustration-design-icon-free-vector.jpg`)
+    embed.setImage(`https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg`)
     embed.addField('Prefix', '`lol `')
     embed.addField('PS:', '**The bot will make a invite in this server for devolopment purpose If it is a problem it is ok to remove the invite :)**')
 
