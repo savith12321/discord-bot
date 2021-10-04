@@ -5,8 +5,10 @@ module.exports = {
     cooldown:1,
     description: "this is a ping command!",
     async execute(message, args, client){
+        const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
         try {
-            await profileSchema.findOne({ UserID: message.author.id }, async (err, data) =>{
+            await profileSchema.findOne({ UserID: Member.user.id }, async (err, data) =>{
+
                 if (!data) {
                     let profile = await profileSchema.create({
                     UserID: message.author.id,
@@ -17,7 +19,7 @@ module.exports = {
                     profile.save();
                 }else{
                 let embed = new Discord.MessageEmbed()
-                .setTitle("🏦・Balance")
+                .setTitle(`🏦・ ${Member.user}'s Balance`)
                 .setColor("RANDOM")
                 .setTimestamp()
                 .addField("💶・Wollet", data.wollet.toString() + "€")
