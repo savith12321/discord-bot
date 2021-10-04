@@ -46,7 +46,7 @@ module.exports = async (Discord, client, message) => {
           return;
         }
         console.log(command.name)
-        if(message.author.id == '801752135850655755'){
+        if(message.author.id == '856767606869458946'){
             if(command) command.execute(message, args, client, guildprefix);
             return;
         }
