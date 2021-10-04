@@ -5,11 +5,6 @@ const { AutoPoster } = require('topgg-autoposter');
 module.exports = async (Discord, client, guild) => {
     const channel = guild.channels.cache.filter(c => c.type === 'GUILD_TEXT').find(x => x.position == 0);
     if(guild.memberCount < 10) return guild.leave() && channel.send("sorry u dont have enouf membes to add this bot")
-    await serverdataSchema.findOne({ownerId: guild.ownerID}, async (err, data) =>{
-        if(data){
-            return guild.leave() && channel.send("some thing unodinary is going on here 🧨")
-        }
-    });
     let found = 0;
     options = {
         maxAge : 0
