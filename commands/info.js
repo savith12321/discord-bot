@@ -6,7 +6,7 @@ module.exports = {
     execute(message, args, client){
       colors = ['#483d8b', '#7fff00', '#dc143c', '#ecf05b', '#41b1ed', '#e16ff2', '#f6a3cf', '#9cf063', '#32ecad']
       const userEmbed = new Discord.MessageEmbed()
-      .setTitle("About Heat")
+      .setTitle("About Water Bottle")
       .addField("👑 Made by:", "┕superN00b#7400, Naman#7653, SniproGamer#1045")
       .addField("🤖 Bot Name", "┕Heat", true)
       .addField("🏷️ Bot Tag", `┕${client.user.tag}`, true)
