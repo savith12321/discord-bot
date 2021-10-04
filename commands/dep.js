@@ -6,7 +6,6 @@ module.exports = {
     description: ';-;',
     async execute (message, args, client){
         if(!args[0]) return message.reply("please specifi the ammount u want to deposite")
-        if(isNaN(args[0]) || args[0] != "max") return message.reply("please specifi a number");
         await profileSchema.findOne({ UserID: message.author.id }, async (err, data) =>{
             if(args[0] == "max"){
                 data.bank = data.wollet
@@ -15,6 +14,7 @@ module.exports = {
                 message.reply(`${message.author}, now has **${data.wollet}€** on his wollet and **${data.bank}€** on his bank.`)
                 return;
             }
+            if(isNaN(args[0])) return message.reply("please specifi a number");
             if(data.wollet < args[0]) return message.reply("you dont have that much money on your wollet");
 
             data.wollet -= parseFloat(args[0]);
