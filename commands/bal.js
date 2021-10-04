@@ -20,8 +20,8 @@ module.exports = {
                 .setTitle("🏦・Balance")
                 .setColor("RANDOM")
                 .setTimestamp()
-                .addField("💶・Wollet", data.wollet.toString())
-                .addField("💰️・Bank:", data.bank.toString())
+                .addField("💶・Wollet", data.wollet.toString() + "€")
+                .addField("💰️・Bank:", data.bank.toString() + "€")
                 message.channel.send({embeds:[embed]});
                 }
             });
