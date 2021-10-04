@@ -13,7 +13,7 @@ module.exports = {
 
         await profileSchema.findOne({ UserID: message.author.id }, async (err, data) =>{
             true_or_false = [true, false]
-            let yeshuh =true_or_false[Math.floor(Math.random() * true_or_false.length)] == true
+            let yeshuh =true_or_false[Math.floor(Math.random() * true_or_false.length)]
             if(yeshuh == true){
                 let val = between(100, 500)
                 data.wollet += val;
