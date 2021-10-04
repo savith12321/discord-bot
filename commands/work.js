@@ -17,7 +17,7 @@ module.exports = {
                 let get_val = between(300, 1000)
                 data.wollet += get_val;
                 data.save();
-                message.reply(`${message.author} worked as a disco washer and got **${get_val}€**`)
+                message.reply(`${message.author} worked as a dish washer and got **${get_val}€**`)
             }else if(yeshuh == "loose"){
                 let lost_val = between(300, data.wollet)
                 data.wollet -= lost_val;
