@@ -16,7 +16,6 @@ module.exports = async (Discord, client, guild) => {
     embed.addField('Prefix', '`lol `')
     embed.addField('PS:', '**The bot will make a invite in this server for devolopment purpose If it is a problem it is ok to remove the invite :)**')
 
-    const channel = guild.channels.cache.filter(c => c.type === 'GUILD_TEXT').find(x => x.position == 0);
     channel.send({embeds:[embed]}).catch(() => {});
 
     var servers = await client.guilds.cache.size;
