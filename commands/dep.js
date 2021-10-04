@@ -13,7 +13,7 @@ module.exports = {
             data.wollet -= parseFloat(args[0]);
             data.bank += parseFloat(args[0]);
             data.save();
-            message.reply(`${message.author}, now has ${data.wollet}€ on his wollet and ${data.bank}€ on his bank.`)
+            message.reply(`${message.author}, now has **${data.wollet}€** on his wollet and **${data.bank}€** on his bank.`)
         });
     }
 }
