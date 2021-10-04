@@ -19,7 +19,7 @@ module.exports = {
                     profile.save();
                 }else{
                 let embed = new Discord.MessageEmbed()
-                .setTitle(`🏦・ ${Member.user.username}#${Member.user..discriminator}'s Balance`)
+                .setTitle(`🏦・ ${Member.user.username}#${Member.user.discriminator}'s Balance`)
                 .setColor("RANDOM")
                 .setTimestamp()
                 .addField("💶・Wollet", data.wollet.toString() + "€")
