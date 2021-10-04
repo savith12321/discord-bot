@@ -8,8 +8,8 @@ module.exports = {
         if(!args[0]) return message.reply("please specifi the ammount u want to withdraw")
         await profileSchema.findOne({ UserID: message.author.id }, async (err, data) =>{
             if(args[0] == "max"){
-                data.bank = data.wollet
-                data.wollet = 0 
+                data.bank = 0
+                data.wollet = data.bank
                 data.save()
                 message.reply(`${message.author}, now has **${data.wollet}€** on his wollet and **${data.bank}€** on his bank.`)
                 return;
