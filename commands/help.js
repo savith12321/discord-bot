@@ -6,7 +6,7 @@ module.exports = {
     async execute(message, args, client, guildprefix) {
         colors = ['#483d8b', '#7fff00', '#dc143c', '#ecf05b', '#41b1ed', '#e16ff2', '#f6a3cf', '#9cf063', '#32ecad']
         const helpEmbed = new Discord.MessageEmbed()
-            .setTitle("help for heat")
+            .setTitle("help for Water Bottle")
             .setAuthor(`Prefix = ${guildprefix}`)
             .setDescription("please select something from the drop down menu")
             .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
