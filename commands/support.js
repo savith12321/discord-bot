@@ -8,7 +8,7 @@ module.exports = {
     execute(message, args, client){
         const row = new Discord.MessageActionRow().addComponents(
             new Discord.MessageButton()
-            .setLabel("Vote us on Top.gg")
+            .setLabel("Support Server")
             .setURL("https://discord.gg/uJ3ThhyTvP")
             .setStyle("LINK"),
         );
