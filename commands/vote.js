@@ -19,7 +19,7 @@ module.exports = {
             .setURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
             .setLabel("probably not rick roll")
             .setStyle("LINK")
-
+//lol
         );
         message.channel.send({content: "❤️ hey you want to vote for us, thank you ❤️", components : [row]})
 
