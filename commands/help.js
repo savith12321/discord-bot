@@ -66,12 +66,6 @@ module.exports = {
                             description: "this will show you bots Meme commands",
                             emoji: '😂'
                         },
-                        {
-                            label: 'Ticket',
-                            value: 'ticket',
-                            description: "this will show you bots ticket commands",
-                            emoji: '🎫'
-                        },
                     ]
                 )
             )
@@ -138,13 +132,6 @@ module.exports = {
         .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
         .setURL(`https://discord.com/api/oauth2/authorize?client_id=894144261665206293&permissions=2282093686&scope=bot%20applications.commands`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
-        
-        let Ticket = new Discord.MessageEmbed()
-        .setTitle("🎫 Ticket")
-        .setDescription("`ticket` - create a ticket")
-        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
-        .setURL(`https://discord.com/api/oauth2/authorize?client_id=894144261665206293&permissions=2282093686&scope=bot%20applications.commands`)
-        .setColor(colors[Math.floor(Math.random() * colors.length)]);
 
         let Economy = new Discord.MessageEmbed()
         .setTitle("💰 Economy")
@@ -173,8 +160,6 @@ module.exports = {
                 await edit_msg.edit({embeds: [Moderation], components : [row]})
             }else if(value == 'meme'){
                 await edit_msg.edit({embeds: [meme], components : [row]})
-            }else if(value == 'ticket'){
-                await edit_msg.edit({embeds: [Ticket], components : [row]})
             }else if(value == 'economy'){
                 await edit_msg.edit({embeds: [Economy], components : [row]})
             }
