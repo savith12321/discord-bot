@@ -8,11 +8,13 @@ module.exports = {
             new Discord.MessageButton()
             .setLabel("Vote us on Top.gg")
             .setURL("https://top.gg/bot/874131652920614942/vote")
+            .setDisabled(true)
             .setStyle("LINK"),
 
             new Discord.MessageButton()
             .setLabel("Vote us on discordbotlist.com")
             .setStyle("LINK")
+            .setDisabled(true)
             .setURL("https://discordbotlist.com/bots/Water Bottle-5417/upvote"),
 
             new Discord.MessageButton()

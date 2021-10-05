@@ -1,8 +1,17 @@
+const { contents } = require('cheerio/lib/api/traversing');
+
+const Discord = { Client, MessageEmbed, MessageAttachment } = require('discord.js');
 module.exports = {
     name: 'support',
     cooldown:10,
     description: "this is a ping command!",
     execute(message, args, client){
-        message.reply(`here is our support server click on the link and create a ticket for support (https://discord.gg/uJ3ThhyTvP)`);
+        const row = new Discord.MessageActionRow().addComponents(
+            new Discord.MessageButton()
+            .setLabel("Vote us on Top.gg")
+            .setURL("https://discord.gg/uJ3ThhyTvP")
+            .setStyle("LINK"),
+        );
+        message.reply({content:`here is our support server click on the button and create a ticket for support`, components:[row]});
     }
 }
