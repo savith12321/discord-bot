@@ -16,6 +16,7 @@ module.exports = {
             profileSchema.findOne({UserID: Member.user.id}, async (error, Member_data) =>{
                 if(data){
                     Member_data.wollet += parseFloat(args[0])
+                    Member_data.save();
                     message.reply("you gave " + Member.user.username + " **" + args[0] + "€**")
                 }
                 if(!data){
