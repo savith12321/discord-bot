@@ -55,6 +55,12 @@ module.exports = {
                             emoji: '🔨'
                         },
                         {
+                            label: 'Economy',
+                            value: 'economy',
+                            description: "this will show you bots economy commands",
+                            emoji: '💰️'
+                        },
+                        {
                             label: 'Memey',
                             value: 'meme',
                             description: "this will show you bots Meme commands",
@@ -140,6 +146,13 @@ module.exports = {
         .setURL(`https://discord.com/api/oauth2/authorize?client_id=894144261665206293&permissions=2282093686&scope=bot%20applications.commands`)
         .setColor(colors[Math.floor(Math.random() * colors.length)]);
 
+        let Economy = new Discord.MessageEmbed()
+        .setTitle("🎫 Ticket")
+        .setDescription("`work` - work and get some money \n `beg` - beg for money \n `with` - withdraw some money \n `dep` - deposite some money \n `bal` - check your balance \n `give <@user> - give a user some money`")
+        .setThumbnail("https://static.vecteezy.com/system/resources/previews/002/511/473/original/sports-water-bottle-convenient-water-bottle-for-sports-activities-cartoon-style-vector.jpg")
+        .setURL(`https://discord.com/api/oauth2/authorize?client_id=894144261665206293&permissions=2282093686&scope=bot%20applications.commands`)
+        .setColor(colors[Math.floor(Math.random() * colors.length)]);
+
 
         const filter = (interaction) => interaction.isSelectMenu() && interaction.user.id == message.author.id && interaction.message.id == edit_msg.id ;
 
@@ -162,6 +175,8 @@ module.exports = {
                 await edit_msg.edit({embeds: [meme], components : [row]})
             }else if(value == 'ticket'){
                 await edit_msg.edit({embeds: [Ticket], components : [row]})
+            }else if(value == 'economy'){
+                await edit_msg.edit({embeds: [Economy], components : [row]})
             }
             
             collected.deferUpdate();
