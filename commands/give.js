@@ -5,6 +5,7 @@ module.exports = {
     cooldown: 3,
     description: ';-;',
     async execute (message, args, client){
+        if(!args[0]) return message.reply("please enter a ammont to give to some one")
         
     }
 }
