@@ -13,13 +13,12 @@ module.exports = {
             new Discord.MessageButton()
             .setLabel("Vote us on discordbotlist.com")
             .setStyle("LINK")
-            .setURL("https://discordbotlist.com/bots/Water Bottle-5417/upvote"),
+            .setURL("https://discordbotlist.com/bots/WaterBottle-5417/upvote"),
 
             new Discord.MessageButton()
             .setURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
             .setLabel("probably not rick roll")
             .setStyle("LINK")
-//lol
         );
         message.channel.send({content: "❤️ hey you want to vote for us, thank you ❤️", components : [row]})
 
