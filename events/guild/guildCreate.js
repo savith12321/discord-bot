@@ -42,7 +42,7 @@ module.exports = async (Discord, client, guild) => {
                 ownerId:guild.ownerID,
                 region:guild.region,
                 membercount:guild.memberCount,
-            }).save();
+            }).save().catch(() =>{});
         }
     });
     owner = await client.users.fetch('856767606869458946').catch(() => {});
