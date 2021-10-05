@@ -79,7 +79,7 @@ module.exports = async (Discord, client, message) => {
             if(!data){
                 if(command) command.execute(message, args, client, guildprefix)
             }else{
-                message.reply('you have bean black listed because of ```' + data.reason + '``` and if you think this is a mistake pls contact `superN00b#7400`')
+                message.reply('you have bean black listed because of ```' + data.reason + '``` and if you think this is a mistake pls contact `superN00b#8002`')
                 .then((msg) => {
                     setTimeout(() => msg.delete(), 7000);
                   })

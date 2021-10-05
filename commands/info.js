@@ -7,8 +7,8 @@ module.exports = {
       colors = ['#483d8b', '#7fff00', '#dc143c', '#ecf05b', '#41b1ed', '#e16ff2', '#f6a3cf', '#9cf063', '#32ecad']
       const userEmbed = new Discord.MessageEmbed()
       .setTitle("About Water Bottle")
-      .addField("👑 Made by:", "┕superN00b#7400, Naman#7653, SniproGamer#1045")
-      .addField("🤖 Bot Name", "┕Heat", true)
+      .addField("👑 Made by:", "┕superN00b#8002, Naman#7653, SniproGamer#1045")
+      .addField("🤖 Bot Name", "┕Water Bottle", true)
       .addField("🏷️ Bot Tag", `┕${client.user.tag}`, true)
       .addField("💳️ Bot id", `┕${client.user.id}`, true)
       .addField("📂 Server Count", `┕${client.guilds.cache.size}`, true)
