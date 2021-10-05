@@ -16,7 +16,7 @@ module.exports = {
             profileSchema.findOne({UserID: Member.user.id}, async (error, Member_data) =>{
                 if(data){
                     Member_data.wollet += parseFloat(args[0])
-                    message.reply("you gave " + Member.user + " **" + args[0] + "€**")
+                    message.reply("you gave " + Member.user.username + " **" + args[0] + "€**")
                 }
                 if(!data){
                     message.reply("that user is not on our db please tell him to atleast use our bot at once.")
