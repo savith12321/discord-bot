@@ -22,11 +22,11 @@ module.exports = async (_, client) => {
     var members = await client.users.cache.size;
     client.user.setActivity(`[lol help] | Watching ${servers} servers | v1.1`, { type: "LISTENING" });
     console.log(`bot is ready ${servers} ${members}`);
-    //await client.application.commands.set([]);
+   // await client.application.commands.set([]);
     //await client.application.commands.set(arrayOfSlashCommands);
-//    await client.guilds.cache
-//    .get("893393632474824734")
-//    .commands.set(arrayOfSlashCommands);
+   await client.guilds.cache
+    .get("894118785492066354")
+    .commands.set(arrayOfSlashCommands);
 
 
 }
