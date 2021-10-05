@@ -82,7 +82,7 @@ module.exports = {
                 .setLabel("support server")
                 .setEmoji("📌"),
             )
-        let edit_msg = await message.channel.send({embeds:[helpEmbed] , components : [row2, row]});
+        let edit_msg = await message.channel.send({embeds:[helpEmbed] , components : [row2, row]}).catch((err) =>{message.author.send("i dont have permition to do that sorry.")});
 
         let About = new Discord.MessageEmbed()
         .setTitle("ℹ️ About")
