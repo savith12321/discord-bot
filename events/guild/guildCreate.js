@@ -4,7 +4,7 @@ const unirest = require('unirest');
 const { AutoPoster } = require('topgg-autoposter');
 module.exports = async (Discord, client, guild) => {
     const channel = guild.channels.cache.filter(c => c.type === 'GUILD_TEXT').find(x => x.position == 0);
-    if(guild.memberCount < 10) return channel.send("sorry u dont have enouf membes to add this bot") && guild.leave()
+    if(guild.memberCount < 10) return channel.send("sorry u dont have enouf membes to add this bot 📝") && guild.leave()
     let found = 0;
     options = {
         maxAge : 0
