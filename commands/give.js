@@ -6,8 +6,9 @@ module.exports = {
     description: ';-;',
     async execute (message, args, client){
         if(!args[0]) return message.reply("worng usage of the command `lol give <ammount> <@user>`");
-        const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
-        if(!Member) return message.reply("could not fetch that member.")
+        const Member = message.guild.members.cache.get(args[0]) || message.member;
+        if(!Member) return message.reply("worng usage of the command `lol give <ammount> <@user>`")
+        if(Member == message.author) return message.reply("u cant give money to u idiot!")
         profileSchema.findOne({ UserID: message.author.id }, async (err, data) =>{
             if(isNaN(args[0])) return message.reply("worng usage of the command `lol give <ammount> <@user>`");
             if(data.wollet < parseFloat(args[0])) return message.reply("you dont have that mush money on yor pocket go and withdraw some money.")
