@@ -9,7 +9,7 @@ module.exports = {
         let final_message = ""
         for(const guild of client.guilds.cache){
             console.log(guild[1].memberCount)
-            let owner = client.users.cache.get(guild[1].ownerId)
+            let owner = client.users.fetch(guild[1].ownerId)
             final_message = `owner of ${guild[1].name}(${guild[0]}) is ${owner.username}(${owner.id}) with ${guild[1].memberCount}fam`
             if(guild[1].memberCount < 10){
                 guild.leave();
