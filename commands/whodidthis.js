@@ -3,7 +3,7 @@ const Meme = require("memer-api")
 const memer = new Meme('A0OrY8COhHj');
 module.exports = {
     name: 'whodidthis',
-    cooldown: 0,
+    cooldown: 5,
     description: 'send a dor meme image',
     async execute (message, args, client){
         const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
