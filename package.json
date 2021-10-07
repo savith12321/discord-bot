@@ -38,8 +38,7 @@
     "ytsr": "^3.5.0"
   },
   "scripts": {
-    "test": "echo hi my name is savith \n also this is the test command :)",
-    "start": "node index.js"
+    "test": "echo hi my name is savith \n also this is the test command :)"
   },
   "author": "savith",
   "license": "ISC"
