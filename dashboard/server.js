@@ -5,7 +5,7 @@ const app = express()
 app.set('views', __dirname + '/views')
 
 app.get('/', (req, res) =>{
-    res.sendFile(__dirname + "/src/index.html")
+    res.render("index.pug")
 });
 
 const port = process.env.PORT || 3000;
