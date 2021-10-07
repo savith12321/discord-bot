@@ -38,7 +38,8 @@
     "ytsr": "^3.5.0"
   },
   "scripts": {
-    "test": "echo hi my name is savith \n also this is the test command :)"
+    "test": "echo hi my name is savith \n also this is the test command :)",
+    "start": "echo lol"
   },
   "author": "savith",
   "license": "ISC"
