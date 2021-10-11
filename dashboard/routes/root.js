@@ -42,4 +42,8 @@ router.get('/about', (req, res) =>{
     res.render("about.pug")
 });
 
+router.get('/dt', (req, res) =>{
+    res.redirect("https://dis.gd/mytickets")
+});
+
 module.exports = router;

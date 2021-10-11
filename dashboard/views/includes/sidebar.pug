@@ -1,0 +1,11 @@
+#sidebar.float-left.bg-dark
+    a(href="/dashboard")
+        img.icon.round.shodow(alt=user.username, src=user.avatarUrl(64))
+    hr
+
+    each guild in guilds 
+        a(href="/servers/" + guild.id)
+            img.icon.round.round(alt=guild.name src=guild.iconUrl(64))
+
+    a(href='/invite')
+        p.abbr.icon.text-sccuess.text-center.round.green #[i.fas.fa-plus]
