@@ -1,0 +1,41 @@
+doctype html
+header
+    include includes/header.pug
+    title Water Bottle | Commands
+body
+    include includes/navbar.pug
+    br
+    center
+        h1.title Commands
+    br
+    br
+    ul.nav.justify-content-center
+        ul.nav.nav-tabs
+            li.nav-item
+                a.nav-link(href='/commands') About
+            li.nav-item
+                a.nav-link(href='/commands/misc') Misc
+            li.nav-item
+                a.nav-link(href='/commands/fun') Fun
+            li.nav-item
+                a.nav-link(href='/commands/animals') Animals
+            li.nav-item
+                a.nav-link(href='/commands/media') Social media
+            li.nav-item
+                a.nav-link(href='/commands/moderation') Moderation            
+            li.nav-item
+                a.nav-link(href='/commands/economy') Economy
+            li.nav-item
+                a.nav-link.active(href='/commands/memey') Memey
+    br
+    br
+    #commands2
+        li meme - random meme
+        li chuck-joke - random chuck joke 
+        li  door <@user> - sends a door meme image 
+        li  delete <@user> - sends a meme delete image 
+        li  hitler <@user> - sends a hitler meme image 
+        li  egg <@user> - sends egg meme image 
+        li  wanted <@user> - sens a wanted meme image 
+        li  cancer <@user> - sends a cancer meme image
+

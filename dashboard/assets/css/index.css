@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+
+.jumbotron{
+    margin: 25vh;
+    background-color: rgb(26, 26, 26);
+}
+
+.nav{
+    background-color: rgb(26, 26, 26);
+}
+
+body{
+    background-color: rgb(26, 26, 26);
+    color: white;
+    border-color: white;
+}
+
+.main-title{
+    font-family: Dosis;
+}
+
+.c_boder{
+    border-color: white;
+    border-width: 10px ;
+}
+
+.title{
+    font-family: Dosis;
+}
+
+#commands{
+    margin-left: 85vh;
+}
+
+#commands2{
+    margin-left: 75vh;
+}
+.round{
+    width: 32;
+    height: 32;
+    border-radius: 50%;
+}

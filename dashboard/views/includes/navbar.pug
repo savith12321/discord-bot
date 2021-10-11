@@ -1,12 +1,37 @@
-nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.container-fluid
-    a.navbar-brand(href='#') Navbar
-    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-      span.navbar-toggler-icon
-    #navbarSupportedContent.collapse.navbar-collapse
-      ul.navbar-nav.me-auto.mb-2.mb-lg-0
-        li.nav-item
-          a.nav-link.active(aria-current='page' href='/commands') Commands
-      .float-right
-       ul.navbar-nav.me-auto.mb-2.mb-lg-0
-          li.nav-item
-            a.nav-link.active(aria-current='page' href='/login') Login
+nav.navbar.navbar-expand-lg.navbar-dark
+  a.navbar-brand(href='/') Home
+  button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbar', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbar.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link(href='/Commands')
+          i.fas.fa-code.p-2
+          span Commands 
+        li.nav-item.active
+          a.nav-link(href='/about') 
+            i.fas.fa-info.p-2
+            span About 
+
+    form.form-inline.my-2.my-lg-0
+      ul.navbar-nav.mr-auto
+        if user
+          .dropdown.pr-2
+            .pr-2.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+              img.me-2.rounded-circle(src=user.avatarUrl(32))
+              span.pl1 #{user.username}
+            ul.dropdown-menu.dropdown-menu-dark.bg-dark(aria-labelledby='dropdownMenuButton1')
+              li
+                a.dropdown-item(href='/dashboard') 
+                  i.fas.fa-sliders-h
+                  |  Dashboard
+              hr
+              li
+                a.dropdown-item(href='/logout') 
+                  i.fas.fa-user-alt-slash
+                  |  Logout
+        else 
+          li.nav-item.active
+            a.nav-link(href='/login')
+              i.fas.fa-sign-in-alt.p-2
+              span.pl1 Login

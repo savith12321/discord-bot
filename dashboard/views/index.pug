@@ -1,8 +1,12 @@
-include includes/header.pug
-
-body
-    include includes/navbar.pug
-    br
-    center
-        h1 hello world
-    include  includes/style.pug
+doctype html
+html(lang="en")
+    head
+        include includes/header.pug
+        title Water Bottle | Home
+    body
+        include includes/navbar.pug
+        .jumbotron.text-center
+            h1.display-4.main-title Water Bottle
+                i.fas.fa-wine-bottle.p-2
+            p.lead Imagine a bot - that make world a better place
+            a.btn.btn-outline-light(href='https://discord.com/api/oauth2/authorize?client_id=894144261665206293&permissions=2282093686&scope=bot%20applications.commands', role='button') Invite

@@ -1,0 +1,22 @@
+doctype html
+header
+    include includes/header.pug
+    title Water Bottle | About
+body
+    include includes/navbar.pug
+    #tab.carousel.slide(data-bs-ride='carousel')
+        .carousel-inner
+            .carousel-item.active
+                img.d-block.w-100(src='imgs/1.png', alt='...',height = "600")
+            .carousel-item
+                img.d-block.w-100(src='imgs/2.png', alt='...',height = "600")
+            .carousel-item
+                img.d-block.w-100(src='imgs/3.png', alt='...',height = "600")
+        button.carousel-control-prev(type='button', data-bs-target='#tab', data-bs-slide='prev')
+            span.carousel-control-prev-icon(aria-hidden='true')
+            span.visually-hidden Previous
+        button.carousel-control-next(type='button', data-bs-target='#tab', data-bs-slide='next')
+            span.carousel-control-next-icon(aria-hidden='true')
+            span.visually-hidden Next
+
+

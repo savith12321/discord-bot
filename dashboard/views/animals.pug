@@ -1,0 +1,45 @@
+doctype html
+header
+    include includes/header.pug
+    title Water Bottle | Commands
+body
+    include includes/navbar.pug
+    br
+    center
+        h1.title Commands
+    br
+    br
+    ul.nav.justify-content-center
+        ul.nav.nav-tabs
+            li.nav-item
+                a.nav-link(href='/commands') About
+            li.nav-item
+                a.nav-link(href='/commands/misc') Misc
+            li.nav-item
+                a.nav-link(href='/commands/fun') Fun
+            li.nav-item
+                a.nav-link.active(href='/commands/animals') Animals
+            li.nav-item
+                a.nav-link(href='/commands/media') Social media
+            li.nav-item
+                a.nav-link(href='/commands/moderation') Moderation            
+            li.nav-item
+                a.nav-link(href='/commands/economy') Economy
+            li.nav-item
+                a.nav-link(href='/commands/memey') Memey
+    br
+    br
+    #commands2 
+        li cat - send a random image of cat
+        li dog - send a random image of a dog
+        li kangaroo - return a random image of kangaroo 
+        li  kola - return a random image of kola 
+        li  monkey - send's a image of you 
+        li  bird - sends a image of a bird 
+        li  cat-fact - sends a fact about cats 
+        li  dog-fact - sends a fact about dogs 
+        li  monkey-fact - sends a fact about monkeys 
+        li  panda-fact - sends a fact about pandas 
+        li  fox-fact - sends facts about foxes 
+        li  bird-fact - sends facts about birds 
+        li  koala-fact - sends facts about koalas
