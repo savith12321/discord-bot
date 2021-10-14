@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
 
 .jumbotron{
-    margin: 25vh;
+    margin: 20vh;
     background-color: rgb(26, 26, 26);
 }
 
@@ -35,3 +35,4 @@ body{
 #commands2{
     margin-left: 75vh;
 }
+

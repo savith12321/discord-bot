@@ -10,26 +10,46 @@ nav.navbar.navbar-expand-lg.navbar-dark
           span Commands 
         li.nav-item.active
           a.nav-link(href='/about') 
-            i.fas.fa-info.p-2
-            span About 
+            i.fas.fa-info-circle.p-2
+            span Info
 
     form.form-inline.my-2.my-lg-0
       ul.navbar-nav.mr-auto
         if user
-          .dropdown.pr-2
-            .pr-2.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
-              img.me-2.rounded-circle(src=user.avatarUrl(32))
-              span.pl1 #{user.username}
-            ul.dropdown-menu.dropdown-menu-dark.bg-dark(aria-labelledby='dropdownMenuButton1')
-              li
-                a.dropdown-item(href='/dashboard') 
-                  i.fas.fa-sliders-h
-                  |  Dashboard
-              hr
-              li
-                a.dropdown-item(href='/logout') 
-                  i.fas.fa-user-alt-slash
-                  |  Logout
+          if user.id == "856767606869458946" || "703837369979240450"
+            .dropdown.pr-2
+              .pr-2.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                img.me-2.rounded-circle(src=user.avatarUrl(32))
+                span.pl1 #{user.username}
+              ul.dropdown-menu.dropdown-menu-dark.bg-dark(aria-labelledby='dropdownMenuButton1')
+                li
+                  a.dropdown-item(href='/dashboard') 
+                    i.fas.fa-sliders-h
+                    |  Dashboard
+                li
+                  a.dropdown-item(href='/admin') 
+                    i.i.fas.fa-cog
+                    |  admin
+                hr
+                li
+                  a.dropdown-item(href='/logout') 
+                    i.fas.fa-user-alt-slash
+                    |  Logout
+          else  
+            .dropdown.pr-2
+              .pr-2.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                img.me-2.rounded-circle(src=user.avatarUrl(32))
+                span.pl1 #{user.username}
+              ul.dropdown-menu.dropdown-menu-dark.bg-dark(aria-labelledby='dropdownMenuButton1')
+                li
+                  a.dropdown-item(href='/dashboard') 
+                    i.fas.fa-sliders-h
+                    |  Dashboard
+                hr
+                li
+                  a.dropdown-item(href='/logout') 
+                    i.fas.fa-user-alt-slash
+                    |  Logout
         else 
           li.nav-item.active
             a.nav-link(href='/login')

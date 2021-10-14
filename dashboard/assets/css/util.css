@@ -22,6 +22,49 @@
       text-shadow: 0 0 20px #fff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff, 0 0 80px #ffffff;
     }
 }
-.green{
-  color:rgb(52, 182, 0);
+
+.white_border{
+  border-width: 10px;
+  border: #ffffff;
+}
+.icon{
+  border-radius: 50%;
+  transition: 0.04s ease-in-out;
+}
+.icon:hover{
+  border-radius: 20%;
+}
+.DivToScroll{   
+    background-color: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 0 4px 0;
+    color: #3B3C3E;
+    font-size: 12px;
+    font-weight: bold;
+    left: -1px;
+    padding: 10px 7px 5px;
+}
+
+.DivWithScroll{
+    height:120px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+
+.servers_without_a_icon{
+  left:10vh;
+}
+
+.invite{
+  border-radius: 50%;
+  color: #4ba55e;
+  background-color: #36393f;
+
+  transition: 0.04s ease-in-out;
+}
+
+.invite:hover{
+  border-radius: 20%;
+  background-color: #4ba55e;
+  color: white;
 }

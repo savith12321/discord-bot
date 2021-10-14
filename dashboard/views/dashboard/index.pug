@@ -6,6 +6,21 @@ html(lang="en")
         link(rel='stylesheet', href='/css/sidebar.css')
     body
         include ../includes/sidebar.pug
+        .vertical
+        #sidebarExtention 
+            header.text-center.pt-4 
+                .larg-icon.rond
+                    img.round(src=user.avatarUrl(128), alt=user.username)
+                h4.pt-2 #{user.username}#[span.text-muted #{"#" + user.discriminator}]
+            .tabs.navbar-nav
+                .cattagory.nav-link.color_white| info 
+                .left
+                    a(href="#").color_white.nav-link Username  : #{user.username}
+                    a(href="#").color_white.nav-link Id : #{user.id}
+                    a(href="#").color_white.nav-link Account creation : #{user.createdAt}
+                    a(href="#").color_white.nav-link locale   : #{user.locale}
+                    a(href="#").color_white.nav-link Discriminator   : #{user.discriminator}
         include ../includes/navbar.pug
         .jumbotron.text-center
             h1.display-4.main-title Dashboard
+            h4.text-muted Edit server config from water bottle Dashboard!!..

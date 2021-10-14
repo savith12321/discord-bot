@@ -1,6 +1,35 @@
 #sidebar{
     height: 100vh;
     padding: 10px;
+    background-color: #202225;
+}
+
+#sidebar, #sidebarExtention{
+    height: 100vh;
+    float: left;
+    background-color: #202225;
+}
+
+#sidebarExtention{
+    width: 275px;
+    transition: .1s;
+    opacity: 1;
+}
+
+#sidebarExtention .large-icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+}
+
+#sidebarExtention .large-icon{
+    font-size: xx-large;
+
+    width:128px;
+    height: 128px;
+
+    color: rgb(0, 140, 255);
 }
 
 .icon, icon img{
@@ -11,8 +40,50 @@
 
     margin: 0.5rem 0;
 
+    transition: 0.2s ease-in-out;
+}
+
+.icon:hover, icon img:hover{
+    border-radius: 20%;
 }
 
 .abbr{
     padding-top: 7.5px;
+}
+
+#sidebar {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+
+#sidebar::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+.vertical {
+    border-left: 2px solid rgb(156, 156, 156);
+    height: 100vh;
+    position:absolute;
+    left: 80px;
+}
+
+.abbr2{
+    padding-top:42.8px;
+}
+
+.tabs{
+    padding-left: 20px; 
+}
+
+.color_white{
+    color: white;
+}
+
+.color_white:hover{
+    color: rgb(194, 194, 194);
+}
+
+.left {
+    padding-left: 30px;    
 }

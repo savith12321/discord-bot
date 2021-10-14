@@ -1,11 +1,16 @@
-#sidebar.float-left.bg-dark
+#sidebar.float-left.DivWithScroll
     a(href="/dashboard")
-        img.icon.round.shodow(alt=user.username, src=user.avatarUrl(64))
+        img.icon.round.shodow(alt=user.username, src=user.avatarUrl(64), data-bs-toggle="tooltip" data-bs-placement="right", title="Dashboard")
     hr
-
     each guild in guilds 
-        a(href="/servers/" + guild.id)
-            img.icon.round.round(alt=guild.name src=guild.iconUrl(64))
+        a(href="/servers/" + guild.id).nav-link.p-0
+            if guild.icon
+                img.icon.round.shodow(alt=guild.name, src=guild.iconURL({dynamic: true, size:64}), data-bs-toggle="tooltip" data-bs-placement="right", title=guild.name)
+            else
+                p.text-center.abbr.icon.shodow.bg-light(data-bs-toggle="tooltip" data-bs-placement="right", title=guild.name) #{guild.nameAcronym}
+
 
     a(href='/invite')
-        p.abbr.icon.text-sccuess.text-center.round.green #[i.fas.fa-plus]
+        p.abbr.icon.text-sccuess.text-center.green.invite(data-bs-toggle="tooltip" data-bs-placement="right", title="invite") #[i.fas.fa-plus]
+    a(href="https://discord.gg/uJ3ThhyTvP")
+        p.abbr.icon.text-sccuess.text-center.green.invite(data-bs-toggle="tooltip" data-bs-placement="right", title="support server") #[i.fas.fa-compass]

@@ -2,13 +2,31 @@ doctype html
 html(lang="en")
     head
         include ../includes/header.pug
-        title Water Bottle | Dashboard
+        title Water Bottle | #{guild.name}
         link(rel='stylesheet', href='/css/sidebar.css')
     body
         include ../includes/sidebar.pug
+        .vertical
+        #sidebarExtention 
+            header.text-center.pt-4 
+                .larg-icon.rond
+                    if guild.icon
+                        img.round(src=guild.iconURL(128), alt=guild.name)
+                    else
+                       p.large-icon.text-center.abbr2.round.bg-light.large-icon #{guild.nameAcronym}
+                h4.pt-2 #{guild.name}
+            .tabs.navbar-nav
+                .cattagory.nav-link.color_white| info 
+                .left
+                    p.color_white.nav-link Member count  : #{guild.memberCount}
+                    p.color_white.nav-link Channel count : #{channelSize}
+                    a(href="#").color_white.nav-link Verified : #{guild.verified}
+                    a(href="#").color_white.nav-link Emoji count   : #{guild.emojis.cache.size}
+                    a(href="#").color_white.nav-link Boost count   : #{guild.premiumSubscriptionCount}
+                    a(href="#").color_white.nav-link Max members   : #{guild.maximumMembers}
+                    a(href="#").color_white.nav-link Verification level: #{guild.verificationLevel}
         include ../includes/navbar.pug
-        .container.text-center
-            |  
-            h1.display-4.main-title Dashboard
-            hr
-            p.lead Edit your server config here
+        .jumbotron.text-center.bg-transparent
+            h1.title #{guild.name}
+
+            p #{owner}
