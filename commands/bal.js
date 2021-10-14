@@ -24,7 +24,7 @@ module.exports = {
                 .setTimestamp()
                 .addField("💶・Wollet", data.wollet.toString() + "€")
                 .addField("💰️・Bank:", data.bank.toString() + "€")
-                message.channel.send({embeds:[embed]});
+                message.channel.send({embeds:[embed]}).cache(() =>{});
                 }
             });
         } catch (err) {

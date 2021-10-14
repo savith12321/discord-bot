@@ -14,11 +14,11 @@ module.exports = {
             return message.channel.send(":boom: I could not ban that member see do i have perms or he/she have higher perms thane me")
           });          
           if(!error){
-            message.reply(`You **KICK** ${target}`);
+            message.reply(`You **BAN** ${target}`).cache(() =>{});
           }
       }
       else{
-        message.reply("Don't be an idiot **MENTION A MEMBER TO BAN IDIOT**");
+        message.reply("Don't be an idiot **MENTION A MEMBER TO BAN IDIOT**").cache(() =>{});
       }
 
     }
