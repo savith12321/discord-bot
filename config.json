@@ -1,8 +1,1 @@
-{
-  "token" : "ODk0MTQ0MjYxNjY1MjA2Mjkz.YVluvA.QIKI8TAT4ixICsrf0Nhq7NVMKnM",
-  "mongosrv" : "mongodb+srv://savith:savith@cluster0.jpvpv.mongodb.net/MoringbotDB?retryWrites=true&w=majority",
-  "spotify" : {
-    "client_id" : "300b8900e81044fa83ccc3912ed1b8a1",
-    "client_secret" : "18dc5a6b434d4bd493da668cedab1399"
-  }
-}
+
